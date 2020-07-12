@@ -1,0 +1,4 @@
+<view class="go-to-top-container" bindtap="goToTop">
+  <image class="go-to-top-icon" src="../../statics/images/icon_go_top@2x.png" mode="aspectFit" />
+  <view wx:if="{{isIPX}}" class="IPX-corresponding-block"></view>
+</view>

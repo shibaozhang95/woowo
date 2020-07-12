@@ -1,0 +1,14 @@
+<view class="search-bar-container">
+  <view class="search-bar">
+    <image class="search-icon" src="statics/icon_search@2x.png" mode="aspectFill"></image>
+    <!-- <input class="search-input" placeholder="输入区域(Suburb)，或邮编" 
+      placeholder-class="search-input-placeholder" type="text"></input> -->
+    <view class="search-fake-input">
+      <text wx:if="{{chosenAreas.length == 0}}" class="place-hoder">输入区域(Suburb)，或邮编</text>
+      <text wx:else class="areas">
+        <block wx:for="{{chosenAreas}}" wx:key="">{{item.locality + ';'}}</block>
+      </text>
+    </view>
+    
+  </view>
+</view>

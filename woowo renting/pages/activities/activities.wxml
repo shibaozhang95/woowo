@@ -1,0 +1,43 @@
+<wn-navigation nav-title="{{'摸法管家'}}"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <image class="activity-banner"
+      mode="aspectFil"
+      src="/statics/images/banner_page_mofaguanjia_zufang.png">
+    </image>
+
+    <view class="info-block">
+      <text class="txt-block-one">
+        又到了 final 结束然后搬家的时间啦，怕遇到黑心搬家清洁中介拖拉 or 乱加价，清洁不给力，行李无处存放的小伙伴们有福了！Woowo 生活（管家）（服务）他 lei 啦！Woowo 助您在退房搬家清洁路上一路顺风~
+
+        Woowo 涵盖了搬家，清洁，行李寄存和接送机等一站式服务，给您全方位服务到家！
+
+        Woowo 向每一位用户保证：
+        1. 放心！我们团队会按时到达指定地点，中途干活不磨蹭，不会影响您的既定行程~
+        2. 靠谱！快速搬家，专业清洁，安全行李寄存，快速接送机，让您没有后顾之忧~
+        3. 不加价！确认搬家清洁等服务项目后，绝！不！加！价！
+
+        Woowo，您的海外生活留学伴侣~
+      </text>
+    </view>
+
+    <view class="contact-block">
+      <view class="contact-hint">👇 微信号(点击复制)👇</view>
+      <view class="contact-method">
+        <view class="wechat-id"
+          hover-class="touch-copy"
+          bindtap="touchCopy"
+          data-content="{{'Redbeencake'}}" >Redbeencake</view>
+      </view>
+      <view class="contact-hint">👇 微信二维码(保存扫描)👇</view>
+      <view class="contact-method">
+        <image class="wechat-barcode"
+          src="https://media.woniu-xcx.xyz/977B7842-650C-4745-83FB-55888D2BC52F.jpeg"
+          mode="aspectFit"
+          data-url="{{'https://media.woniu-xcx.xyz/977B7842-650C-4745-83FB-55888D2BC52F.jpeg'}}"
+          bindtap="previewQRCode"></image>
+      </view>
+    </view>
+  </view>
+</wn-window>

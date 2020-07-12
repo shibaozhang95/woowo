@@ -1,0 +1,15 @@
+
+<full-screen-container wx:if="{{ifShowModal}}">
+  <view class="modal-block">
+    <view class="modal-icon-block">
+      <image class="modal-icon" src="{{iconUrl}}" mode="aspectFit"></image>
+    </view>
+    <view class="modal-txt">{{modalInfo.tipsTxt}}</view>
+    <view class="modal-fnt">
+      <view class="modal-fnt-btn modal-fnt-confirm" hover-class="modal-fnt-hover" 
+        bindtap="confirmOpt">{{modalInfo.confirmTxt}}</view>
+      <view class="modal-fnt-btn modal-fnt-cancel" hover-class="modal-fnt-hover"
+        bindtap="cancelOpt">{{modalInfo.cancelTxt}}</view>
+    </view>
+  </view>
+</full-screen-container>

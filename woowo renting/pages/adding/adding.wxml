@@ -1,0 +1,42 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'Woowo 租房'}}"></wn-navigation>
+
+<wn-window
+  if-show-tab-bar="{{false}}">
+  <view class="container">
+    <!-- 有房 -->
+    <view class="nav-list">
+      <block wx:for="{{navListHouse}}" wx:key="">
+        <view class="nav-block" hover-class="normal-hover"
+          bindtap="chooseOneRentType"
+          data-type="{{item.rentType}}">
+          <view class="nav-icon">
+            <image class="" src="{{item.iconUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="nav-title">{{item.title}}</view>
+          <view class="arrow-icon">
+            <image class="" src="/statics/images/icon_arrow.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <!-- 无房 -->
+    <view class="nav-list">
+      <block wx:for="{{navListHousemate}}" wx:key="">
+        <view class="nav-block" hover-class="normal-hover"
+          bindtap="goToPostHousemate"
+          data-type="{{item.rentType}}"
+          data-nav-url="{{item.navUrl}}">
+          <view class="nav-icon">
+            <image class="" src="{{item.iconUrl}}" mode="aspectFit"></image>
+          </view>
+          <view class="nav-title">{{item.title}}</view>
+          <view class="arrow-icon">
+            <image class="" src="/statics/images/icon_arrow.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</wn-window>

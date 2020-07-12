@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/activities/activities",
+    "pages/goodsList/goodsList",
+    "pages/goodsDetail/goodsDetail",
+    "pages/sale/sale",
+    "pages/sale2/sale2",
+    "pages/afterPosted/afterPosted",
+    "pages/user/user",
+    "pages/myFollowings/myFollowings",
+    "pages/myLiked/myLiked",
+    "pages/myMessages/myMessages",
+    "pages/myPosted/myPosted",
+    "pages/homepage/homepage",
+    "pages/aboutUs/aboutUs",
+    "pages/contactUs/contactUs",
+    "pages/logs/logs",
+    "pages/article/article",
+    "pages/areasSearch/areasSearch",
+    "pages/businessGoodsList/businessGoodsList",
+    "pages/shopInfo/shopInfo",
+    "pages/recruitment/recruitment"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息，能让我们针对你的地区的为你服务哦"
+    }
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的主页"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6b62d",
+    "navigationBarTitleText": "WooWo二手市场",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "navigationStyle": "custom",
+    "backgroundColor": "#f8f5f0",
+    "onReachBottomDistance": 600
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx9d31f121f734cae7",
+    "wx7bbbffe2b11138f8",
+    "wxc3e43cb4472891ef"
+  ],
+  "usingComponents": {
+    "wn-navigation": "components/wnNavigation/wnNavigation",
+    "wn-window": "components/wnWindow/wnWindow",
+    "wn-image": "components/wnImage/wnImage",
+    "wn-list": "components/common/wnList/wnList"
+  },
+  "sitemapLocation": "sitemap.json"
+}

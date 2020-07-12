@@ -1,0 +1,86 @@
+<wn-navigation if-tab-page="{{true}}" if-custom="{{false}}"
+  nav-title="{{'个人中心'}}"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+
+    <view class="section-user-inf" hover-class="normal-hover" 
+      bindtap="navigateToHomepage">
+      <view class="block-basic-inf">
+        <image class="basic-inf avatar" mode="aspectFit" 
+          src="{{woowoUserInfo.user_image}}"></image>
+        <view class="basic-inf name-block">
+          <text class="username"
+            >{{woowoUserInfo.ifLogedin?woowoUserInfo.username:"Hi, 游客(点击登录)"}}</text>
+          <view class="bussiness-tag"
+            wx:if="{{woowoUserInfo.user_right!='normal'}}">商</view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="section-user-fnct">
+
+      <view class="block block-fnct">
+        <!-- <view bindtap="navigateTo" data-towhere="../myHomepage/myHomepage" class="block-line" hover-class="normal-hover">
+          <image class="block-line-icon" src="../../statics/images/icon_hp_homepage@2x.png" mode="aspectFit" />
+          <text class="block-line-txt">我的主页</text>
+        </view> -->
+
+        <view bindtap="navigateTo" 
+          data-towhere="../myPost/myPost" class="block-line" hover-class="normal-hover">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_mypost.png" mode="aspectFit" />
+          <text class="block-line-txt">我的发布</text>
+        </view>
+        
+        <view bindtap="navigateTo" data-towhere="../myLiked/myLiked" class="block-line" hover-class="normal-hover">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_mylikes.png" mode="aspectFit" />
+          <text class="block-line-txt">我的收藏</text>
+        </view>
+
+        <view bindtap="navigateTo" data-towhere="../myFollowing/myFollowing" class="block-line" hover-class="normal-hover">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_myfollowing.png" mode="aspectFit" />
+          <text class="block-line-txt">我的关注</text>
+        </view>
+        
+        <view bindtap="navigateTo" data-towhere="../myViewHistory/myViewHistory" class="block-line" hover-class="normal-hover">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_myhistory.png" mode="aspectFit" />
+          <text class="block-line-txt">浏览记录</text>
+        </view>
+      </view>
+      
+      <view class="block block-service">
+        <!-- <navigator url="../contract/contract" class="block-line">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_contract.png" mode="aspectFit" />
+          <text class="block-line-txt">合同文案</text>
+        </navigator> -->
+        
+        <button id="clearBtn" class="block-line service" open-type="contact" class="block-line">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_service.png" mode="aspectFit" />
+          <text class="block-line-txt">联系客服</text>
+        </button>
+
+        <navigator url="../aboutUs/aboutUs" class="block-line">
+          <image class="block-line-icon" 
+            src="../../statics/images/icon_hp_about_us.png" mode="aspectFit" />
+          <text class="block-line-txt">关于我们</text>
+        </navigator>
+      </view>
+
+    </view>
+  
+  </view>
+</wn-window>
+
+<login-auth
+  show-login-auth="{{showLoginAuth}}"
+  bind:loginsuccess="loginSuccess"
+  bind:refuseauth="refuseAuth"></login-auth>
+
+<wn-tab-bar isHomepage="true"></wn-tab-bar>

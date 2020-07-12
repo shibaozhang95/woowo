@@ -1,0 +1,14 @@
+<view class="wn-input-container">
+  <view class="input-title">{{title}}</view>
+  <view class="input-fnt">
+    <view class="prefix">{{prefix}}</view>
+    <input type="{{inputType}}"
+      placeholder-class="input-placeholder"
+      placeholder="{{placeholder}}"
+      value="{{inputValue}}"
+      style="width:{{inputWidth*2}}rpx"
+      bindinput="inputChanged">
+    </input>
+    <view class="suffix">{{suffix}}</view>
+  </view>
+</view>

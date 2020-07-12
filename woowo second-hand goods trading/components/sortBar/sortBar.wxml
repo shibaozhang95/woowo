@@ -1,0 +1,127 @@
+<view class="sort-bar-container" catchtouchmove="doNothing">
+  <view class="sort-bar-fnt sort-bar-catagory sort-bar-fnt-{{ifShowCatagory ? 'chosen' : ''}}" hover-class="normal-hover"
+    bindtap="triggerCatagory">
+    <view class="sort-fnt-item">
+      <text class="sort-txt">{{chosenCatTxt}}</text>
+      <view class="catagory-arrow"></view>
+    </view>
+  </view>
+
+  <view class="sort-bar-fnt sort-bar-byprise sort-bar-fnt-{{ifShowPriceSort ? 'chosen' : ''}}" 
+    bindtap="switchPriceSortWay">
+    <view class="sort-fnt-item">
+      <text class="sort-txt">{{priceSortWay[currentPriceSortWay]}}</text>
+      <view class="price-sort-arrow-{{currentPriceSortWay}}"></view>
+    </view>  
+  </view>
+
+  <view class="sort-bar-fnt sort-bar-filter sort-bar-fnt-{{ifShowFilter ? 'chosen' : ''}}" hover-class="normal-hover"
+    bindtap="triggerFilter">
+    <view class="sort-fnt-item">
+      <text class="sort-txt">筛选</text>
+      <view class="sort-bar-filter-icon-block">
+        <image class="sort-bar-filter-icon" src="../../statics/images/icon_sort_filter@2x.png" mode="aspectFit"></image>
+        <image wx:if="{{ifShowFilter}}" class="sort-bar-filter-icon sort-bar-filter-icon-{{ifShowFilter ? 'bold' : ''}}" src="../../statics/images/icon_sort_filter@2x.png" mode="aspectFit"></image>
+      </view>
+    </view>  
+  </view>
+</view>
+
+<!-- CATAGORY -->
+<view class="catagory-container" 
+  wx:if="{{ifShowCatagory}}" 
+  style="height:{{screenHeight-navBarHeight-sortBarHeight-posTop}}px;">
+  <!-- for touch off catagory block -->
+  <view class="catagory-block-background"
+    catchtouchmove="doNothing" bindtap="triggerCatagory"></view>
+  <view class="catagory-block" 
+    animation="{{catagoryAnimation}}">
+    <view class="main-cat-block">
+      <block wx:for="{{catObj}}" wx:for-index="mainCatItem" wx:key="">
+        <view class="main-cat-item main-cat-item-{{mainCatItem == choosingMainCat ? 'chosen' : ''}}"
+          data-main-cat-item="{{mainCatItem}}" bindtap="chooseMainCat"
+          >{{mainCatItem}}</view>
+      </block>
+      
+    </view>
+    <view class="sub-cat-block">
+      <block wx:for="{{catObj[choosingMainCat]}}" wx:key="">
+        <view class="sub-cat-item sub-cat-item-{{item == choosingSubCat ? 'chosen' : ''}}"
+          data-sub-cat-item="{{item}}" hover-class="sub-cat-chosen" bindtap="chooseSubCat"
+          >{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- FILTER -->
+<view class="filter-container" wx:if="{{ifShowFilter}}" 
+  style="height:{{screenHeight-navBarHeight-sortBarHeight-posTop}}px;">
+  <!-- for touch off filter block-->
+  <view class="filter-block-background" 
+    catchtouchmove="" bindtap="triggerFilter"></view> 
+  <scroll-view class="filter-block" animation="{{filterAnimation}}" scroll-y="{{true}}">
+    <view class="filter-section">
+      <view class="filter-section-title">热门区域（多选）</view>
+      <view class="filter-section-content">
+        <view class="filter-btn filter-btn-areas filter-btn-{{currentArea.ifChosen ? 'chosen' : ''}}"
+          bind:tap="getCurrentArea">{{"附近范围"}}
+        </view>
+        <view class="filter-btn filter-btn-areas filter-btn-{{item.ifChosen ? 'chosen' : ''}}" 
+          wx:for="{{popAreas.list}}" wx:key=""
+          data-section="popAreas" data-index="{{index}}" 
+          bindtap="chooseMultFilter">{{item.value}}
+        </view>
+      </view>
+      <view class="filter-section-title">其他区域</view>
+      <view class="filter-section-content">
+        <input type="text" class="area-inpt" placeholder="输入区域" value="{{otherArea}}"
+          bindinput="inputOtherArea"></input>
+      </view>
+    </view>
+    <view class="filter-section">
+      <view class="filter-section-title">价格区间</view>
+      <view class="filter-section-content">
+        <input type="number" class="price-inpt lowest-price" placeholder="最低价" value="{{lowestPrice}}"
+          bindinput="inputLowestPrice"></input>
+        <view class="between-price-line"></view>
+        <input type="number" class="price-inpt highest-price" placeholder="最高价" value="{{highestPrice}}"
+          bindinput="inputHighestPrice"></input>
+      </view>
+    </view>
+    <view class="filter-section">
+      <view class="filter-section-title">发布时间</view>
+      <view class="filter-section-content">
+        <view class="filter-btn filter-btn-{{postDate.current == item ? 'chosen' : ''}}" 
+          wx:for="{{postDate.list}}" wx:key=""
+          data-section="postDate" data-index="{{index}}" bindtap="chooseOneFilter"
+          >{{item}}</view>
+      </view>
+    </view>
+    <view class="filter-section">
+      <view class="filter-section-title">新旧程度（多选）</view>
+      <view class="filter-section-content">
+        <view class="filter-btn filter-btn-{{item.ifChosen ? 'chosen' : ''}}" 
+          wx:for="{{conditionLevel.list}}" wx:key=""
+          data-section="conditionLevel" data-index="{{index}}" bindtap="chooseMultFilter"
+          >{{item.value}}</view>
+      </view>
+    </view>
+    <view class="filter-section">
+      <view class="filter-section-title">交易方式（多选）</view>
+      <view class="filter-section-content">
+        <view class="filter-btn filter-btn-{{item.ifChosen ? 'chosen' : ''}}" 
+          wx:for="{{shipWay.list}}" wx:key=""
+          data-section="shipWay" data-index="{{index}}" bindtap="chooseMultFilter"
+          >{{item.value}}</view>
+      </view>
+    </view>
+    <view class="filter-fnt-section">
+      <view class="filter-fnt-btn filter-fnt-confirm" hover-class="normal-hover"
+        bindtap="confirmFilter">确认</view>
+      <view class="filter-fnt-btn filter-fnt-reset" hover-class="normal-hover"
+        bindtap="resetFilter">重置</view>
+    </view>
+    <view class="filter-bottom-gap" style="height:{{bottomGapHeight+1}}px"></view>
+  </scroll-view>
+</view>

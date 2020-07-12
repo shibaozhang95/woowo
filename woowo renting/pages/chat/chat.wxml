@@ -1,0 +1,27 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{contactUserInfo.username}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}" 
+  if-show-go-to-top="{{false}}">
+  <view class="chat-container">
+    <scroll-view class="messages-window" scroll-y="{{true}}"
+      scroll-into-view="{{btmViewId}}" scroll-with-animation="{{true}}"
+      style="width:{{screenWidth}}px;height:{{messageWindowHeight}}px">
+      <view class="message-list">
+        <block wx:for="{{messages}}" wx:key="uniqueMessageId">
+          <one-message 
+            message-item="{{item}}"
+            user-info="{{item.receiverId==woowoUserInfo.user_id?contactUserInfo:woowoUserInfo}}"
+            if-own="{{item.receiverId!=woowoUserInfo.user_id}}"
+            bindresendMessage="resendFailedMessage"
+            binddeleteMessage="deleteFailedMessage"></one-message>
+        </block>
+      </view>
+      <view id="window-btm"></view>
+    </scroll-view>
+    <view class="input-window">
+      <chat-input 
+        bindinputconfirm="sendANewMessage"></chat-input>
+    </view>
+  </view>
+</wn-window>

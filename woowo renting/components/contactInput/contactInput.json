@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "phone-verification": "/components/phoneVerification/phoneVerification"
+  }
+}

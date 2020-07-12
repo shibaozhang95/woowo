@@ -1,0 +1,130 @@
+page {
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  position: relative;
+  padding-bottom: 168rpx;
+}
+
+.search-bar-section {
+  background-color: rgba(44, 62, 80, 0.05);
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.current-area-section {
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.title-block {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-area-section .title {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 34rpx;
+  color: rgb(55, 74, 94);
+  margin-left: 30rpx;
+}
+.current-area-section .current-area-swith{
+  margin-right: 30rpx;
+}
+
+.suggestion-areas-section,
+.history-areas-section {
+  width: 100%;
+  height: auto;
+}
+.section-title {
+  box-sizing: content-box;
+  width: 100%;
+  padding: 6rpx 30rpx 8rpx 30rpx;
+  height: 48rpx;
+  color: rgba(44, 62, 80, 0.5);
+  font-size: 24rpx;
+  line-height: 48rpx;
+  background-color: rgba(44, 62, 80, 0.05);
+  /* I don't know why this is 48 */
+}
+.section-list {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.requesting-tips {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: content-box;
+  height: 88rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, 0.1);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.requesting-tips .loading {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+.loading-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 30rpx;
+}
+.loading-text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.no-result {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(44, 62, 80, 0.8);
+}
+
+.one-area {
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, 0.1);
+}
+
+.confirm-section {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 0;
+  border-top: 2rpx solid rgba(112, 112, 112, 0.1);
+}
+
+.confirm-section-button {
+  width: 660rpx;
+  height: 70rpx;
+  background-color: rgb(246, 182, 45);
+  border-radius: 46rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  color: rgb(255, 255, 255);
+  margin: 16rpx auto 14rpx auto;
+}
+
+.normal-hover-class {
+  opacity: 0.7;
+}

@@ -1,0 +1,57 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.6",
+	"appid": "wx8d5c44e08ac1dc3e",
+	"projectname": "woowo",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/index/index",
+					"query": "aaaaa",
+					"scene": "1047"
+				},
+				{
+					"id": 1,
+					"name": "测试",
+					"pathName": "pages/index/index",
+					"query": "aaaaa",
+					"scene": "1047"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,50 @@
+<wn-navigation if-tab-page="{{true}}" if-custom="{{false}}"
+  nav-title="{{'Woowo 租房'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{true}}"
+  current-top-pos="{{currentTopPos}}"
+  if-show-go-to-top="{{true}}">
+  <view class="container">
+    <view class="section section-ad-and-search">
+      <index-ad></index-ad>
+      <search-bar bind:tap="goToAreasSearch"></search-bar>
+    </view>
+    
+    <view class="section">
+      <index-menu></index-menu>
+    </view>
+
+    <view class="section">
+      <hot-housing-stock
+        block-title="最新房源"
+        block-type="newest"
+        re-load-trigger="{{reLoadTrigger}}"
+        ></hot-housing-stock>
+    </view>
+
+    <view class="section">
+      <agents-block></agents-block>
+    </view>
+    <!-- <view class="section">
+      <hot-housing-stock
+        block-title="热门房源"
+        block-type="popular"
+        re-load-trigger="{{reLoadTrigger}}"
+        ></hot-housing-stock>
+    </view> -->
+
+    <view class="section">
+      <school-areas-apts
+        monitor-reach-bottom="{{monitorReachBottom}}"
+        re-load-trigger="{{reLoadTrigger}}">
+        </school-areas-apts>
+    </view>
+  </view>
+</wn-window>
+
+<wn-tab-bar isIndex="true"></wn-tab-bar>
+
+<login-auth show-login-auth="{{ifShowLoginAuth}}" 
+  bind:loginsuccess="loginSuccess"
+  bind:refuseAuth="refuseAuth"
+  ></login-auth>

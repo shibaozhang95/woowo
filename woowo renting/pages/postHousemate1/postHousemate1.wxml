@@ -1,0 +1,169 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'求租 1/2'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="post-container">
+    <view class="adding-photos-section">
+      <post-adding-photos
+        default-image-urls="{{imageUrls}}"
+        pics-limitation="{{4}}"
+        upload-hint="选填哦"
+        bind:addnewphotos="updatePhotos"
+        bind:deletephotos="">
+      </post-adding-photos>
+    </view>
+
+    <scroll-view class="info-section"
+      scroll-y="{{true}}"
+      style="width:100%; height:{{scrollListHeight}}px;overflow:hidden;">
+      <view class="section">
+        <view class="section-form">
+          <view class="section-form-line">
+            <wn-input-picker
+              title="入住时间"
+              picker-mode="date"
+              default-date-value="{{availableDateStr}}"
+              bind:wninputchanged="availableDateChanged"
+              data-field-name=""></wn-input-picker>
+          </view>
+          <view class="section-form-line">
+            <view class="areas-picker-container"
+              bind:tap="goToAreasSearch">
+              <view class="picker-title">求租地点</view>
+              <view class="picker-fnt">
+                <view class="picker-result">{{areasShortcut}}</view>
+                <image class="picker-icon"
+                  mode="aspectFill"
+                  src="/statics/images/icon_arrow_right_grey.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section-title">价位区间</view>
+        <view class="section-form">
+          <view class="section-form-line">
+            <wn-input title="最低价位"
+              input-type="number"
+              placeholder="输入价格"
+              prefix="$"
+              suffix="/周"
+              input-width="{{64}}"
+              default-number-value="{{priceLow}}"
+              bind:wninputchanged="priceChanged"
+              data-field-name="priceLow"></wn-input>
+          </view>
+          <view class="section-form-line">
+            <wn-input title="最高价位"
+              input-type="number"
+              placeholder="输入价格"
+              prefix="$"
+              suffix="/周"
+              input-width="{{64}}"
+              default-number-value="{{priceHigh}}"
+              bind:wninputchanged="priceChanged"
+              data-field-name="priceHigh"></wn-input>
+          </view>
+        </view>
+      </view>
+      
+      <view class="section">
+        <view class="section-title">求租偏好（可多选）</view>
+        <view class="section-form">
+          <view class="section-form-line">
+            <!-- <wn-input-selection
+              selection-type="multiple"
+              title="求租类型"
+              choices="{{typesOpts}}"
+              default-choices="{{type}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="type"></wn-input-selection> -->
+            <wn-input-selection2
+              selection-type="multiple"
+              title="求租类型"
+              choices="{{typesOpts}}"
+              default-choices="{{type}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="type"></wn-input-selection2>
+          </view>
+          <view class="section-form-line">
+            <!-- <wn-input-selection
+              selection-type="multiple"
+              title="所需户型"
+              choices="{{rentTypesOpts}}"
+              default-choices="{{rentType}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="rentType"></wn-input-selection> -->
+            <wn-input-selection2
+              selection-type="multiple"
+              title="所需户型"
+              choices="{{rentTypesOpts}}"
+              default-choices="{{rentType}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="rentType"></wn-input-selection2>
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section-title">关于我</view>
+        <view class="section-form">
+          <view class="section-form-line">
+            <wn-input-selection
+              selection-type="radio"
+              title="是否做饭"
+              choices="{{ifCookOpts}}"
+              default-choices="{{ifCook}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="ifCook"></wn-input-selection>
+          </view>
+          <view class="section-form-line">
+            <wn-input-selection
+              selection-type="radio"
+              title="是否抽烟"
+              choices="{{ifSmokeOpts}}"
+              default-choices="{{ifSmoke}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="ifSmoke"></wn-input-selection>
+          </view>
+          <view class="section-form-line">
+            <wn-input-selection
+              selection-type="radio"
+              title="是否养宠物"
+              choices="{{ifPetsOpts}}"
+              default-choices="{{ifPet}}"
+              bind:wnselectionchanged="selectionChanged"
+              data-field-name="ifPet"></wn-input-selection>
+          </view>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section-title">想说的话</view>
+        <view class="section-form">
+          <wn-input-count
+            input-type="textarea"
+            placeholder="介绍自己，关于自己的工作性格和喜好或是其他的要求都可以说一下哦～"
+            default-value="{{description}}"
+            word-limit="{{150}}"
+            textarea-height="{{88}}"
+            bind:wninputchanged="descriptionChanged"
+            data-field-name="description"></wn-input-count>
+        </view>
+      </view>
+
+    </scroll-view>
+    
+    <view class="post-next-btn-block post-next-btn-block-{{ifPostDataValid?'enable':'disable'}}"
+      bind:tap="">
+      <view class="post-next-btn"
+        hover-class="post-button-hover"
+        bind:tap="goToPostHousemate2">下一步</view>  
+      <view class="post-next-bottom-gap"
+        style="width:100%; height:{{bottomGapHeight}}px"></view>
+    </view>
+  </view>
+</wn-window>

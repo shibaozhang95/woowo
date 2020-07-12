@@ -1,0 +1,97 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'设施服务'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{45}}">
+  <view class="container">
+
+    <!-- FOR INDOOR FACILITIES -->
+    <view class="f-section">
+      <view class="section-title">室内设施</view>
+      <view class="post-icons-block">
+        <block wx:for="{{indoor}}" wx:key="iconUrl">
+          <view class="icon-item icon-item-{{item.ifChosen?'active': ''}}" 
+            hover-class="icon-hover"
+            bindtap="chooseIcon"
+            data-chosen-field="indoor"
+            data-chosen-index="{{index}}">
+            <image class="icon" mode="aspectFit"
+              src="{{item.iconUrl}}"></image>
+            <view class="icon-text"
+              >{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+
+      <view class="trigger-block">
+        <wn-input-trigger title="是否包含家具"
+          block-height="{{1 + 55 * 4 + 20 * 2}}"
+          default-trigger-value="{{ifHasFurnitureChosen}}"
+          bindwninputchanged="furnitureClear">
+          <view class="post-icons-block">
+            <block wx:for="{{furniture}}" wx:key="iconUrl">
+              <view class="icon-item icon-item-{{item.ifChosen?'active': ''}}" 
+                hover-class="icon-hover"
+                bindtap="chooseIcon"
+                data-chosen-field="furniture"
+                data-chosen-index="{{index}}">
+                <image class="icon" mode="aspectFit"
+                  src="{{item.iconUrl}}"></image>
+                <view class="icon-text"
+                  >{{item.title}}</view>
+              </view>
+            </block>
+          </view>
+        </wn-input-trigger>
+      </view>
+    </view>
+
+    <!-- FOR BUILDING FACILITIES -->
+    <view class="f-section">
+      <view class="section-title">公共设施</view>
+      <view class="post-icons-block">
+        <block wx:for="{{public}}" wx:key="iconUrl">
+          <view class="icon-item icon-item-{{item.ifChosen?'active': ''}}" 
+            hover-class="icon-hover"
+            bindtap="chooseIcon"
+            data-chosen-field="public"
+            data-chosen-index="{{index}}">
+            <image class="icon" mode="aspectFit"
+              src="{{item.iconUrl}}"></image>
+            <view class="icon-text"
+              >{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- FOR BUILDING FACILITIES -->
+    <view class="f-section">
+      <view class="section-title">周围设施</view>
+      <view class="post-icons-block">
+        <block wx:for="{{nearby}}" wx:key="iconUrl">
+          <view class="icon-item icon-item-{{item.ifChosen?'active': ''}}" 
+            hover-class="icon-hover"
+            bindtap="chooseIcon"
+            data-chosen-field="nearby"
+            data-chosen-index="{{index}}">
+            <image class="icon" mode="aspectFit"
+              src="{{item.iconUrl}}"></image>
+            <view class="icon-text"
+              >{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>  
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}"
+  hover-class="normal-hover"
+  bindtap="nextStep">
+  <view class="post-next-btn"
+    >下一步</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

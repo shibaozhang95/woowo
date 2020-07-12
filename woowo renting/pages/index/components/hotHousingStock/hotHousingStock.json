@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "one-apt-small": "/components/oneAptSmall/oneAptSmall"
+  }
+}

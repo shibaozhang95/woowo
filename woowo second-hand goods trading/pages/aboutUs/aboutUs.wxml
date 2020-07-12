@@ -1,0 +1,31 @@
+<wn-navigation nav-title="关于我们"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="title-img">
+      <image class="about-us-banner" mode="aspectFit" src="../../statics/images/img_about_us@2x.png" />
+    </view>
+    <view class="info-one-block">
+      <view class="info-title">关于我们</view>
+      <view class="info-content">
+        <text class="info-txt">WooWo二手市场是蜗牛科技官方二手交易小程序，土澳小伙伴们可以在这里po出长期闲置的家具电器、买完后悔的近新优品；也可以在这里淘到梦寐已久的二手限量好货，用最低的预算买到最合心意的美物。轻松发布，开心购买。
+        </text>
+        <image class="img img-left-1" src="../../statics/images/img_us_left_1@2x.png" mode="aspectFit"></image>
+        <image class="img img-right-1" src="../../statics/images/img_us_right_1@2x.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    <view class="info-one-block">
+      <view class="info-title">免责申明</view>
+      <view class="info-content">
+        <text class="info-txt">WooWo二手市场是一家分享闲置优品的交易平台，属于第三方服务平台。我们竭诚为买家和卖家提供最优质的服务，但不承诺以下职责：
+          1. 本平台并不检验个人和企业用户的商品真伪及其校验服务，如有问题请联系客服；
+          2. 本平台有权使用用户上传的内容信息，包含且不仅限于文字、物品图片、位置等信息；
+          3. 本平台不承担因交易物品导致的侵权责任；
+          4. 本平台只提供分享闲置商品的渠道，并不参与交易流程，买卖方请保护好自身权益，感谢您的理解与支持。
+        </text>
+        <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+        <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+      </view>
+    </view>
+  </view>
+</wn-window>

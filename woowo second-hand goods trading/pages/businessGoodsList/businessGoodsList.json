@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wn-search-bar": "../../components/common/wnSearchBar/wnSearchBar",
+    "merchants-content": "./components/merchantsContent/merchantsContent",
+    "goods-content": "./components/goodsContent/goodsContent"
+  }
+}

@@ -1,0 +1,61 @@
+{
+	"description": "Project configuration file",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.5.2",
+	"appid": "wx7bbbffe2b11138f8",
+	"projectname": "woniu_zufang",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 1,
+			"list": [
+				{
+					"id": -1,
+					"name": "from scan qr code",
+					"pathName": "pages/index/index",
+					"query": "scene=55",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "HousemateId",
+					"pathName": "pages/index/index",
+					"query": "scene= housemateId%3D6",
+					"scene": 1005
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,130 @@
+/* tabBar.wxss */
+.tabbar-container {
+  width: 750rpx;
+  height: auto;
+  border-top: 2rpx solid rgba(44, 62, 90, 0.1);
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  
+}
+
+.tabbar-layer {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tabbar-left,
+.tabbar-right {
+  padding: 0 16rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.tabbar-ls {
+  width: 80rpx;
+  height: 100%;
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabbar-text {
+  display: block;
+  width: 80rpx;
+  height: 22rpx;
+  line-height: 20rpx;
+  text-align: center;
+  color: rgba(44, 62, 80, 1);
+  font-size: 16rpx;
+  margin-top: 4rpx;
+}
+
+.tabbar-nav {
+  position: relative;
+  padding: 8rpx 0 6rpx 0;
+}
+
+.tabbar-icon {
+  display: block;
+  width: 80rpx;
+  height: 60rpx;
+}
+
+.tabbar-middle {
+  padding: 0 12rpx;
+  position: relative;
+}
+
+.tabbar-add-block-circle {
+  width: 140rpx;
+  height: 70rpx;
+  border: 2rpx solid rgba(44, 62, 90, 0.1);
+  position: absolute;
+  border-top-left-radius: 120rpx;
+  border-top-right-radius: 120rpx;
+  background: #fff;
+  left: -22rpx;
+  top: -34rpx;
+  z-index: 1;
+}
+
+.tabbar-add-block-white {
+  background-color: #fff;
+  width: 144rpx;
+  height: 70rpx;
+  position: absolute;
+  left: -22rpx;
+  top: 0;
+  z-index: 2;
+}
+
+.icon-add-block-bg {
+  padding: 14rpx 0;
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  z-index: 99;
+  left: 0;
+  bottom: 0;
+}
+
+.tabbar-icon-add {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.tabbar-nav-add {
+  width: 100rpx;
+  height: 100%;
+  position: relative;
+}
+
+/*
+*  For the read dot
+*/
+.unread-message-red-dot {
+  position: absolute;
+  box-sizing: border-box;
+  height: 30rpx;
+  min-width: 30rpx;
+  background-color: rgb(246, 182, 45);
+  top: 8rpx;
+  left: 44rpx;
+  padding: 0 8rpx;
+  font-size: 22rpx;
+  line-height: 30rpx;
+  color: rgb(255, 255, 255);
+  border-radius: 15rpx;
+}
+
+.rotate {
+  transform: rotate(-90deg);
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,9 @@
+<view class="nothing-mark-container">
+  <view class="nothing-mark-gap-small" wx:if="{{nothingMarkGapSize == 'small'}}"></view>
+  <view class="nothing-mark-gap-medium" wx:elif="{{nothingMarkGapSize == 'medium'}}"></view>
+  <view class="nothing-mark-gap-large" wx:else></view>
+  <view class="nothing-mark">
+    <image class="nothing-mark-img" mode="aspectFit" src="../../statics/images/img_nothing@2x.png"></image>
+    <text class="nothing-mark-txt">{{nothingMarkTips}}</text>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="mini-goods-item mini-goods-item-{{(goodsInfo.status == 'private' || goodsInfo.status == 'delete') && showingType == 'liked' ? 'unsell' : ''}}" data-goods-id="{{goodsInfo.goodsId}}" data-showing-type="{{showingType}}" data-goods-status="{{goodsInfo.status}}"
+  catchtap="goToGoodsDetail">
+  <image class="mini-goods-cover" 
+    mode="aspectFill" lazy-load="{{true}}"
+    src="{{goodsInfo.goodsPicsUrl[0] + '-scale_50'}}"></image>
+  <!-- <wn-image class="mini-goods-cover" img-src="{{goodsInfo.goodsPicsUrl[0]}}"
+    if-lazy-load="{{true}}" img-mode="{{'aspectFill'}}"></wn-image> -->
+  <view class="mini-goods-inf">
+    <view class="mini-goods-title">{{goodsInfo.goodsTitle}}
+    </view>
+    <!--edit icon -->
+
+    <view style='display: inline-block;' wx:if="{{showingType == 'selling' || showingType == 'unsell'}}">
+      <view data-goods-id="{{goodsInfo.goodsId}}" class="edit-image" catchtap="editProduct" src="{{editSrc}}"></view>
+    </view>
+
+    <view class="mini-goods-other-inf">
+      <view class="mini-goods-price">$ {{goodsInfo.goodsPrice}}</view>
+      <view class="mini-goods-fnt">
+        <!-- type == 0, used for myLiked page -->
+        <view wx:if="{{showingType == 'liked'}}" class="mini-goods-my-liked">
+          <view class="mini-goods-fnt-btn" hover-class="normal-hover" catchtap="unlikeGoods" data-goods-id="{{goodsInfo.goodsId}}">取消收藏</view>
+          <image class="mini-goods-unsell-img" wx:if="{{goodsInfo.status == 'private' || goodsInfo.status == 'delete'}}" mode="aspectFit" src="../../statics/images/img_bg_unsell@2x.png" />
+        </view>
+        <!-- type == 1, used for mySelling page -->
+        <view wx:if="{{showingType == 'selling'}}" class="mini-goods-my-selling">
+          <view class="mini-goods-fnt-btn" hover-class="normal-hover" catchtap="unsellGoods" data-goods-id="{{goodsInfo.goodsId}}">下架</view>
+          <view class="mini-goods-fnt-btn mini-goods-fnt-btn-{{ifOutLimitation ? 'disable': ''}}" hover-class="normal-hover" catchtap="promoteGoods" data-goods-id="{{goodsInfo.goodsId}}">置顶</view>
+        </view>
+        <!-- type == 2, used for myunsell page -->
+        <view wx:if="{{showingType == 'unsell'}}" class="mini-goods-my-unsell">
+          <view class="mini-goods-fnt-btn" hover-class="normal-hover" catchtap="resellGoods" data-goods-id="{{goodsInfo.goodsId}}">重新上架</view>
+          <view class="mini-goods-fnt-btn" hover-class="normal-hover" catchtap="deleteGoods" data-goods-id="{{goodsInfo.goodsId}}">删除</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

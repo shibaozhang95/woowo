@@ -1,0 +1,42 @@
+<view class="hot-housing-stock-container">
+  <view class="title-block">
+    <view class="title">{{blockTitle}}</view>
+    <view class="view-more-block"
+      bindtap="goToHousingList">
+      <view class="view-more-text">查看全部</view>
+      <image class="view-more-icon" mode="aspectFill"
+        src="/statics/images/icon_arrow_top_yellow.png"></image>
+    </view>
+  </view>
+  
+  <view class="stock-container">
+    
+    <view class="loading-block"
+      wx:if="{{ifLoading}}">
+      <image class="loading-icon" mode="aspectFit"
+        src="/statics/images/loading_2.gif"></image>
+      <view class="loading-text">加载中...</view>
+    </view>
+    <view class="nothing-block"
+      wx:if="{{ifNothing}}">
+      <view class="nothing-text">还什么都没有哦~</view>
+    </view>
+
+    <scroll-view 
+      wx:if="{{!ifLoading&&!ifNothing}}"
+      class="" scroll-x="{{true}}">
+      <view class="stock-block">
+        <block wx:for="{{topStocks}}" wx:key="">
+          <view class="hot-apt-item" wx:if="{{item}}">
+            <!-- <image class="apt-image" src="{{item.imageUrl}}" mode="aspectFit"></image>
+            <view class="apt-title">{{item.aptTitle}}</view>
+            <view class="apt-sub-title">{{item.aptSubTitle}}</view> -->
+            <one-apt-small
+              house-info="{{item}}"></one-apt-small>
+          </view>
+        </block>
+        <view class="hot-apt-item-margin">AA</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

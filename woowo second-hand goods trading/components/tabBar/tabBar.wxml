@@ -1,0 +1,31 @@
+<!--tabBar.wxml-->
+<view class="tabbar-container">
+  <view class="tabbar-layer">
+    <view class="tabbar-ls tabbar-index">
+      <navigator class="tabbar-nav-index" url="../index/index" open-type="switchTab" hover-class="none">
+        <image class="tabbar-icon-index" wx:if="{{!isHome}}" mode="aspectFit" src="../../statics/images/icon_tab_home_2@2x.png" />
+        <image class="tabbar-icon-index" wx:if="{{isHome}}" mode="aspectFit" src="../../statics/images/icon_tab_home_after@2x.png" />
+      </navigator>
+    </view>
+    <view class="tabbar-ls tabbar-add">
+      <view bindtap="navigateToSell" class="tabbar-nav-add" url="../sale/sale" open-type="navigateTo">
+        <view class="icon-add-bg" hover-class="rotate">
+          <image class="tabbar-icon-add" mode="aspectFit" src="../../statics/images/icon_tab_add@2x.png" />
+        </view>
+        
+        <view class="tabbar-icon-add-block1"></view>
+        <view class="tabbar-icon-add-block2"></view>
+      </view>
+    </view>
+    <view class="tabbar-ls tabbar-user">
+      <navigator class="tabbar-nav-user" url="../user/user" open-type="switchTab" hover-class="none" bind:tap="triggerUploadFormId">
+        <image class="tabbar-icon-user" wx:if="{{!isUser}}" mode="aspectFit" src="../../statics/images/icon_tab_user_2@2x.png" />
+        <image class="tabbar-icon-user" wx:if="{{isUser}}" mode="aspectFit" src="../../statics/images/icon_tab_user_after@2x.png" />
+      </navigator>
+    </view>
+  </view>
+  
+  <view wx:if="{{isIPX}}" class="IPX-corresponding-block"></view>
+</view>
+
+<login-auth show-login-auth="{{showLoginAuth}}" bind:loginsuccess="loginSuccess"></login-auth>

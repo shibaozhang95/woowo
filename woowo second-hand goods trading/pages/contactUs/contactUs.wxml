@@ -1,0 +1,3 @@
+<view class="contact-us-container">
+  <image bindtap="previewImage" class="contact-img" src="{{contactImgUrl}}" mode="aspectFit" />
+</view>

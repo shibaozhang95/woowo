@@ -1,0 +1,83 @@
+.wn-input-radio-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40rpx;
+  height: 100rpx;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-title {
+  width: 160rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  white-space: nowrap;
+}
+
+.input-fnt {
+  width: 510rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.choice-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 30rpx;
+}
+
+.choice-radio {
+  width: 40rpx;
+  height: 40rpx;
+  border: 2rpx solid rgb(175, 182, 189);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.choice-radio .choice-inner {
+  width: 24rpx;
+  height: 24rpx;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.choice-multiple {
+  width: 30rpx;
+  height: 30rpx;
+  border: 2rpx solid rgb(175, 182, 189);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rpx;
+}
+
+.choice-multiple .choice-inner {
+  width: 21rpx;
+  height: 21rpx;
+  background-color: rgb(255, 255, 255);
+}
+
+.choice-radio .choice-inner-chosen,
+.choice-multiple .choice-inner-chosen {
+  background-color: rgb(86, 182, 213);
+}
+
+.choice-txt {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+}

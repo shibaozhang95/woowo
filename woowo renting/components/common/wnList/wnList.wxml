@@ -1,0 +1,30 @@
+<view class="wn-list-container">
+  <view class="extra-top-block"
+    style="width:100%;height:{{extraTopBlockHeight}}px">
+  </view>
+
+  <slot></slot>
+
+  <view class="nothing-mark-block" 
+    wx:if="{{ifShowNothingMark}}">
+    <image class="nothing-mark-img" 
+      src="/statics/images/img_nothing.png" mode="aspectFit">
+    </image>
+    <view class="nothing-mark-tips">{{nothingMarkTips}}</view>
+  </view>
+
+  <view class="loading-block"
+    wx:if="{{ifShowLoading}}">
+    <image class="loading-img" 
+      src="/statics/images/loading_2.gif" mode="aspectFit"></image>
+    <view class="loading-tips">{{loadingTips}}</view>
+  </view>
+
+  <view class="reach-bottom-block"
+    wx:if="{{ifShowReachBottom}}"
+    >{{reachBottomTips}}</view>
+
+  <view class="extra-bottom-block"
+    style="width:100%;height:{{extraBottomBlockHeight}}px">
+  </view>
+</view>

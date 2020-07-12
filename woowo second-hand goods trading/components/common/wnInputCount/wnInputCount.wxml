@@ -1,0 +1,24 @@
+<view class="input-count-container">
+  <view class="input-block"
+    wx:if="{{inputType=='input'}}">
+    <input type="text"
+      placeholder="{{placeholder}}"
+      placeholder-class="input-placehoder"
+      maxlength="{{wordLimit}}"
+      value="{{inputValue}}"
+      bindinput="inputChanged"></input>
+    <view class="input-count"
+      >{{currentWordCount + '/' + wordLimit}}</view>
+  </view>
+  <view class="textarea-block"
+    wx:else>
+    <textarea style="height:{{textareaHeight}}px"
+      placeholder="{{placeholder}}"
+      placeholder-class="input-placehoder"
+      maxlength="{{wordLimit}}"
+      value="{{inputValue}}"
+      bindinput="inputChanged"></textarea>  
+    <view class="textarea-count"
+      >{{currentWordCount + '/' + wordLimit}}</view>
+  </view>
+</view>

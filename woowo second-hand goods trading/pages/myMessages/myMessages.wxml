@@ -1,0 +1,16 @@
+<wn-navigation nav-title="我的消息"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <woowo-scroll-view list-length="{{sysMessages.length}}"
+      nothing-mark-gap-size="large" noting-mark-gap-tips="test"
+      ban-reach-bottom="{{true}}"></woowo-scroll-view>
+    <view slot="list-container" class="message-block">
+      <block wx:for="{{sysMessages}}" wx:key="">
+        <system-message 
+          msg-type="{{0}}" msg-content="{{item.info}}">
+        </system-message>
+      </block>
+    </view>
+  </view>
+</wn-window>

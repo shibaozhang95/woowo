@@ -1,0 +1,20 @@
+<view class="index-ad-container">
+  <swiper autoplay="{{swiperConfig.autoplay}}" interval="{{swiperConfig.interval}}" duration="{{swiperConfig.duration}}" 
+    circular="{{swiperConfig.circular}}" vertical="{{swiperConfig.vertical}}" 
+    bindchange="bannerChange" bindanimationfinish="" indicator-dots="{{swiperConfig.indivatorDots}}">
+    <block wx:for="{{ads}}" wx:key="">
+      <swiper-item item-id=""
+        bindtap="clickOnBanner"
+        data-item="{{item}}">
+        <image class="ad-poster" src="{{item.imgUrl}}" mode="aspectFit">
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="diy-dots-container">
+    <block wx:for="{{adsDots}}" wx:key="">
+      <view class="diy-dots diy-dots-{{item?'focus':''}}"></view>
+    </block>
+  </view>
+</view>

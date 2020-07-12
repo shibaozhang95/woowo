@@ -1,0 +1,61 @@
+<view class="contact-info-container">
+  <view class="contact-block">
+    <view class="contact-title-block">
+      <view class="contact-title">{{contactInfoTitle}}</view>
+      <view class="contact-show-block"
+        animation="{{contactBtnAnimation}}"
+        bindtap="showOrOffContact"
+        data-if-show="{{true}}">
+        <view class="contact-show-text">点击展开</view>
+        <view class="contact-show-icon">
+          <image class="" mode="aspectFit" 
+            src="/statics/images/icon_arrow_yellow.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="contact-info-block"
+      animation="{{contactSlideAnimation}}"
+      style="height:0px;opacity:0;">
+      <view class="contact-line-one">
+        <view class="contact-line-one-item">
+          <view class="contact-line-one-title">电话 TEL</view>
+          <view class="contact-line-one-content"
+            bindtap="touchCopy"
+            data-content="{{woowoHouse.contactPhone}}"
+            >{{woowoHouse.contactPhone}}</view>
+        </view>
+        <view class="contact-line-one-item">
+          <view class="contact-line-one-title">微信 Wechat</view>
+          <view class="contact-line-one-content contact-line-one-content-{{woowoHouse.contactWechat?'':'disable'}}"
+            bindtap="touchCopy"
+            data-content="{{woowoHouse.contactWechat}}"
+            >{{woowoHouse.contactWechat?woowoHouse.contactWechat:'木有留微信呀'}}</view>
+        </view>
+      </view>
+      <view class="contact-line-two"
+        wx:if="{{woowoHouse.contactWechatCodeUrl}}">
+        <view class="contact-line-two-item">
+          <view class="contact-line-two-title">二维码 QR Code</view>
+          <view class="contact-line-two-content"
+            bindtap="previewImages"
+            data-current-img="{{woowoHouse.contactWechatCodeUrl}}"
+            data-imgs="{{[woowoHouse.contactWechatCodeUrl]}}">
+            <image class="qr-code" 
+              src="{{woowoHouse.contactWechatCodeUrl}}" mode="aspectFit"></image>
+          </view>
+        </view>
+      </view>
+      <view class="contact-line-thress">
+        <view class="show-less-block"
+          bindtap="showOrOffContact"
+          data-if-show="{{false}}">
+          <view class="show-less-text">收起内容</view>
+          <view class="show-less-icon">
+            <image class="" mode="aspectFit" 
+              src="/statics/images/icon_arrow_yellow.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="school-areas-apts-container">
+  <view class="title">热门学区房</view>
+  <view class="apts-block">
+    <view class="school-nav-container">
+      <scroll-view class="" scroll-x="{{true}}">
+        <view class="school-nav-block">
+          <block wx:for="{{schools}}" wx:key="">
+            <view class="each-school each-school-{{item.ifChosen?'chosen':''}}"
+              bindtap="switchToAnotherSchool"
+              data-index="{{index}}">
+              <text>{{item.schoolName}}</text>
+            </view>
+          </block> 
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="school-apts-block">
+      <wn-list if-show-loading="{{housesInfo.ifLoading}}"
+        if-show-reach-bottom="{{housesInfo.ifReachBottom}}"
+        if-show-nothing-mark="{{housesInfo.ifNothing}}"
+        nothing-mark-tips="还没有呢，去看看其他的吧~"
+      >
+      <view class="housing-list">
+        <block wx:for="{{housesInfo.list}}" wx:key="id">
+          <view class="one-apt-item"
+            wx:if="{{item}}">
+            <one-apt house-info="{{item}}"></one-apt>
+          </view>
+        </block>
+      </view>
+      
+      </wn-list>
+    </view>
+  </view>
+</view>

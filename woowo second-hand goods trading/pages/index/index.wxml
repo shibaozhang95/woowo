@@ -1,0 +1,139 @@
+<wn-navigation if-tab-page="{{true}}" if-custom="{{true}}">
+  <view class="custom-nav-container">
+    <picker class="states-picker" mode="selector" range="{{states}}" value="{{statesValue}}" 
+      bindchange="statesChange" bindcancel="cancelStatesChoose">
+      <view class="states-txt-block">
+        <view class="states-txt">{{states[statesValue] ? states[statesValue] : '选择地区'}}</view>
+        <view class="states-chose-arrow"></view>
+      </view>
+    </picker>
+  </view>
+</wn-navigation>
+
+<wn-window current-top-pos="{{currentTopPos}}"
+  if-show-tab-bar="{{true}}">
+  <view class="container" bindscroll="navScroll">
+    <view class="section s-activities">
+      <view class="search-box-background"></view>
+      <!-- <view class="search-box">
+        <image class="icon-search" src="../../statics/images/icon_search@2x.png" />
+        <input class="s-input" placeholder="搜索" type="text" value="{{keyword}}" confirm-type="搜索" bindinput="inputKeyword" bindconfirm="goToSearch"></input>
+      </view> -->
+      <view class="search-bar-block">
+        <wn-search-bar
+          init-placeholder="搜索"
+          init-keyword="{{keyword}}"
+          confirm-type-text="搜索"
+          bindconfirmsearch="goToSearch"></wn-search-bar>
+      </view>
+      <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" indicator-color="#f6f0e3" indicator-active-color="#88c1d3">
+        <block wx:for="{{ads}}" wx:key="">
+          <swiper-item item-id=""
+            class="a-item"
+            bindtap="clickOnBanner"
+            data-item="{{item}}">
+            <image class="ad-poster" src="{{item.imgUrl}}" mode="aspectFit">
+            </image>
+          </swiper-item>
+        </block>
+        
+      </swiper>
+    </view>
+
+    <view hidden="{{unreadNotificationAccount == 0}}" class="section s-notification">
+      <view class="notification-block" bindtap="goToNotify">
+        <text class="notify-title">你有新的消息</text>
+        <text class="notify-value">{{unreadNotificationAccount}}</text>
+      </view>
+    </view>
+
+    <view class="section menu-section">
+      <menu></menu>
+    </view>
+
+    <!-- FOR POPULAR GOODS -->
+    <view class="section popular-section">
+      <popular-goods></popular-goods>
+    </view>
+
+    <view class="section s-content">
+      <view class="content-nav">
+        <view class="content-nav-ls content-nav-{{contentId == 0 ? 'selected' : 'unselected'}}" data-cid="0" bindtap="switchContent">
+          <text class="nav-txt">最新的</text>
+          <image class="nav-img nav-img-hottest" hidden="{{contentId != 0}}" src="../../statics/images/eyes.gif" mode="aspectFit" />
+          <image class="nav-img nav-img-hottest" hidden="{{contentId == 0}}" src="../../statics/images/eyes_reverse.gif" mode="aspectFit" />
+        </view>
+        <view class="span"></view>
+        <view class="content-nav-ls content-nav-{{contentId == 1 ? 'selected' : 'unselected'}}" data-cid="1" bindtap="switchContent">
+          <text class="nav-txt">附近的</text>
+          <image class="nav-img nav-img-hottest" hidden="{{contentId != 1}}" src="../../statics/images/location.gif" mode="aspectFit" />
+          <image class="nav-img nav-img-hottest" hidden="{{contentId == 1}}" src="../../statics/images/location_reverse.gif" mode="aspectFit" />
+        </view>
+      </view>
+
+      <view class="content-container">
+        <view hidden="{{contentId != 0}}">
+          <wn-list ifShowNothingMark="{{hottestGoods.ifNothing}}"
+            ifShowLoading="{{hottestGoods.ifLoading}}"
+            ifShowReachBottom="{{hottestGoods.ifReachBottom}}"
+            nothing-mark-tips="空的，去看看其他吧~"
+            extra-top-block-height="{{0}}">
+            <view slot="list-container" class="c-content content-hottest">
+              <view class="c-content-left">
+                <!-- ADD WX:KEY FOR PERFORMANCE -->
+                <block wx:for="{{hottestGoods.list}}" wx:key="product_id">
+                  <view wx:if="{{index % 2 == 0}}" class="content-item">        
+                    <brif-goods class="brif-goods" goods-info="{{item}}">
+                    </brif-goods>
+                  </view>
+                </block>
+              </view>
+              <view class="c-content-right">
+                <block wx:for="{{hottestGoods.list}}" wx:key="product_id">
+                  <view wx:if="{{index % 2 == 1}}" class="content-item">       
+                    <brif-goods class="brif-goods" goods-info="{{item}}">
+                    </brif-goods>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </wn-list>
+        </view>
+
+        <view hidden="{{contentId != 1}}">
+          <wn-list ifShowNothingMark="{{nearestGoods.ifNothing}}"
+            ifShowLoading="{{nearestGoods.ifLoading}}"
+            ifShowReachBottom="{{nearestGoods.ifReachBottom}}"
+            nothing-mark-tips="空的，去看看其他吧~"
+            extra-top-block-height="{{0}}">
+            <view slot="list-container" class="c-content content-nearest">
+              <view class="c-content-left">
+                <block wx:for="{{nearestGoods.list}}" wx:key="product_id">
+                  <view wx:if="{{index % 2 == 0}}" class="content-item">
+                    <brif-goods class="brif-goods" goods-info="{{item}}">
+                    </brif-goods>
+                  </view>
+                </block>
+              </view>
+              <view class="c-content-right">
+                <block wx:for="{{nearestGoods.list}}" wx:key="product_id">
+                  <view wx:if="{{index % 2 == 1}}" class="content-item">
+                    <brif-goods class="brif-goods" goods-info="{{item}}">
+                    </brif-goods>
+                  </view>
+                </block>
+              </view>
+            </view>
+          </wn-list>
+
+        </view>
+      </view>
+    </view>
+  </view>
+</wn-window>
+
+
+<tab-bar isHome="true" bind:unread="unreadAccount"></tab-bar>
+<login-auth show-login-auth="{{showLoginAuth}}" 
+  bind:loginsuccess="loginSuccess" 
+  bind:refuseAuth="refuseAuth"></login-auth>

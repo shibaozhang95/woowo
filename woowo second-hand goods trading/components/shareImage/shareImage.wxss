@@ -1,0 +1,48 @@
+.share-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.share-image-block {
+  position: relative;
+  overflow: hidden;
+}
+.share-img {
+  /* position: absolute; */
+  display: block;
+  width: 560rpx;
+  height: 760rpx;
+  margin: 0 auto;
+  /* border-radius: 40rpx; */
+}
+.share-btn {
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background-color: rgb(246, 182, 45);
+  color: rgb(44, 62, 80);
+  font-size: 32rpx;
+  text-align: center;
+  margin: 60rpx auto 0 auto;
+}
+.canvas {
+  position: absolute;
+  left: 750rpx;
+  top: 0;
+  /* width: 1000px;
+  height: 1000px; */
+  z-index:0;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 28rpx;
+  right: 28rpx;
+  width: 30rpx;
+  height: 30rpx;
+}

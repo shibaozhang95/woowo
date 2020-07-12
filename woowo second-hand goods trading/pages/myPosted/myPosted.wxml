@@ -1,0 +1,59 @@
+<wn-navigation nav-title="我的发布"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="posted-nav">
+      <view class="posted-nav-ls posted-nav-ls-{{currentPage == 0 ? 'focused' : ''}}"
+        data-cid="{{0}}" bindtap="switchPostedContent">在架</view>
+      <view class="posted-nav-ls posted-nav-ls-{{currentPage == 1 ? 'focused' : ''}}"
+        data-cid="{{1}}" bindtap="switchPostedContent">已下架</view>
+    </view>
+
+    <!-- <view class="goods-account-block">
+      <text class="title">当前在架数量：</text>
+      <text class="value">{{stuffs}}/{{limitation}}</text>
+    </view> -->
+
+    <swiper class="posted-content" indicator-dots="{{false}}" autoplay="{{false}}" duration="{{500}}"
+      current="{{currentPage}}" circular="{{ture}}" bindchange="swipPostedContent"
+      style="height:{{windowHeight-navHeight}}px">
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" class="items-content">
+          <wn-list 
+            extra-top-block-height="{{30}}"
+            if-show-loading="{{ifLoading}}"
+            if-show-nothing-mark="{{ifNothingForSellingList}}"
+            if-show-reach-bottom="{{ifReachBottomForSellingList}}"
+            reach-bottom-tips="没有啦~">
+            <view slot="list-container" class="items-content-selling">
+              <view class="one-goods-block" wx:for="{{sellingList}}" wx:key="product_id">
+                <mini-goods goods-info="{{item}}" showing-type="{{'selling'}}"
+                  bindunsell="unsellGoods"></mini-goods>
+              </view>
+            </view>
+          </wn-list>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="{{true}}" class="items-content">
+
+          <wn-list 
+            extra-top-block-height="{{30}}"
+            if-show-loading="{{ifLoading}}"
+            if-show-nothing-mark="{{ifNothingForUnsellList}}"
+            if-show-reach-bottom="{{ifReachBottomForUnsellList}}"
+            reach-bottom-tips="没有啦~">
+            <view slot="list-container" class="one-goods-block" wx:for="{{unsellList}}" wx:key="product_id">
+              <mini-goods goods-info="{{item}}" showing-type="{{'unsell'}}"
+                bindresell="resellGoods" binddelete="deleteGoods"></mini-goods>
+            </view>
+          </wn-list>
+
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</wn-window>
+
+
+<modal if-show-modal="{{ifShowModal}}" modal-info="{{modalInfo}}" bindconfirm="modalconfirm" bindcancel="modalCancel"></modal>

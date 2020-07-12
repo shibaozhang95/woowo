@@ -1,0 +1,9 @@
+<view class="sys-message-container">
+  <view class="sys-message-title">
+    <image class="sys-message-title-icon" src="{{iconUrls[msgType]}}"></image>
+    <text class="sys-message-title-txt">{{titleArray[msgType]}}</text>
+  </view>
+  <view class="sys-message-content">
+    {{msgContent}}
+  </view>
+</view>

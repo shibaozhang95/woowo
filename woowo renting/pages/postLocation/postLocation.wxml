@@ -1,0 +1,93 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'房屋位置'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{51}}">
+  <view class="container"
+    style="width:100%;height:{{containerHeight}}px">
+    <view class="location-form">
+
+      <view class="location-form-line line-for-loc">
+
+        <view class="location-input-area-block">
+          <view class="title">地址</view>
+          <input type="text"
+            placeholder="输入并从列表中选择"
+            bindinput="addressInputChanged"
+            value="{{formatAddress}}"
+            ></input>
+          <view class="get-current-location"
+            bindtap="getCurrentLocation">
+            <view class="tips">获取当前位置</view>
+            <image class="icon" src="/statics/images/icon_location_small.png" mode="aspectFit"></image>
+          </view>
+        </view>
+
+        <view wx:if="{{ifShowSuggestion}}" class="results-tips">
+          
+          <view wx:if="{{ifRequesting}}" class="loading">
+            <image class="loading-icon"
+              src="/statics/images/loading_2.gif">
+            </image>
+            <view class="loading-text">加载中...</view>
+          </view>
+
+          <view class="no-result"
+            wx:if="{{!ifRequesting&&suggestionLocations.length==0}}"
+            >找不到该地址(别忘了街道号哦~)</view>
+
+          <view class="get-results"
+            wx:if="{{!ifRequesting&&suggestionLocations.length>0}}"
+            >从下列地址选择</view>
+
+        </view>
+
+      </view>
+
+      <view wx:if="{{!ifShowSuggestion}}" class="location-form-line line-for-unit-num">
+        <wn-input title="门牌号"
+          placeholder="选填：公寓才需填写"
+          input-type="text"
+          input-width="{{176}}"
+          default-text-value="{{fieldObj.unitNum}}"
+          bindwninputchanged="houseNumChanged"></wn-input>
+      </view>
+
+    </view>
+
+
+    <map class="map"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      scale="{{scale}}"
+      markers="{{markers}}"
+      style="width:{{mapWidth}}px;height:{{mapHeight}}px;top:{{posTop}}px"
+      enable-zoom="{{false}}"
+      enable-scroll="{{false}}"
+      enable-rotate="{{false}}">
+
+      <cover-view wx:if="{{ifShowSuggestion}}"
+        class="location-suggestion-block">
+        <block wx:for="{{suggestionLocations}}" wx:key="formatAddress">
+          <cover-view class="one-suggestion" 
+            hover-class="choose-location"
+            bindtap="confirmAnAddress"
+            data-location="{{item}}">
+            <cover-view class="icon">{{index+1}}</cover-view>
+            <cover-view class="format-address">{{item.formatAddress}}</cover-view>
+          </cover-view>
+          <cover-view class="one-suggeston-border"></cover-view>
+        </block>
+      </cover-view>
+    </map>
+  </view>
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}">
+  <view class="post-next-btn"
+    bindtap="nextStep"
+    hover-closs="post-button-hover">下一步</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

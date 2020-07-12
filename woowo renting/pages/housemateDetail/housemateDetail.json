@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "contact-info": "/components/contactInfo/contactInfo",
+    "function-bar": "./components/functionBar/functionBar",
+    "gender-icons": "/components/genderIcons/genderIcons"
+  }
+}

@@ -1,0 +1,56 @@
+<view class="one-apt-edit-container">
+  <view class="image-and-info-block"
+    bindtap="goToHouseDetails">
+    <image class="cover" src="{{houseInfo.imageUrls[0]?houseInfo.imageUrls[0]+'-scale_50':''}}" 
+      mode="aspectFill" 
+      lazy-load="{{false}}"></image>
+
+    <view class="info-block">
+      <view class="info-title">{{houseInfo.houseTitle}}</view>
+      <view class="info-types-block">
+        <view class="info-type">{{houseInfo.rentType}}</view>
+        <view class="info-house-type">{{houseInfo.houseType}}</view>
+      </view>
+    </view>
+
+    <view class="edit-block"
+      catchtap="goToEdit">
+      <view class="edit-text">编辑</view>
+      <image class="edit-icon"
+        mode="aspectFill"
+        src="./statics/icon_edit.png"></image>
+    </view>
+  </view>
+
+  <view class="fnt-block">
+    <view class="retop-fnt-block">
+      <view class="fnt-btn fnt-btn-retop fnt-btn-retop-{{houseInfo.status=='postedChecked'?'':'disable'}}"
+        hover-class="btn-hover"
+        bindtap="reTopHouse"
+        >置顶</view>
+    </view>
+
+    <view class="seperate-line"></view>
+
+    <view class="changed-fnt-block">
+      <view class="fnt-btn fnt-btn-taking-off"
+        wx:if="{{houseInfo.status == 'postedChecked'}}"
+        bindtap="changeShelf"
+        data-status="offShelf"
+        hover-class="btn-hover">下架</view>
+      <view class="fnt-btn fnt-btn-taking-on"
+        wx:else
+        bindtap="changeShelf"
+        data-status="postedChecked"
+        hover-class="btn-hover">上架</view>
+    </view>
+
+    <view class="seperate-line"></view>
+
+    <view class="delete-fnt-block">
+      <view class="fnt-btn fnt-btn-delete"
+        hover-class="btn-hover"
+        bindtap="deleteHouse">删除</view>
+    </view>
+  </view>
+</view>

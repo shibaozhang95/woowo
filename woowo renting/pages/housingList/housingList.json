@@ -1,0 +1,10 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "one-apt": "/components/oneApt/oneApt",
+    "filter": "components/filter/filter",
+    "filter-bubble": "components/filterBubble/filterBubble",
+    "agents-choosing": "components/agentsChoosing/agentsChoosing"
+  },
+  "onReachBottomDistance": 200
+}

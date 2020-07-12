@@ -1,0 +1,37 @@
+<view class="merchant-card-container">
+  <view class="merchant-info-block"
+    bindtap="goToMerchant">
+    <image class="avatar" 
+      src="{{merchantInfo.image}}" mode="aspectFill">
+    </image>
+    <view class="basic-info-block">
+      <view class="shop-name">{{merchantInfo.name}}</view>
+      <view class="shop-brief"
+        >{{merchantInfo.description}}</view>
+    </view>
+    <view wx:if="{{!ifSelf}}" 
+      class="follow-btn follow-btn-{{ifFollowing ? 'following' : ''}}"
+      catchtap="switchFollowing"
+      >{{ifFollowing ? '已关注' : '关注'}}</view>
+  </view>
+  <view class="merchant-goods-block">
+    <block wx:if="{{!ifLoading && !ifNothing}}"
+      wx:for="{{goodsList}}" wx:key="">
+      <merchant-goods-card
+        goods-info="{{item}}"></merchant-goods-card>
+    </block>
+
+    <view class="loading-block"
+      wx:if="{{ifLoading}}">
+      <image class="loading-img" 
+        src="/statics/images/loading_2.gif" mode="aspectFit"></image>
+      <view class="tips">热门商品加载中</view>
+    </view>
+
+    <view class="loading-block"
+      wx:if="{{ifNothing}}">
+      <view class="tips">商铺已售罄，等待添加库存~</view>
+    </view>
+
+  </view>
+</view>

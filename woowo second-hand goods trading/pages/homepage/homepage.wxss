@@ -1,0 +1,222 @@
+/*
+ *  For normal user info
+ */
+.user-inf-block {
+  width: 100%;
+  background-color: rgb(246, 182, 45);
+  overflow: hidden;
+}
+.user-inf-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  background-color: rgb(246, 240, 227);
+  display: block;
+  margin: 24rpx auto 0 auto;
+}
+.user-inf-name {
+  width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 30rpx;
+  color: rgb(44, 62, 80);
+  display: block;
+  margin: 0 auto 42rpx auto;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*
+ *  For merchant info
+ */
+.merchant-block {
+  width: 100%;
+  height: 230rpx;
+  position: relative;
+}
+
+.bg-image {
+  width: 750rpx;
+  height: 230rpx;
+  background-color: rgb(246, 182, 45);
+}
+
+.edit-block {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+  z-index: 99;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+.create-shop-card-btn {
+  width: 170rpx;
+  height: 40rpx;
+  border-radius: 26rpx;
+  background-color: rgb(246, 182, 45);
+  line-height: 40rpx;
+  color: rgb(255, 255, 255);
+
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.edit-btn {
+  width: 110rpx;
+  height: 40rpx;
+  border-radius: 26rpx;
+  background-color: rgb(44, 62, 80);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 10rpx;
+}
+.edit-text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: rgb(255, 255, 255);
+  margin: 0 10rpx 0 14rpx;
+}
+.edit-icon {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.merchant-info-block {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.merchant-info-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: linear-gradient(to top, rgb(44, 62, 80), rgba(9, 12, 16,0))
+}
+
+.merchant-avatar {
+  position: relative;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgb(246, 240, 227);
+  margin: 0 20rpx 20rpx 30rpx;
+  z-index: 99;
+}
+
+.name-and-brief-block {
+  position: relative;
+  width: 560rpx;
+  height: auto;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 99;
+}
+
+.merchant-name {
+  max-width: 100%;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 2rpx;
+}
+
+.merchant-brief {
+  max-width: 100%;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 4rpx;
+}
+
+
+.following-fnt-block {
+  width: 100%;
+  position: relative;
+  height: 90rpx;
+  overflow: hidden;
+}
+.following-fnt-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  z-index: 1;
+}
+.bg-unfollowed {
+  src: ("../../statics/images/img_bg_unfollowed@2x.png");
+}
+.bg-following {
+  src: ("../../statics/images/img_bg_following@2x.png");
+}
+.following-fnt-btn {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 46rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  margin: 20rpx 300rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: rgb(44, 62, 80);
+  border: 2rpx solid rgb(44, 62, 80);
+  position: relative;
+  z-index: 99;
+}
+.following-fnt-btn-following {
+  color: rgba(44, 62, 80, 0.5);
+  background-color: #fff;
+  border: 2rpx solid rgba(44, 62, 80, 0.5);
+}
+
+.goods-account-block {
+  width: 100%;
+  height: 60rpx;
+  background: #fff;
+  color: rgb(44, 62, 80);
+  padding: 14rpx 0;
+  line-height: 32rpx;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.goods-content {
+  width: 100%;
+  padding: 20rpx 0 20rpx 10rpx;
+  overflow: hidden;
+  column-count: 2;
+  column-gap: 0;
+}
+
+.goods-content .goods-item {
+  break-inside: avoid;
+}

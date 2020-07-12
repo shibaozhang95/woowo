@@ -1,0 +1,41 @@
+.filter-bubble-container {
+  width: auto;
+  max-width: 670rpx;
+  height: 60rpx;
+  padding: 0 20rpx;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+  background-color: rgb(246, 182, 45);
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+.one-filter-item {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.filter-icon { 
+  width: 50rpx;
+  height: 20rpx;
+}
+
+.filter-text, .plus-icon {
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  white-space: nowrap;
+}
+.plus-icon {
+  margin: 0 6rpx;
+}

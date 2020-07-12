@@ -1,0 +1,50 @@
+
+.one-following-block {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  margin: 20rpx 0;
+}
+.following-avatar {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 16rpx 32rpx 14rpx 42rpx;
+  background-color: rgb(136, 193, 211);
+  border-radius: 60rpx;
+}
+.following-inf {
+  float: left;
+}
+.following-inf-name {
+  display: block;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  margin: 54rpx 0 52rpx 0;
+}
+
+.following-fnt {
+  float: right;
+  /* overflow: hidden; */
+}
+.following-fnt button {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 46rpx;
+  font-size: 28rpx;
+  border-radius: 20rpx;
+  margin: 50rpx 60rpx 50rpx auto;
+  padding: 0;
+}
+.unfollow-btn {
+  background-color: #fff;
+  color: rgba(44, 62, 80, 0.5);
+  border: 2rpx solid rgba(44, 62, 80, 0.5);
+}
+.follow-btn {
+  background-color: rgba(44, 62, 80, 1);
+  color: #fff;
+  border: 2rpx solid rgba(44, 62, 80, 1);
+}

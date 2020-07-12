@@ -1,0 +1,157 @@
+/**app.wxss**/
+page {
+  height: 100%;
+  background-color: rgb(248, 245, 240);
+}
+.container {
+  width: 100%;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  z-index: 0;
+} 
+
+view, text, swiper, textarea, input {
+  /* box-sizing: border-box; */
+  font-family: 'Heiti, Microsoft Yahei';
+  padding: 0;
+  margin: 0;
+}
+
+.normal-hover {
+  opacity: 0.7 !important;
+}
+
+.bussiness-tag {
+  width: 40rpx;
+  height: 40rpx;
+  color: rgb(255, 255, 255);
+  line-height: 40rpx;
+  background-color: rgb(246, 182, 45);
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+/*
+* THIS IS COMMON CSS FOR POST RELATED PAGE
+*/
+.post-container {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 0;
+  margin-bottom: 60rpx;
+}
+
+.post-container .section {
+  margin-top: 40rpx;
+}
+
+.post-container .section-title {
+  height: 44rpx;
+  line-height: 44rpx;
+  margin-left: 40rpx;
+  margin-bottom: 10rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  font-weight: bold;
+}
+
+.post-container .section-form {
+  border-top: 2rpx solid rgba(44, 62, 80, 0.1);
+}
+
+.post-container .section-form-line {
+  border-bottom: 2rpx solid rgba(44, 62, 80, 0.1);
+}
+
+/*
+* THIS IS FOR POST ICON
+*/
+
+.post-icons-block {
+  width: 720rpx;
+  height: auto;
+  border-bottom: 2rpx solid rgba(44, 62, 80, 0.1);
+  background-color: rgb(255, 255, 255);
+  padding: 40rpx 14rpx 40rpx 16rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.post-icons-block .icon-item {
+  opacity: 0.3;
+  width: 180rpx;
+  height: 110rpx;
+  position: relative;
+}
+
+.post-icons-block .icon-item-active {
+  opacity: 1;
+}
+
+.post-icons-block .icon {
+  width: 180rpx;
+  height: 110rpx;
+  display: block;
+}
+
+.post-icons-block .icon-text {
+  width: 100%;
+  height: 28rpx;
+  line-height: 26rpx;
+  position: absolute;
+  font-size: 20rpx;
+  text-align: center;
+  left: 0;
+  bottom: 10rpx;
+  color: rgb(44, 62, 80);
+}
+
+/* .post-container .trigger-line {
+  width: 100%;
+  height: 100rpx;
+  border-bottom: 2rpx solid rgba(44, 62, 80, 0.1);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.post-icons-block .icon-hover {
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+/*
+* THIS IS FOR THE NEXT BUTTOM
+*/
+
+.post-next-btn-block {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  border-top: 2rpx solid rgba(112, 112, 112, 0.1);
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.post-next-btn-block .post-next-btn {
+  width: 660rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: rgb(255, 255, 255);
+  margin: 16rpx auto 14rpx auto;
+  border-radius: 46rpx;
+}
+
+.post-next-btn-block-enable .post-next-btn {
+  background-color: rgb(246, 182, 45);
+}
+
+.post-next-btn-block-disable .post-next-btn {
+  background-color: rgb(222, 225, 228);
+}

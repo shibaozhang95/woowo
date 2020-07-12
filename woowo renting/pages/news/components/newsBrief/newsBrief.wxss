@@ -1,0 +1,32 @@
+.news-brief-container {
+  width: 100%;
+  height: 180rpx;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.news-image {
+  width: 270rpx;
+  height: 180rpx;
+  display: block;
+  background-color: rgba(86, 182, 213);
+}
+
+.news-info-block {
+  width: 480rpx;
+  height: 180rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.news-title {
+  width: 480rpx;
+  padding: 0 60rpx 0 20rpx;
+  box-sizing: border-box;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: rgb(55, 74, 94);
+}

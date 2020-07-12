@@ -1,0 +1,55 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="Woowo 商城">
+</wn-navigation>
+
+<wn-window
+  current-top-pos="{{currentTopPos}}"
+  if-show-tab-bar="{{false}}">
+  <view class="fixed-block">
+    <view class="search-bar-block">
+      <wn-search-bar
+        init-placeholder="搜索"
+        init-keyword="{{searchKeyword}}"
+        confirm-type-text="搜索"
+        bindconfirmsearch="confirmSearchKeyword"></wn-search-bar>
+    </view>
+    
+    <view class="search-mode-block">
+      <view class="search-mode-item search-mode-{{searchMode == 'goods' ? 'chosen' : ''}}"
+        bindtap="switchSearchMode"
+        data-search-mode="goods">
+        <view class="icon-and-txt">
+          <image class="search-mode-icon" 
+            src="./statics/icon_menu_goods.png" 
+            mode="aspectFit"></image>
+          <view class="search-mode-text">商品</view>
+        </view>
+        <view class="chosen-indicator"></view>
+      </view>
+      <view class="search-mode-item search-mode-{{searchMode == 'merchants' ? 'chosen' : ''}}"
+        bindtap="switchSearchMode"
+        data-search-mode="merchants">
+        <view class="icon-and-txt">
+          <image class="search-mode-icon" 
+            src="./statics/icon_menu_merchants.png" 
+            mode="aspectFit"></image>
+          <view class="search-mode-text">店铺</view>
+        </view>
+        <view class="chosen-indicator"></view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="content-block">
+    <merchants-content
+      wx:if="{{searchMode == 'merchants'}}"
+      refresh-trigger="{{refreshTrigger}}"
+      request-more-trigger="{{requestMoreTrigger}}"
+      search-keyword="{{searchKeyword}}"></merchants-content>
+    <goods-content
+      wx:if="{{searchMode == 'goods'}}"
+      refresh-trigger="{{refreshTrigger}}"
+      request-more-trigger="{{requestMoreTrigger}}"
+      search-keyword="{{searchKeyword}}"></goods-content>
+  </view>
+</wn-window>

@@ -1,0 +1,18 @@
+<view class="user-card-container"
+  bindtap="goToUserPage">
+  <image class="avatar" 
+    src="{{userInfo.user_image}}" mode="aspectFit"></image>
+
+  <view class="username-block">
+    <view class="username">{{userInfo.username}}</view>
+    <view class="bussiness-tag"
+      wx:if="{{woowoUserInfo.user_right!='normal'}}">商</view>
+  </view>
+
+  <view class="function-block">
+    <view class="fnt-btn fnt-btn-{{ifFollowing?'unfollow':'follow'}}"
+      hover-class="normal-hover"
+      catchtap="switchFollowingStatus"
+      >{{ifFollowing?'已关注':'关注'}}</view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+/**app.wxss**/
+page {
+  position: relative;
+  height: 100%;
+  background-color: rgb(248, 245, 240);
+}
+.container {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 0;
+} 
+
+view, text, swiper, textarea, input {
+  box-sizing: border-box;
+  font-family: 'Heiti, Microsoft Yahei';
+  padding: 0;
+  margin: 0;
+}
+
+.normal-hover {
+  opacity: 0.7 !important;
+}
+
+@import "pages/template/template.wxss";

@@ -1,0 +1,69 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'求租 2/2'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="post-container">
+
+    <!-- personal info block -->
+    <view class="personal-info-block">
+      <image class="user-avatar" src="{{woowoUserInfo.user_image}}" mode="aspectFit"></image>
+      <view class="username">{{woowoUserInfo.username}}</view>
+    </view>
+
+    <!-- input info block -->
+    <scroll-view class="info-section"
+      scroll-y="{{true}}"
+      style="width:100%; height:{{scrollListHeight}}px">
+      <view class="section">
+        <view class="section-form">
+          <view class="section-form-line">
+            <wn-input-picker title="性别"
+              picker-mode="selector"
+              picker-range="{{genderRanges}}"
+              default-selector-value="{{genderRangesValue}}"
+              bind:wninputchanged="pickerChanged"
+              data-field-name="gender"></wn-input-picker>
+          </view>
+          <view class="section-form-line">
+            <wn-input-picker title="年龄段"
+              picker-mode="selector"
+              picker-range="{{agesRanges}}"
+              default-selector-value="{{agesRangesValue}}"
+              bind:wninputchanged="pickerChanged"
+              data-field-name="ages"></wn-input-picker>
+          </view>
+          <view class="section-form-line">
+            <wn-input-picker title="职业"
+              picker-mode="selector"
+              picker-range="{{careerRanges}}"
+              default-selector-value="{{careerRangesValue}}"
+              bind:wninputchanged="pickerChanged"
+              data-field-name="career"></wn-input-picker>
+          </view>
+        </view>
+      </view>  
+
+      <view class="section">
+        <view class="section-title">联系方式</view>
+        <view class="section-form">
+          <contact-input
+            field-obj="{{initContactInfo}}"
+            bind:savecontactinfo="saveContactInfo"
+            bind:contactinfochanged="contactInfoChanged"></contact-input>
+        </view>
+      </view>
+      
+    </scroll-view>
+
+    <!-- next btn block -->
+    <view class="post-next-btn-block post-next-btn-block-{{ifPostDataValid?'enable':'disable'}}"
+      bind:tap="">
+      <view class="post-next-btn"
+        hover-class="post-button-hover"
+        bind:tap="postHousemate">{{ifEditMode ? '更新' : '发布'}}</view>  
+      <view class="post-next-bottom-gap"
+        style="width:100%; height:{{bottomGapHeight}}px"></view>
+    </view>
+  </view>
+</wn-window>

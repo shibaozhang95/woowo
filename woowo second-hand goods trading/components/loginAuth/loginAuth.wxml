@@ -1,0 +1,15 @@
+<full-screen-container wx:if="{{showLoginAuth}}">
+  <view class="login-auth-container"  style="width:100%; height:100%;">
+    <view class="auth-refuse-btn" bindtap="refuseLoginAuth" hover-class="normal-hover">
+      <image class="auth-refuse-img" mode="aspectFit" src="../../statics/images/icon_auth_cancel@2x.png"></image>
+    </view>   
+    <view class="login-auth-block">
+      <image class="login-auth-img" mode="aspectFit" src="../../statics/images/img_auth@2x.png"></image>
+      <view class="login-auth-txt">
+        <text>授权之后才可以解锁\n全部的功能yooo~</text>
+      </view>
+      <button class="login-auth-btn" open-type="getUserInfo" 
+        bindgetuserinfo="confirmLoginAuth">授权微信登录</button>
+    </view>
+  </view>
+</full-screen-container>

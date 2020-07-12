@@ -1,0 +1,23 @@
+<view class="chat-input-container">
+  <view class="input-area" catchtouchmove="">
+    <view class="text-area-block">
+      <input class="" value="{{inputContent}}" 
+        maxlength="{{100}}"
+        auto-height="{{true}}"
+        placeholder="请在此输入内容..." 
+        placeholder-class="input-placeholder"
+        bindinput="inputSendingMsg"
+        bindconfirm="inputConfirm">
+      </input>
+      <view class="extra-input"
+        hover-class="normal-hover"
+        bindtap="sendPicture">
+        <image class="send-pic-icon"
+          mode="aspectFit" 
+          src="/statics/images/icon_send_photos.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-gap-block"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

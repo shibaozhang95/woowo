@@ -1,0 +1,8 @@
+<view class="woowo-scroll-view-container">
+  <slot name="list-container"></slot>
+  <!-- <go-to-top wx:if="{{!banReachBottom}}" current-top-pos="{{currentTopPos}}"></go-to-top> -->
+  <reach-bottom-tips wx:if="{{listLength != 0 && ifReachBottom && !banReachBottom}}"></reach-bottom-tips>
+  <nothing-mark wx:if="{{listLength == 0 && ifReachBottom}}" nothing-mark-gap-size="{{nothingMarkGapSize}}"
+    nothing-mark-tips="{{nothingMarkTips}}">
+  </nothing-mark>
+</view>

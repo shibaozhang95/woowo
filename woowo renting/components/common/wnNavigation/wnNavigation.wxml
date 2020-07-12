@@ -1,0 +1,19 @@
+<view class="wn-nav-container" 
+  style="background-color:{{navBackgroundColor}}">
+  <view class="status-bar" 
+    style="width:{{windowWidth}}px; height:{{statusBarHeight}}px"></view>
+  <view class="wn-navigator" 
+    style="width:{{windowWidth}}px; height:{{navBarHeight}}px">
+    <view class="nav-title"
+      style="color:{{navTitleColor}}">{{navTitle}}</view>
+    <view class="nav-function">
+      <view wx:if="{{!ifTabPage && !ifCustom}}" 
+        class="nav-fnt-back" bindtap="goBackPreviousPage" 
+        hover-class="normal-hover">
+        <image class="nav-back-icon" src="statics/icon_arrow_left@2x.png" mode="aspectFit">
+        </image>  
+      </view> 
+      <slot name=""></slot>
+    </view>
+  </view> 
+</view>

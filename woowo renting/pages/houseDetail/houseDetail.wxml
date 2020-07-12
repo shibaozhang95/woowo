@@ -1,0 +1,209 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'房屋详情'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{50}}">
+  <view class="container">
+  
+    <view class="images-block">
+      <swiper class="" indicator-dots="{{true}}" 
+        indicator-color="rgb(246, 240, 227)"
+        indicator-active-color="rgb(86, 182, 213)" autoplay="{{false}}" 
+        duration="{{500}}" circular="{{false}}" vertical="{{false}}">
+        <block wx:for="{{woowoHouse.imageUrls}}" wx:key="">
+          <swiper-item class="" item-id=""
+            bindtap="previewImages"
+            data-current-img="{{item}}"
+            data-imgs="{{woowoHouse.imageUrls}}">
+            <image class="house-images" src="{{item+'-scale_50'}}" mode="aspectFill">
+            </image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="price-and-location-block">
+      <view class="price-and-count-block">
+        <view class="price-block"
+          >{{'$' + (woowoHouse.pricePerWeek?woowoHouse.pricePerWeek:0) + '/周'}}</view>
+        <view class="count-block">
+          <view class="view-count"
+            >{{(woowoHouse.view?woowoHouse.view:'0') + ' 浏览'}}</view>
+          <view class="liked-count"
+            >{{(woowoHouse.liked?woowoHouse.liked:'0') + ' 收藏'}}</view>
+        </view>
+      </view>
+
+      <view class="house-title-block"
+        >{{woowoHouse.houseTitle?woowoHouse.houseTitle:''}}</view>
+      
+      <view class="location-block">
+        <view class="location-text"
+          >地址：{{woowoHouse.houseAddress?woowoHouse.houseAddress:''}}</view>
+        <view class="location-icon-block"
+          data-latlng="{{woowoHouse.houseLatlng}}"
+          bindtap="goToMaps">
+          <image class="location-icon" 
+            src="./statics/icon_location.png" mode="aspectFit"></image>
+          <view class="location-icon-text">查看地图</view>
+        </view>
+      </view>
+
+      <view class="post-time">发布时间: {{woowoHouse.postDate?woowoHouse.postDate:''}}</view>
+    </view>
+
+    <view class="basic-house-info-block">
+      <view class="basic-one-block">
+        <image class="basic-info-icon" 
+          src="./statics/icon_rent_type.png" mode="aspectFit">  
+        </image>
+        <view class="basic-info-line-one"
+          >{{woowoHouse.rentType?woowoHouse.rentType:''}}</view>
+        <view class="basic-info-line-two"
+          >{{woowoHouse.rentType2?woowoHouse.rentType2:''}}</view>
+      </view>
+      <view class="basic-one-block">
+        <image class="basic-info-icon" 
+          src="./statics/icon_house_type.png" mode="aspectFit">  
+        </image>
+        <view class="basic-info-line-one"
+          >{{woowoHouse.houseType?woowoHouse.houseType:''}}</view>
+        <view class="basic-info-line-two"
+          >{{woowoHouse.houseType2?woowoHouse.houseType2:''}}</view>
+      </view>
+      <view class="basic-one-block">
+        <image class="basic-info-icon" 
+          src="./statics/icon_date.png" mode="aspectFit">  
+        </image>
+        <view class="basic-info-line-one"
+          >入:{{woowoHouse.avaliableDate?woowoHouse.avaliableDate:''}}</view>
+        <view class="basic-info-line-two"
+          >离:{{woowoHouse.expireDate?woowoHouse.expireDate:''}}</view>
+      </view>
+    </view>
+
+    <view class="house-holder-block"
+      hover-class="bg-hover"
+      bindtap="goToUserPage">
+      <image class="house-holder-avatar" 
+        src="{{woowoHouse.houseHolderInfo.user_image}}" mode="aspectFit"></image>
+      <view class="username-and-right-block">
+        <view class="username">{{woowoHouse.houseHolderInfo.username}}</view>
+        <view class="user-right"
+          >{{woowoHouse.ifAgent?woowoHouse.companyInfo.name:'个人房东'}}</view>
+      </view>
+      <view class="house-holder-fnt-block"
+        wx:if="{{!ifSelfHouse}}">
+        <view class="fnt fnt-message"
+          hover-class="normal-hover"
+          catchtap="goToHaveAChat">留言</view>
+        <view class="fnt fnt-follow"
+          hover-class="normal-hover"
+          catchtap="switchFollowingStatus">
+          <view class="fnt-follow-btn fnt-following"
+            wx:if="{{ifFollowingHouseHolder}}">已关注</view>
+          <view class="fnt-follow-btn fnt-unfollowing"
+            wx:else>关注</view>
+        </view>
+      </view>
+    </view>
+
+    <contact-info
+      woowo-house="{{woowoHouse}}"
+      contact-info-title="房东联系方式"></contact-info>
+
+    <view class="facilities-block">
+      <view class="facilities-title-block">
+        <view class="facilities-title">设置服务</view>
+        <view class="facilities-more-block" 
+          wx:if="{{woowoHouse.detailShowingIcons.length>4}}"
+          bindtap="goToAllIcons">
+          <view class="facilities-more">查看全部</view>
+          <view class="facilities-more-icon">
+            <image class="" mode="aspectFit" 
+              src="/statics/images/icon_arrow_yellow.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="facilities-icons-block">
+        <block wx:for="{{woowoHouse.detailShowingIcons}}" wx:key=""
+          wx:if="{{index<=3}}">
+          <view class="one-icon-block">
+            <image class="one-icon-image" src="{{item.iconUrl}}" mode="aspectFit">
+            </image>
+            <view class="icon-text">{{item.title}}</view>
+          </view>
+        </block>
+        <image class="icon-more"
+          bindtap="goToAllIcons"
+          wx:if="{{woowoHouse.detailShowingIcons.length>4}}" 
+          src="statics/icon_facilities_more.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="house-detail-block">
+      <view class="house-detail-title">房屋介绍</view>
+      <view class="house-detail"
+        >{{woowoHouse.houseDetail}}</view>
+      <!-- <view class="house-detail-more"></view> -->
+    </view>
+
+    <view class="house-rules-container">
+      <view class="house-rules-block">
+        <view class="house-rules-title">对租客要求</view>
+        <view class="house-rules-gender">租客性别：{{woowoHouse.rules.gender}}</view>
+        <view class="house-rules-if-allowed">
+          <view class="if-allowed-item">
+            <!-- <view class="if-allowed-icon {{woowoHouse.rules.ifCookAllowed?'allowed':'not-allow'}}-icon"
+              ></view> -->
+            <image class="if-allowed-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{woowoHouse.rules.ifCookAllowed?'allowed':'not_allowed'}}.png"
+              ></image>
+            <view class="if-allowed-text"
+              >{{woowoHouse.rules.ifCookAllowed?'':'不'}}允许做饭</view>
+          </view>
+          <view class="if-allowed-item">
+            <!-- <view class="if-allowed-icon {{woowoHouse.rules.ifSmookAllowed?'allowed':'not-allow'}}-icon"
+              ></view> -->
+            <image class="if-allowed-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{woowoHouse.rules.ifSmookAllowed?'allowed':'not_allowed'}}.png"
+              ></image>
+            <view class="if-allowed-text"
+              >{{woowoHouse.rules.ifSmookAllowed?'':'不'}}允许抽烟</view>
+          </view>
+          <view class="if-allowed-item">
+            <!-- <view class="if-allowed-icon {{woowoHouse.rules.ifPetsAllowed?'allowed':'not-allow'}}-icon"
+              ></view> -->
+            <image class="if-allowed-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{woowoHouse.rules.ifPetsAllowed?'allowed':'not_allowed'}}.png"
+              ></image>
+            <view class="if-allowed-text"
+              >{{woowoHouse.rules.ifPetsAllowed?'':'不'}}允许养宠物</view>
+          </view>
+        </view>
+        <view class="house-rules-others"
+          >其他要求：{{woowoHouse.rules.others?woowoHouse.rules.others:'暂无'}}</view>
+      </view>
+    </view>  
+  </view>
+</wn-window>
+
+<view class="function-bar-block">
+  <function-bar
+    house-id="{{woowoHouse.houseId}}"
+    if-shared="{{ifShared}}"
+    bindupdatelikingstatus="updateLikingStatus"
+    bindopenshare="triggerOnShare"
+    bindcallbtnpressed="callHouseholder"></function-bar>
+</view>
+
+<share-image if-show-share-image="{{ifShowShareImage}}"
+  house-info="{{woowoHouse}}"
+  user-info="{{woowoUserInfo}}"
+  bindcompleteshare="completeShare"
+  bindcancelshare="cancelShare"
+  bindcreateimagedone="createImageDone"></share-image>

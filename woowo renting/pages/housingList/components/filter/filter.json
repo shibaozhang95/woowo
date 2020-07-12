@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "range-slider": "/components/rangeSlider/rangeSlider"
+  }
+}

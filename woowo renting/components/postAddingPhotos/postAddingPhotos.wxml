@@ -1,0 +1,45 @@
+<view class="adding-photos-container">
+  <view class="no-photo-block"
+    wx:if="{{images.length==0}}"
+    bindtap="takePhoto">
+    <image class="camera-icon" 
+      src="{{cameraIconUrl}}" mode="aspectFit"></image>
+    <view class="limits-tips">{{'最多添加 ' + picsLimitation + ' 张图片'}}</view>
+    <view class="no-pic-warn">{{uploadHint}}</view>
+  </view>
+
+  <view class="photos-block"
+    wx:else>
+    <swiper class="photos-swiper" autoplay="{{false}}" 
+      current-item-id="" duration="{{500}}" circular="{{false}}" vertical="{{false}}" 
+      bindchange="photosSwipe" 
+      current="{{currIndex}}">
+      <block wx:for="{{images}}" wx:key="tempFilePath">
+        <swiper-item class="photos-swiper-item" item-id="">
+          <image class="deleting-btn"
+            bindtap="deletePhoto"
+            data-index="{{index}}"
+            mode="aspectFill"
+            src="/statics/images/icon_delete.png"></image>
+          <image class="swiper-image" src="{{item.tempFilePath}}" mode="aspectFill">
+            
+          </image>
+        </swiper-item>
+      </block>
+    </swiper>
+    
+    <view class="adding-area-block"
+      bindtap="takePhoto">
+      <image class="adding-camera-icon"
+        src="{{cameraIconUrl}}" mode="aspectFit"></image>
+      <view class="adding-limits-tips"
+        >{{"点此继续添加(" + images.length + '/' + picsLimitation + ')'}}</view>
+    </view>
+
+    <view class="process-dot-block">
+      <block wx:for="{{images}}" wx:key="tempFilePath">
+        <view class="process-dot process-dot-{{item.ifMain?'main':''}} process-dot-{{item.ifDone?'':'uploading'}}"></view>
+      </block>
+    </view>
+  </view>
+</view>

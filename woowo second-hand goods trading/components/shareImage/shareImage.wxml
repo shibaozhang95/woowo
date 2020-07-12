@@ -1,0 +1,17 @@
+<full-screen-container wx:if="{{ifShowShareImage}}">
+  <view class="share-image-container">
+    <canvas class="canvas" canvas-id="testCanvas" style="width: 200%; height: 200%"/>
+
+    <view class="share-image-block">
+      <image class="delete-icon" mode="aspectFill" src="../../statics/images/icon_auth_cancel@2x.png"
+        bindtap="cancelShare" wx:if="{{imageUrl}}"></image>
+      <image class="share-img" mode="widthFix" src="{{imageUrl}}" />
+      <view class="share-btn" 
+        loading="{{loading}}" 
+        disabled="{{!imageUrl}}" 
+        bindtap="saveImageToLocal"
+        >保存图片</view>
+    </view>
+  </view>
+
+</full-screen-container>

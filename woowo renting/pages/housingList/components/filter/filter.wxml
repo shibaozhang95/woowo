@@ -1,0 +1,77 @@
+<view class="filter-container" 
+  style="width:{{filterWindowWidth}}px;height:{{filterWindowHeight}}px">
+  
+  <scroll-view class="filter-list-block" scroll-y="{{true}}"
+    style="width:100%;height:{{filterDetailHeight}}px"
+    catchtouchmove="">
+
+    <view class="filter-detail-block">
+      
+      <view wx:for="{{filterList}}" 
+        wx:for-item="filterItem"
+        wx:for-index="filterIndex"
+        wx:key="title"
+        class="filter-detail-section">
+        <view class="filter-title-block">
+          <view class="filter-title-text">{{filterItem.title}}</view>
+          <!-- <view class="filter-title-icon"></view> -->
+        </view>
+        <view class="filter-content">
+          <block wx:for="{{filterItem.choices}}" wx:key="value"
+            wx:for-item="contentItem"
+            wx:for-index="contentIndex"
+            wx:key="">
+            <view class="filter-content-item filter-content-item-{{contentItem.ifChosen?'chosen':''}}"
+              bind:tap="chooseFilterContent"
+              data-filter-index="{{filterIndex}}"
+              data-content-index="{{contentIndex}}"
+              >{{contentItem.text}}</view>
+          </block>
+        </view>
+      </view>
+
+      <view class="filter-section-split"></view>
+
+      <view class="filter-detail-section">
+        <view class="filter-title-block filter-title-block-price">
+          <view class="filter-title-text">价格（每周）</view>
+        </view>
+      </view>
+      <view class="filter-content-price">
+        <view class="price-text">
+          <text>{{ifPriceIntervalChanged?'$'+woowoFilter.pricePerWeekLow+ ' - $'+woowoFilter.pricePerWeekHigh:'不限'}}</text>
+        </view>
+        <view class="price-slider-block">
+          <!-- <zyslider minValue="{{price.lowPrice}}" maxValue="{{price.highPrice}}" 
+            min="{{price.MIN_PRICE}}" max="{{price.MAX_PRICE}}" 
+            bind:lowValueChange="lowValueChangeAction"
+            bind:heighValueChange="heighValueChangeAction"></zyslider> -->
+          <range-slider width="{{670}}" height="{{100}}" block-size="{{40}}"
+            bar-height="{{20}}" background-color="#e9e9e9" active-color="#F5B52D"
+            min="{{price.MIN_PRICe}}" max="{{price.MAX_PRICE}}"
+            values="{{price.priceValue}}"
+            bindrangechange="filterPriceChange">
+            <view slot='minBlock' class='range-slider-block'></view> 
+            <view slot='maxBlock' class='range-slider-block'></view> 
+          </range-slider>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="filter-list-block"></view>
+  
+  <view class="filter-fnt-block">
+    <view class="filter-reset-block">
+      <view class="filter-reset-bottom"
+        bindtap="resetFilter">重置</view>
+      <view class="bottom-gap"
+        style="width:100%;height:{{bottomGapHeight}}px"></view>
+    </view>
+    <view class="filter-confirm-block">
+      <view class="filter-confirm-bottom"
+        bindtap="confirmFilter">确认过滤条件</view>
+      <view class="bottom-gap"
+        style="width:100%;height:{{bottomGapHeight}}px"></view>
+    </view>
+  </view>
+</view>

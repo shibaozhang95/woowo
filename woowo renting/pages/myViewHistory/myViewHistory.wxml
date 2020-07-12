@@ -1,0 +1,18 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="浏览记录"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="">
+  <wn-list if-show-nothing-mark="{{ifNothing}}"
+    nothing-mark-tips="空的，你什么都没看呢~"
+    if-show-loading="{{ifLoading}}"
+    if-show-reach-bottom="{{ifReachBottom}}"
+    reach-bottom-tips="没有啦~">
+    <view class="housing-list-block">
+      <viwe class="house-item" wx:for="{{houseInfoList}}" wx:key="id">
+        <one-apt
+          house-info="{{item}}"></one-apt>
+      </viwe>
+    </view>  
+  </wn-list>  
+</wn-window>

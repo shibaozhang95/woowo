@@ -1,0 +1,102 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'房屋描述'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{45}}">
+  <view class="post-container">
+    <view class="section">
+      <view class="section-title">房屋</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-picker title="房屋类型"
+            picker-mode="selector"
+            picker-range="{{rentTypes}}"
+            default-selector-value="{{rentTypesValue}}"
+            bindwninputchanged="pickerResultCallback"
+            data-field-name="rentType"></wn-input-picker>
+        </view>
+        <view class="section-form-line">
+          <wn-input-picker title="房屋户型"
+            picker-mode="multiSelector"
+            picker-range="{{houseTypes}}"
+            default-multi-selector-value="{{houseTypesValue}}"
+            bindwninputchanged="pickerResultCallback"
+            data-field-name="houseType"></wn-input-picker>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input title="房屋面积"
+            input-type="number"
+            placeholder="选填：输入房屋面积"
+            suffix="平米"
+            input-width="{{150}}"
+            default-number-value="{{fieldObj.houseArea}}"
+            bindwninputchanged="inputChanged"
+            data-field-name="houseArea"></wn-input>
+        </view>
+        
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">房屋名称</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-count
+            input-type="input"
+            placeholder="例如：近墨大2室2卫公寓"
+            default-value="{{fieldObj.houseTitle}}"
+            word-limit="{{20}}"
+            bindwninputchanged="inputChanged"
+            data-field-name="houseTitle"></wn-input-count>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">房屋介绍</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-count
+            input-type="textarea"
+            placeholder="补充介绍房屋的情况斜街或周边环境"
+            default-value="{{fieldObj.houseDetail}}"
+            word-limit="{{450}}"
+            textarea-height="{{108}}"
+            bindwninputchanged="inputChanged"
+            data-field-name="houseDetail"></wn-input-count>
+        </view>
+      </view>
+    </view>
+
+    <view class="section" 
+      wx:if="{{type!='整租'}}">
+      <view class="section-title">出租房间信息</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-switch
+            title="有独立卫浴"
+            default-switch-value="{{fieldObj.roomInfo.ifBathroom?true:false}}"
+            bindwninputchanged="inputChanged"
+            data-field-name="roomInfo.ifBathroom"></wn-input-switch>
+        </view>
+        <view class="section-form-line">
+          <wn-input-switch
+            title="有窗"
+            default-switch-value="{{fieldObj.roomInfo.ifWindows?true:false}}"
+            bindwninputchanged="inputChanged"
+            data-field-name="roomInfo.ifWindows"></wn-input-switch>
+        </view>
+      </view>
+    </view>
+  </view>  
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}"
+  bindtap="nextStep">
+  <view class="post-next-btn"
+    hover-closs="post-button-hover">下一步</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

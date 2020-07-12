@@ -1,0 +1,10 @@
+<view class="full-screen-container">
+  <view class="custom-nav-placeholder"
+    wx:if="ifCustomNav" style="width:{{windowWidth}}px;height:{{totallNavHeight}}px">
+  </view>
+  <view class="valiad-area" 
+    style="width:{{windowWidth}}px; height:{{windowHeight}}px; background:{{backgroundColor}};"
+    bindtouchstart="doNothing" bindtap="doNothing">
+    <slot></slot>
+  </view>
+</view>

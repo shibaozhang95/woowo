@@ -1,0 +1,9 @@
+<view class="goods-item" bindtap="goToGoodsDetail">
+  <image class="goods-cover" lazy-load="{{true}}"
+    src="{{goodsInfo.goodsPicsUrl[0] + '-scale_50'}}" mode="widthFix"></image>
+  <!-- <wn-image class="goods-cover" img-src="{{goodsInfo.goodsPicsUrl[0]}}"
+    if-lazy-load="{{true}}" img-mode="{{'widthFix'}}"></wn-image> -->
+  <view class="goods-name">{{goodsInfo.goodsTitle}}</view>
+  <text class="goods-price">$ {{goodsInfo.goodsPrice}}</text>
+  <text class="goods-date">{{formatDate}}</text>
+</view>

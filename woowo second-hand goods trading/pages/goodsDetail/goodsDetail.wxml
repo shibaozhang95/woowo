@@ -1,0 +1,187 @@
+<wn-navigation></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="goods-info-section">
+      <swiper class="pics-swiper" indicator-dots="{{true}}" autoplay="{{false}}" duration="{{500}}">
+        <block wx:for="{{goodsDetail.goodsPicsUrl}}" wx:key="">
+          <swiper-item class="pics-swiper-item" data-current="{{item}}" bind:tap="previewImage">
+            <image class="swiper-image" lazy-load="{{true}}" 
+              src="{{item + '-scale_50'}}" mode="aspectFill" />
+            
+            <!-- <wn-image class="swiper-image" img-src="{{item}}"
+              if-lazy-load="{{false}}" img-mode="{{'aspectFill'}}"></wn-image> -->
+          </swiper-item>
+        </block>
+      </swiper>
+      <block>
+        <text class="goods-price">$ {{goodsDetail.goodsPrice}}</text>
+        <text class="goods-likes">{{goodsDetail.goodsLikedAccount}} 收藏</text>
+      </block>
+      <block>
+        <text class="goods-likes">{{goodsDetail.goodsView}} 阅读</text>
+        <text class="goods-likes">{{goodsDetail.goodsSharedCount}} 分享</text>
+      </block>
+      <view class="goods-tags-block">
+        <block wx:for="{{goodsDetail.goodsShipWays}}" wx:key="">
+          <view class="goods-tags-item goods-tags-delivery">{{item}}</view>
+        </block>
+        <view class="goods-tags-item goods-tags-location">{{goodsDetail.goodsArea}}</view>
+        <view class="goods-tags-item goods-tags-location">{{goodsDetail.goodsRegion == 'Melbourne' ? 'VIC' : goodsDetail.goodsRegion}}</view>
+        <view class="goods-tags-item goods-tags-condition">{{goodsDetail.goodsCondition}}</view>
+      </view>
+      <view class="goods-title">{{goodsDetail.goodsTitle}}</view>
+      <view class="goods-brif">{{goodsDetail.goodsDes}}</view>
+      <view class="goods-post-date">发布时间： {{goodsDetail.formatedPostDate}}</view>
+    </view>
+
+    <view class="seller-other-goods-section" wx:if="{{goFurther}}">
+      <view wx:if="{{!ifMerchant}}"
+        bind:tap="goToHomepage"
+        class="user-basic-info">
+        <image class="user-info-avatar" 
+          mode="aspectFill" 
+          src="{{goodsDetail.sellerAvatarUrl}}"></image>
+        <view class="info-name-block">
+          <text class="user-info-name"
+            >{{goodsDetail.sellerName}}</text>
+        </view>
+        <view class="user-fnt" wx:if="{{!ifOwnGoods}}">
+          <view class="user-fnt-btn user-fnt-{{seller.ifFollowing ? 'unfollowing' : ''}}"
+            catchtap="switchFollowUser">
+            {{seller.ifFollowing ? '已关注' : '关注'}}
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{ifMerchant}}"
+        bind:tap="goToShop"
+        class="user-basic-info">
+        <image class="user-info-avatar" 
+           mode="aspectFill" 
+          src="{{shopInfo.image}}"></image>
+        <view class="info-name-block">
+          <text class="user-info-name shop-info-name"
+            >{{shopInfo.name}}</text>
+          <view class="shop-icon">商</view>
+        </view>
+        <view class="user-fnt" wx:if="{{!ifOwnGoods}}">
+          <view class="user-fnt-btn user-fnt-{{ifFollowingShop ? 'unfollowing' : ''}}"
+            catchtap="switchFollowShops">
+            {{seller.ifFollowing ? '已关注' : '关注'}}
+          </view>
+        </view>
+      </view>
+      
+      <view class="other-goods-block">
+        <text class="block-title">买家其他闲品</text>
+        <view class="block-content other-goods-content">
+          <view class="no-other-goods" 
+            wx:if="{{seller.otherGoodsList.length == 0}}"
+          >暂时没有其他闲品</view>
+          <block wx:else>
+            <scroll-view class="other-goods-scroll-block" scroll-x>
+              <view class="other-goods-scroll-block">
+                <block wx:for="{{seller.otherGoodsList}}" wx:key="">
+                  <tiny-goods class="other-goods-item" goods-info="{{item}}"></tiny-goods>
+                </block>
+              </view>
+            </scroll-view>
+            <view class="more-other-goods" bind:tap="goToHomepage" hover-class="normal-hover">更多闲品</view>
+          </block>
+        </view>
+        
+      </view>
+    </view>
+
+    <view class="seller-contact-info-section">
+      <view class="seller-contact-info-block">
+        <text class="block-title">买家联系方式</text>
+        <view class="block-content">
+          <view class="contact-line-1">
+            <view class="contact-item">
+              <view class="contact-title">电话 TEL</view>
+              <view class="contact-content" hover-class="touch-copy" 
+                bindtap="touchCopy" data-content="{{goodsDetail.sellerPhoneNumber}}">
+                <text>{{goodsDetail.sellerPhoneNumber}}</text>
+              </view>
+            </view>
+            <view class="contact-item">
+              <view class="contact-title">微信 Wechat</view>
+              <view wx:if="{{goodsDetail.sellerWechatId}}" data-content="{{goodsDetail.sellerWechatId}}" 
+                bindtap="touchCopy" class="contact-content" hover-class="touch-copy">
+                <text>{{goodsDetail.sellerWechatId}}</text>
+              </view>
+              <view wx:else class="contact-content contact-content-none">
+                <text>木有留微信呀</text>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{goodsDetail.sellerWechatQR}}" class="contact-line-2">
+            <view class="contact-item">
+              <view class="contact-title">二维码 QR Code</view>
+              <view class="contact-content qr-code-content">
+                <image class="qr-code-img" mode="aspectFit" src="{{goodsDetail.sellerWechatQR}}"
+                  data-url="{{goodsDetail.sellerWechatQR}}" bind:tap="previewQRCode"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</wn-window>
+
+
+<view class="fnt-bar-container">
+  <view class="fnt-bar-layer">
+    <view class="fnt-item fnt-item-left"  
+      bind:tap="goToIndex">
+      <image class="fnt-item-icon" hover-class="go-to-index-hover" src="../../statics/images/icon_goods_index@2x.png" mode="aspectFit"></image>
+      <!-- <view class="fnt-item-icon go-to-index-icon" hover-class="go-to-index-hover"></view> -->
+      <view class="fnt-txt">主页</view>
+    </view>
+    <view class="fnt-item fnt-item-left" hover-class="normal-hover" 
+      bind:tap="switchLikeGoods">
+      <image wx:if="{{!ifLikedGoods}}" class="fnt-item-icon" src="../../statics/images/icon_goods_like@2x.png" mode="aspectFit"></image>
+      <image wx:else class="fnt-item-icon" src="../../statics/images/icon_goods_like_active@2x.png" mode="aspectFit"></image>
+      <view class="fnt-txt">收藏</view>
+    </view>
+    <view class="fnt-item fnt-item-left"  
+      bind:tap="turnOnShareImage">
+      <image wx:if="{{!ifShared}}" class="fnt-item-icon" hover-class="go-to-index-hover" src="../../statics/images/icon_goods_sharing@2x.png" mode="aspectFit"></image>
+      <image wx:else class="fnt-item-icon" hover-class="go-to-index-hover" src="../../statics/images/icon_goods_sharing_active@2x.png" mode="aspectFit"></image>
+      <view class="fnt-txt">分享</view>
+    </view>
+    <view class="fnt-item fnt-item-left" hover-class="normal-hover" 
+      bind:tap="turnOnReportModal">
+      <image wx:if="{{!ifReported}}" class="fnt-item-icon" src="../../statics/images/icon_goods_complain@2x.png" mode="aspectFit"></image>
+      <image wx:else class="fnt-item-icon" src="../../statics/images/icon_goods_complain_active@2x.png" mode="aspectFit"></image>
+      <view class="fnt-txt">举报</view>
+    </view>
+    <view class="fnt-item fnt-item-right fnt-contact-call" hover-class="normal-hover" 
+      bindtap="callSeller">
+      <image class="fnt-contact-call-icon" mode="aspectFit"
+        src="../../statics/images/icon_contact_call@2x.png">
+      </image>
+    </view>
+  </view>
+  
+  <!-- <view class="fnt-item fnt-item-right fnt-contact-message" hover-class="normal-hover" bindtap="messageSeller">
+    <image class="fnt-contact-message-icon" mode="aspectFit"
+      src="../../statics/images/icon_contact_message@2x.png">
+    </image>
+  </view> -->
+  <view wx:if="{{isIPX}}" class="IPX-corresponding-block"></view>
+</view>
+
+<login-auth show-login-auth="{{showLoginAuth}}"
+  bind:refuseAuth="refuseLoginAuth">
+</login-auth>
+
+<report-modal bind:report="reportGoods" if-show-report-modal="{{ifShowReportModal}}"></report-modal>
+
+<share-image goods-id="{{goodsDetail.goodsId}}" goods-title="{{goodsDetail.goodsTitle}}" 
+  goods-cover="{{goodsDetail.goodsPicsUrl[0]}}" goods-price="{{goodsDetail.goodsPrice}}"
+  if-show-share-image="{{ifShowShareImage}}" bind:complete="turnOffShareImage">
+</share-image>

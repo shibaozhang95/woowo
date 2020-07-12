@@ -1,0 +1,41 @@
+.goods-item {
+  overflow: hidden;
+  width: 360rpx;
+  margin: 0 10rpx 20rpx 0;
+  background-color: #fff; 
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+}
+.goods-cover {
+  display: block;
+  width: 360rpx;
+  /* height: 360rpx; */
+  max-height: 480rpx;
+  background-color: rgb(44, 62, 80);
+}
+.goods-name {
+  height: 40rpx;
+  line-height: 40rpx;
+  color: rgb(44, 62, 80);
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: 10rpx 20rpx 0 20rpx;
+}
+.goods-price {
+  float: left;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(246, 182, 45);
+  margin: 6rpx 0 10rpx 20rpx;
+}
+.goods-date {
+  float: right;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 22rpx;
+  color: rgb(136, 193, 211);
+  margin: 12rpx 20rpx auto auto;
+}

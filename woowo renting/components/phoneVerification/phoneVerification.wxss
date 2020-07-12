@@ -1,0 +1,83 @@
+.phone-verification-container {
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(53, 89, 110, 0.5);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-verification-block {
+  width: 520rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin-bottom: 120rpx;
+}
+
+.window-top {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-top .title {
+  height: 40rpx;
+  text-align: center; 
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+  margin: 10rpx 0 40rpx 0;
+}
+
+.window-top input {
+  width: 460rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0;
+  padding: 0;
+  border: 2rpx solid rgba(112, 112, 112, 0.1);
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+  text-align: center;
+}
+
+.window-top .input-placeholder {
+  font-size: 28rpx;
+  color: rgba(44, 62, 80, 0.5);
+  text-align: center;
+}
+
+.window-top .error-tips {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  margin: 20rpx 0 10rpx 0;
+  text-align: center; 
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.window-bottom {
+  margin-top: 4rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+.window-bottom .fnt {
+  width: 258rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  text-align: center; 
+}
+
+.window-bottom .fnt-confirm {
+  background-color: rgb(246, 182, 45);
+}
+.window-bottom .fnt-cancel {
+  background-color: rgb(206, 207, 207);
+}

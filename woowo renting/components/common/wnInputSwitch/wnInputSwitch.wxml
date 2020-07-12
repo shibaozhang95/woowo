@@ -1,0 +1,8 @@
+<view class="input-switch-container">
+  <view class="input-title">{{title}}</view>
+  <switch class="input-switch" type="switch" 
+    checked="{{defaultSwitchValue}}"
+    bindchange="wninputchanged"
+    color="{{color}}">
+  </switch>
+</view>

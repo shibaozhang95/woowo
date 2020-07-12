@@ -1,0 +1,12 @@
+page {
+  background-color: rgb(248, 245, 240);
+
+  animation-name: appear;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

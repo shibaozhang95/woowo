@@ -1,0 +1,158 @@
+page {
+  background-color: rgb(248, 245, 240);
+}
+
+/* user infomation */
+.user-info-block {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  margin-top: 0;
+  margin-left: 0;
+}
+.avatar-and-username-block {
+  width: 100%;
+  background-color: rgb(86, 182, 213);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  overflow: hidden;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: rgb(246, 240, 227);
+  margin: 24rpx 0 16rpx 0;
+}
+
+.username-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 36rpx;
+}
+
+.username {
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 32rpx;
+  color: rgb(255, 255, 255);
+  margin-right: 20rpx;
+}
+
+.user-info-block-others .avatar-and-username-block {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 50rpx 70rpx;
+  box-sizing: border-box;
+}
+
+.user-info-block-others .avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: rgb(246, 240, 227);
+  margin: 0 20rpx 0 0;
+}
+
+.user-info-block-others .username-block {
+  margin-bottom: 16rpx;
+}
+
+.following-fnt-btn {
+  width: 150rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 20rpx;
+  color: rgb(255, 255, 255);
+  background-color: rgb(44, 62, 80);
+  border: 2rpx solid rgb(44, 62, 80);
+}
+
+.following-fnt-btn-following {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2rpx solid rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* navigation */
+.navigation-block {
+  width: 100%;
+  height: auto;
+  background-color: rgb(86, 182, 213);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.nav-btn {
+  width: 374rpx;
+  height: 70rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal-seperate-line {
+  width: 2rpx;
+  height: 70rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-txt {
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10rpx;
+}
+
+.nav-indicator {
+  width: 134rpx;
+  height: 6rpx;
+  background-color: rgb(86, 182, 213);
+  border-radius: 6rpx;
+}
+
+.nav-btn-chosen .nav-txt {
+  color: rgb(255, 255, 255)
+}
+
+.nav-btn-chosen .nav-indicator {
+  background-color: rgb(255, 255, 255)
+}
+
+.post-count {
+  position: fixed;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: rgb(44, 62, 80);
+  background-color: rgb(255, 255, 255);
+  z-index: 9999;
+}
+
+.housing-list-block,
+.housemate-list-block {
+  /* margin-top: 290rpx; */
+  padding: 30rpx 0 0 0;
+}
+
+.one-apt-item,
+.housemate-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}

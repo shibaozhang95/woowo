@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tiny-goods": "../../components/tinyGoods/tinyGoods",
+    "login-auth": "../../components/loginAuth/loginAuth",
+    "report-modal": "../../components/reportModal/reportModal",
+    "share-image": "../../components/shareImage/shareImage"
+  }
+}

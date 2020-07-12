@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "system-message": "../../components/systemMessage/systemMessage",
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView"
+  }
+}

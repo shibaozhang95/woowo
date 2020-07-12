@@ -1,0 +1,18 @@
+.gender-icons-container image {
+  display: block;
+}
+
+.icon-male {
+  width: 16rpx;
+  height: 30rpx;
+}
+
+.icon-female {
+  width: 18rpx;
+  height: 30rpx;
+}
+
+.icon-couples {
+  width: 30rpx;
+  height: 30rpx;
+}

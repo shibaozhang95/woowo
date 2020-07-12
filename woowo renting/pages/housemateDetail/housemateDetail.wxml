@@ -1,0 +1,135 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="求组详情"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{bottomGapHeight+functionBarHeight}}">
+  <view class="container">
+    <view class="images-block"
+      wx:if="{{housemateInfo.imgList.length != 0}}">
+      <swiper class="" indicator-dots="{{true}}" 
+        indicator-color="rgb(246, 240, 227)"
+        indicator-active-color="rgb(86, 182, 213)" autoplay="{{false}}" 
+        duration="{{500}}" circular="{{false}}" vertical="{{false}}">
+        <block wx:for="{{housemateInfo.imgList}}" wx:key="">
+          <swiper-item class="" item-id=""
+            bind:tap="previewImages"
+            data-current-img="{{item}}"
+            data-imgs="{{housemateInfo.imgList}}">
+            <image class="housemate-img"
+              src="{{item+'-scale_50'}}"
+              mode="aspectFill"></image> 
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="info-block">
+      <view class="personal-info">
+        <image class="avatar"
+          src="{{housemateInfo.userInfo.user_image}}"
+          mode="aspectFill"></image>
+        <view class="other-fino">
+          <view class="username"
+            >{{housemateInfo.userInfo.username}}</view>
+          <view class="status">
+            <view class="gender-icon">
+              <gender-icons
+                gender="{{housemateInfo.sex}}"></gender-icons>
+            </view>
+            <view class="status-txt"
+              >{{housemateInfo.sexShortcut}} / {{housemateInfo.age}} / {{housemateInfo.career}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="post-date">
+        <view class="post-date-txt">发布时间 ：{{housemateInfo.uploadTime}}</view>
+      </view>
+    </view>
+
+    <view class="preference-block">
+      <view class="block-title">求租意向</view>
+      <view class="block-content">
+        <view class="content-line">
+          <view class="item-title">租金预算</view>
+          <view class="item-txt"
+            >${{housemateInfo.priceLow}} - ${{housemateInfo.priceHigh}}/week</view>
+        </view>
+        <view class="content-line">
+          <view class="item-title">求租地点</view>
+          <view class="item-txt"
+            >{{housemateInfo.areasShortcut}}</view>
+        </view>
+        <view class="content-line">
+          <view class="item-title">入住时间</view>
+          <view class="item-txt"
+            >{{housemateInfo.availableDate}}</view>
+        </view>
+        <view class="content-line">
+          <view class="item-title">所需房屋类型</view>
+          <view class="item-txt"
+            >{{housemateInfo.typeShortcut}}</view>
+        </view>
+        <view class="content-line">
+          <view class="item-title">所需房屋户型</view>
+          <view class="item-txt"
+            >{{housemateInfo.rentTypeShortcut}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="more-info-block">
+      <view class="block-title">关于我</view>
+      <view class="block-content">
+        <view class="about-me-content">
+          <view class="rule-item">
+            <image class="if-request-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{housemateInfo.ifCook ? 'allowed'  :'not_allowed'}}.png"
+              ></image>
+            <view class="if-request-txt"
+              >{{housemateInfo.ifCook ? '' : '不'}}需做饭</view>
+          </view>
+          <view class="rule-item">
+            <image class="if-request-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{housemateInfo.ifSmoke ? 'allowed'  :'not_allowed'}}.png"
+              ></image>
+            <view class="if-request-txt"
+              >{{housemateInfo.ifSmoke ? '' : '不'}}抽烟</view>
+          </view>
+          <view class="rule-item">
+            <image class="if-request-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_{{housemateInfo.ifPet ? 'allowed'  :'not_allowed'}}.png"
+              ></image>
+            <view class="if-request-txt"
+              >{{housemateInfo.ifPet ? '' : '不'}}养宠物</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="block-title">想说的话</view>
+      <view class="block-content">
+        <view class="content-txt"
+          >{{housemateInfo.description}}</view>
+      </view>
+    </view>
+
+    <div class="contact-info-block">
+      <contact-info
+        woowo-house="{{contactInfo}}"
+        contact-info-title="联系方式"></contact-info>
+    </div>
+  </view>
+
+  <view class="function-bar-block">
+    <function-bar
+      housemate-id="{{housemateInfo.id}}"
+      if-contacted="{{ifSentMessage}}"
+      bind:updatelikingstatus=""
+      bind:trytocontact="sendMessageTo"
+      bind:callbtnpressed="callThePoster"></function-bar>
+  </view>
+    
+</wn-window>

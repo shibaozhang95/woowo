@@ -1,0 +1,22 @@
+<wn-navigation
+  nav-title="Woowo 商家招募计划"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <text class="recruitment-text">
+      Woowo二手市场2.0版本来啦
+      商家小伙伴们可以入驻啦！
+      平台商家分类非常多
+      不管您是在这边做实体的，还是在朋友圈做一些小生意的
+      都可以来Woowo免费开店哦！
+      咨询开店请联系Woowo商家小客服：
+    </text>
+    <text class="another-line">微信号：Woowo3</text>
+    <image class="qrcode"
+      src="statics/customerserviceqrcode.png"
+      mode="aspectFit"
+      bindtap="previewImage"
+      data-src="https://media.woniu-xcx.xyz/customerserviceqrcode.png"></image>
+    
+  </view>
+</wn-window>

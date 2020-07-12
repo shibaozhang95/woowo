@@ -1,0 +1,13 @@
+<view class="one-area-container">
+  <view class="area-name">{{areaInfo}}</view>
+  <view class="area-action">
+    <view class="area-action-add" wx:if="{{!ifChosen}}">
+      <image class="area-action-icon" mode="aspectFit"
+        src="/statics/images/icon_add.png" ></image>
+    </view>
+    <view class="area-action-delete" wx:else>
+      <image class="area-action-icon" mode="aspectFit"
+        src="/statics/images/icon_remove.png"></image>
+    </view>
+  </view>
+</view>

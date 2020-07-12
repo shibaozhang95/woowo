@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView",
+    "brif-goods-basic": "../../components/brifGoodsBasic/brifGoodsBasic",
+    "share-image": "../../components/shareImage/shareImage"
+  }
+}

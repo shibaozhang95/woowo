@@ -1,0 +1,29 @@
+<wn-navigation if-tab-page="{{true}}"
+  nav-title="最新资讯"></wn-navigation>
+
+<wn-window
+  if-show-tab-bar="{{true}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <wn-list if-show-nothing-mark="{{ifShowNotingMark}}"
+      nothing-mark-tips="暂时没有最新资讯哦~"
+      if-show-loading="{{ifShowLoading}}"
+      if-show-reach-bottom="{{ifShowReachBottom}}"
+      reach-bottom-tips="没有更多资讯了"
+      extra-bottom-block-height="{{50}}">
+      <view class="news-list-block">
+        <block wx:for="{{newsList}}" wx:key="">
+          <view class="news-item"
+            bindtap="goToArticle"
+            data-item="{{item}}">
+            <news-brief
+              one-news="{{item}}"></news-brief>
+          </view>
+        </block>
+      </view>
+    </wn-list>
+    
+  </view>  
+</wn-window>
+
+<wn-tab-bar isNews="true"></wn-tab-bar>

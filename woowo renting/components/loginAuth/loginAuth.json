@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "full-screen-container": "../fullScreenContainer/fullScreenContainer"    
+  }
+}

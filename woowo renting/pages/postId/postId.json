@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "phone-verification": "/components/phoneVerification/phoneVerification"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

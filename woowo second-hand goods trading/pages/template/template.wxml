@@ -1,0 +1,18 @@
+<!-- If there is no content for this page, show nothing-mark -->
+<template name="nothing-mark">
+  <view class="nothing-mark">
+    <image class="nothing-mark-img" mode="aspectFit" src="../../statics/images/img_nothing@2x.png"></image>
+    <text class="nothing-mark-txt">空的，你懂我意思吧</text>
+  </view>
+</template>
+
+<!-- Another brif goods information, using at mySelling, myLiked page-->
+<template name="mini-goods-item">
+  <view class="mini-goods-item">
+    <image class="mini-goods-cover" mode="aspectFit" src="{{coverUrl}}"></image>
+    <view class="mini-goods-inf">
+      <text class="mini-goods-title">{{goodsTitle}}</text>
+      <text class="mini-goods-price">${{goodsPrice}}</text>
+    </view>
+  </view>
+</template>

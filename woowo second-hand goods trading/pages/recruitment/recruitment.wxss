@@ -1,0 +1,27 @@
+.recruitment-text {
+  display: block !important;
+  color: rgb(44, 62, 80);
+  font-size: 32rpx !important;
+  line-height: 44rpx !important;
+  text-align: center;
+  width: 660rpx;
+  margin: 60rpx auto 0 auto;
+}
+
+.qrcode {
+  width: 400rpx;
+  height: 400rpx;
+  /* margin: 60rpx auto 10rpx auto; */
+  margin: 0 auto;
+  display: block;
+}
+
+.another-line {
+  width: 100%;
+  display: block !important;
+  color: rgb(44, 62, 80);
+  font-size: 32rpx !important;
+  line-height: 44rpx !important;
+  text-align: center;
+  margin: 60rpx auto 10rpx auto;
+}

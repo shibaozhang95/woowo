@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sort-bar": "/components/sortBar/sortBar",
+    "brif-goods": "/components/brifGoods/brifGoods"
+  }
+}

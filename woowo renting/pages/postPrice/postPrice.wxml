@@ -1,0 +1,72 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'价格设置'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{45}}">
+  <view class="post-container">
+    <view class="section">
+      <view class="section-title">基础价格</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input title="价格"
+            input-type="number"
+            placeholder="输入价格"
+            prefix="$"
+            suffix="/周"
+            input-width="{{64}}"
+            default-number-value="{{fieldObj.pricePerWeek}}"
+            bindwninputchanged="priceChanged"></wn-input>
+        </view>
+
+        <view class="trigger-block">
+          <wn-input-trigger title="是否包含账单"
+            block-height="{{1 + 55 * 1 + 20 * 2}}"
+            default-trigger-value="{{ifIncludesBills}}"
+            bindwninputchanged="billsBlockChanged">
+            <view class="post-icons-block">
+              <block wx:for="{{bills}}" wx:key="iconUrl">
+                <view class="icon-item icon-item-{{item.ifChosen?'active': ''}}" 
+                  hover-class="icon-hover"
+                  bindtap="chooseBillsIcon"
+                  data-index="{{index}}">
+                  <image class="icon" mode="aspectFit"
+                    src="{{item.iconUrl}}"></image>
+                  <view class="icon-text"
+                    >{{item.title}}</view>
+                </view>
+              </block>
+            </view>
+          </wn-input-trigger>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="section">
+      <view class="section-title">其他</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-switch title="押金"
+            ></wn-input-switch>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input title="押金"
+            input-type="number"
+            placeholder="请输入"
+            prefix="$"
+            input-width="{{48}}"></wn-input>
+        </view>
+      </view>
+    </view> -->
+
+  </view>  
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}">
+  <view class="post-next-btn"
+    bindtap="nextStep"
+    hover-closs="post-button-hover">下一步</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

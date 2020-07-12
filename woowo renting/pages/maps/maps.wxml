@@ -1,0 +1,12 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="地图"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <map class="maps"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    scale="{{18}}"
+    markers="{{markers}}"
+    style="width:100%;height:{{mapsHeight}}px"></map>  
+</wn-window>

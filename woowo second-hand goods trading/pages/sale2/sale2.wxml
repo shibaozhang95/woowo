@@ -1,0 +1,93 @@
+<wn-navigation nav-title="发布(2/2)"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="other-inf-block">
+      <view class="contact-title">添加联系方式</view>
+      <view class="other-inf-line">
+        <view class="other-inf-txt">
+          <text class="txt">手机</text>
+        </view>
+        <view class="other-inf-input">
+          <input class="inpt" type="number" placeholder="必填" value="{{phoneNumber}}" 
+            bindinput="inputPhoneNumber"/>
+        </view>
+        <view class="other-inf-fnt">
+          <view wx:if="{{phoneValidateStatus == 'unvalidate'}}" class="fnt-btn unvalidate-fnt-btn"
+            bindtap="requestValidation">发送验证码</view>
+          <view wx:elif="{{phoneValidateStatus == 'validating'}}" class="fnt-btn validating-fnt-btn"
+            >重新发送{{timer}}s</view>
+          <view wx:elif="{{phoneValidateStatus == 'validated'}}" class="fnt-btn validated-fnt-btn">
+            <image class="fnt-icon" mode="aspectFit" src="../../statics/images/icon_uploadqr_success@2x.png" />
+            <text class="fnt-txt">验证成功</text>
+          </view>
+        </view>
+      </view>
+      <view class="other-inf-line">
+        <view class="other-inf-txt">
+          <text class="txt">微信号</text>
+        </view>
+        <view class="other-inf-input">
+          <input bindinput="inputWechatId" class="inpt" value="{{wechatId}}" placeholder="选填" />
+        </view>
+        <view class="other-inf-fnt">
+          <view wx:if="{{!ifUploadedQR}}" class="fnt-btn uplode-qrcode-btn" hover-class="normal-hover"
+            bindtap="chooseQRCode">上传二维码
+          </view>
+          <view wx:else class="fnt-btn reupload-qrcode-btn" hover-class="normal-hover"
+            bindtap="chooseQRCode">
+            <image class="fnt-icon reupload-qrcode-img" mode="aspectFit" src="../../statics/images/icon_uploadqr_success@2x.png" />
+            <text class="fnt-txt reupload-qrcode-txt">重新上传</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view hidden="{{!ifUpdatedInfo}}" class="save-info-line">
+        <view class="save-info-btn save-info-btn-{{ifSaveInfo ? 'active' : ''}}"
+          bindtap="switchSaveInfo">保存联系方式</view>
+      </view> -->
+    </view>
+
+    <view class="other-inf-block">
+      <view class="other-inf-line">
+        <view class="other-inf-txt">
+          <text class="txt">闲品所在位置</text>
+        </view>
+        <view class="other-inf-input"></view>
+        <!-- <view class="other-inf-fnt" bind:tap="getCurrentLocation" hover-class="normal-hover">
+          <view class="get-current-location">获取当前位置</view>
+          <image class="get-current-location-icon" mode="aspectFit" 
+            src="../../statics/images/icon_location@2x.png"></image>
+        </view> -->
+      </view>
+      <view class="other-inf-location" bindtap="inputAddress">
+
+        <view class="location-inf" hover-class="normal-hover">
+          {{location ? location : '必填，获取当前位置或者输入其他位置' }}
+        </view>
+        <!-- <picker mode="multiSelector" range="{{areas}}" value="{{areasValue}}"
+          bind:change="changeAreas" bind:columnchange="changeRegions">
+          <view class="location-inf" hover-class="normal-hover">
+            {{location ? location : '必填，获取当前位置或者选择其他位置'}}
+          </view>
+          <view class="other-inf-fnt">
+            <image class="arrow-icon" src="../../statics/images/icon_arrow@2x.png" mode="aspectFit"></image>
+          </view>
+        </picker> -->
+      </view>
+    </view>
+
+    <view class="section-warning"
+      >注意：发布虚假信息将被封号
+    </view>
+    <view class="section-submit">
+      <view class="submit-btn" hover-class="normal-hover" bindtap="confirmToSell">
+        {{editMode ? '更新信息' : '确认上架'}}
+      </view>
+    </view>
+
+    <!-- <canvas class="qr-code-canvas" canvas-id="qrCodeCanvas"></canvas> -->
+
+  </view>
+</wn-window>
+
+<phone-validation if-show-validation="{{ifShowValidation}}" bind:confirm="confirmValidateCode"></phone-validation>

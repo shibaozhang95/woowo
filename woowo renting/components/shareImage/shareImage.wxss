@@ -1,0 +1,66 @@
+.canvas {
+  position: absolute;
+  left: 750rpx;
+  top: 0;
+  z-index: 0;
+}
+
+.share-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.share-image-block {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.share-img {
+  display: block;
+  width: 680rpx;
+  height: 530rpx;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+
+.btns {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 35rpx;
+  margin-top: 60rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 80rpx;
+}
+
+.btn-save, .btn-cancel {
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: rgb(255, 255, 255);
+  border-radius: 20rpx;
+  text-align: center;
+  background-color: rgb(86, 182, 213);
+}
+
+.btn-cancel {
+  background-color: rgba(206, 207, 207, 1);
+  color: rgba(44, 62, 80, 1);
+}
+
+.delete-icon {
+  position: absolute;
+  top: 50rpx;
+  right: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}

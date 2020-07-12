@@ -1,0 +1,54 @@
+.login-auth-container {
+  background-color: rgb(248, 245, 240);
+  position: relative;
+}
+
+.auth-refuse-btn {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+}
+.auth-refuse-img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.login-auth-block {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 240rpx; 
+}
+
+.login-auth-img {
+  width: 360rpx;
+  height: 330rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.login-auth-txt {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 40rpx;
+  color: rgb(44, 62, 80);
+  margin: 26rpx 0;
+}
+
+.login-auth-btn {
+  width: 280rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  background-color: rgb(246, 182, 45) !important;
+  color: rgb(44, 62, 80) !important;
+  font-size: 32rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.normal-hover {
+  opacity: 0.7;
+}

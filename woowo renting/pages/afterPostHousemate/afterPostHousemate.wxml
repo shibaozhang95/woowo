@@ -1,0 +1,38 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{ifEditMode ? '更新' : '发布'}}成功"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="success-block">
+    <view class="success-block-tips"
+      >{{ifEditMode ? '更新' : '发布'}}成功！</view>
+    <image class="success-image" 
+      src="/statics/images/img_posted_succeed.png" mode="aspectFit">
+    </image>
+  </view>
+
+  <!-- <view class="sharing-image-block">
+    <image class="share-image"
+      src="{{}}"
+      mode="aspectFill"></image>
+  </view> -->
+
+  <view class="customer-service-block">
+    <text class="cs-tips">
+      如果有更多问题可以联系客服哦~
+      （复制添加小客服）
+    </text>
+    <view 
+      class="cs-wechat"
+      bind:tap="copyText"
+      data-copy-text="Redbeencake"
+    >Redbeencake</view>
+  </view>
+
+  <view class="fnt-block">
+    <view class="fnt-btn"
+      bind:tap="goToHousemateDetail">查看详情</view>
+    <view class="fnt-btn"
+      bind:tap="goToIndex">返回首页</view>
+  </view>
+</wn-window>

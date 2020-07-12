@@ -1,0 +1,22 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="我的关注"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+
+    <wn-list if-show-nothing-mark="{{ifNothing}}"
+      nothing-mark-tips="空的，快去关注其他小伙伴吧~"
+      if-show-loading="{{ifLoading}}"
+      if-show-reach-bottom="{{ifReachBottom}}"
+      reach-bottom-tips="没有啦~">
+      <view class="following-list-block">
+        <view class="one-user-item" 
+          wx:for="{{userInfoList}}" wx:key="user_id">
+          <one-user-card
+            user-info="{{item}}"></one-user-card>
+        </view>
+      </view>
+    </wn-list>
+  </view>
+</wn-window>

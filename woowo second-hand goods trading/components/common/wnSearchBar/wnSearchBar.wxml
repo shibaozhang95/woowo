@@ -1,0 +1,12 @@
+<view class="search-bar-container">
+  <image class="icon-search"
+    mode="aspectFit"
+    src="./statics/icon_search.png"></image>
+  <input type="text" class="search-input"
+    placeholder-class="search-bar-placeholder"
+    placeholder="{{initPlaceholder}}"
+    value="{{initKeyword}}"
+    confirm-type="{{confirmTypeText}}"
+    bindinput=""
+    bindconfirm="inputConfirm"></input>
+</view>

@@ -1,0 +1,182 @@
+.one-apt-container {
+  width: 640rpx;
+  height: auto;
+  background: rgb(255, 255, 255);
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+  position: relative;
+}
+
+.agent-block {
+  width: auto;
+  height: 40rpx;
+  position: absolute;
+  left: 30rpx;
+  top: 262rpx;
+  background-color: rgb(255, 255, 255);
+  line-height: 40rpx;
+  font-size: 20rpx;
+  color: rgb(44, 62, 80);
+  padding: 0 16rpx;
+  z-index: 9;
+  border-radius: 10rpx;
+}
+
+.super-agent-block {
+  width: 100%;
+  height: 80rpx;
+  /* position: absolute;
+  left: 0;
+  top: 252rpx; */
+  background-color: rgb(255, 255, 255);
+  z-index: 9;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.super-agent-block .agent-info-block {
+  width: 404rpx;
+  height: 100%;
+  background-color: rgb(246, 182, 45);
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  padding: 30rpx 36rpx 14rpx 36rpx;
+}
+
+.agent-info-block .agent-avatar {
+  width: 80rpx;
+  height: 36rpx;
+  position: relative;
+  margin-right: 6rpx;
+  
+}
+
+.agent-info-block .agent-avatar .agent-avatar-img {
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 50%;
+}
+
+.agent-info-block .agent-name {
+  max-width: 246rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  color: rgb(255, 255, 255);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+
+.super-agent-block .company-logo-block {
+  width: 236rpx;
+  height: 100%;
+}
+
+.super-agent-block .company-logo-img {
+  width: 100%;
+  height: 100%;
+}
+
+.apt-image {
+  width: 100%;
+  height: 320rpx;
+  display: block;
+  border-radius: 10rpx;
+  background-color: rgba(44, 62, 80, 0.5);
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+}
+
+.apt-image-agent {
+  box-shadow: 0 12rpx 0 0 rgb(246, 182, 45);
+}
+
+.apt-info-container {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 20rpx 20rpx;
+}
+
+.apt-title {
+  width: 600rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  margin-bottom: 10rpx;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.apt-address-and-price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apt-address {
+  width: 460rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color: rgba(44, 62, 80, 0.5);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.apt-price {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: rgb(246, 182, 45);
+}
+
+.types-block {
+  position: absolute;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  top: 20rpx;
+  right: 12rpx;
+  background-color: rgb(246, 182, 45);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10rpx;
+}
+
+.type, .house-type {
+  height: 40rpx;
+  line-height: 40rpx;
+  color: rgb(255, 255, 255);
+  font-size: 20rpx;
+  font-weight: bold;
+}
+
+.house-type {
+  margin-left: 20rpx;
+}
+
+.like-block {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}
+
+.like-btn {
+  width: 60rpx;
+  height: 50rpx;
+  
+  display: block;
+}

@@ -1,0 +1,30 @@
+<view class="search-bar-container">
+  <view class="search-icon-block">
+    <image class="search-icon" src="statics/icon_search@2x.png" mode="aspectFit" lazy-load="false"></image>
+  </view>
+  
+
+  <view class="areas-block">
+    <view class="chosen-areas-block">
+      <block wx:for="{{chosenAreasList}}" wx:key="">
+        <view class="one-chosen-area">
+          <view class="area-name">{{item.formatAddress}}</view>
+          <view class="area-delete"
+            bind:tap="deleteOne"
+            data-area-index="{{index}}">
+            <image class="area-delete-icon" mode="aspectFit"
+              src="/statics/images/icon_delete.png"></image>  
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="new-areas-input">
+      <input type="text" focus="{{true}}" 
+        placeholder="输入地区(suburb)，或邮编"
+        placeholder-class="input-placehoder"
+        value="{{areakeyWord}}"
+        bindinput="searchNewArea"
+        focus="{{ifGetFocus}}"></input>
+    </view>
+  </view>
+</view>

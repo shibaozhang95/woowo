@@ -1,0 +1,16 @@
+<view class="menu-container">
+  <view class="menu-block">
+    <block wx:for="{{menus}}" wx:key="">
+      <view class="menu-item" hover-class="normal-hover"
+        bind:tap="fromMenuTo"
+        data-value="{{item.value}}"
+        data-url="{{item.url}}"
+        data-if-avaliable="{{item.avaliable}}">
+        <image class="menu-item-img" mode="aspectFill" 
+          src="{{item.avaliable?item.iconUrl:item.diableIconUrl}}"></image>
+        <view class="menu-item-txt menu-item-txt-{{item.avaliable?'':'disable'}}"
+          >{{item.text}}</view>
+      </view>
+    </block>
+  </view>
+</view>

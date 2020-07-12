@@ -1,0 +1,30 @@
+.one-agent-container {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.company-logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: rgba(246, 182, 45);
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+
+.company-log-img {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.company-name {
+  width: 120rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  text-align: center;
+  color: rgb(44, 62, 80);
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}

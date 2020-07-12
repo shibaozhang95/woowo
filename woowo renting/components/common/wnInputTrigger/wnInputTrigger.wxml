@@ -1,0 +1,14 @@
+<view class="input-trigger-container">
+  <view class="switch-line">
+    <wn-input-switch
+      title="{{title}}"
+      default-switch-value="{{triggerValue}}"
+      bindwninputchanged="wninputchanged">
+    </wn-input-switch>
+  </view>
+  <view class="trigger-block"
+    style="height:{{defaultTriggerValue?blockHeith:0}}px"
+    animation="{{slideAnimation}}">
+    <slot></slot>
+  </view>
+</view>

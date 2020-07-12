@@ -1,0 +1,109 @@
+.function-block {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  margin-top: 0;
+  margin-left: 0;
+  z-index: 99;
+}
+
+.search-bar-block {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.sort-bar-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-item {
+  width: 248rpx;
+  height: 60rpx;
+}
+
+.sort-bar-split {
+  width: 2rpx;
+  height: 60rpx;
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+.sort-item-content {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 52rpx;
+}
+
+.sort-item-txt {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  height: 40rpx;
+  color: rgba(44, 62, 80, 0.5);
+  max-width: 210rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.sort-item-chosen .sort-item-txt {
+  color: rgba(44, 62, 80, 1);
+}
+
+.sort-arrow {
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: rgba(44, 62, 80, 0.5) transparent transparent transparent;
+  margin: 20rpx 0 12rpx 10rpx;
+}
+
+.sort-item-chosen .sort-arrow {
+  border-color: rgba(44, 62, 80, 1) transparent transparent transparent;
+}
+
+.sort-item-icon-block {
+  width: 24rpx;
+  height: 24rpx;
+  /* margin: 2rpx 0 0 10rpx; */
+  margin-left: 10rpx;
+  position: relative;
+}
+
+.sort-item-icon {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.sort-item-icon-bold {
+  left: 1rpx;
+}
+
+filter-for-housemate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+
+
+.housemate-list {
+  overflow: hidden;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.one-housemate-card {
+  margin-top: 20rpx;
+}

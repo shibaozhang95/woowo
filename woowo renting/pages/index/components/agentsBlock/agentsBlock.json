@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "one-agent-brif": "/components/oneAgentBrif/oneAgentBrif"
+  }
+}

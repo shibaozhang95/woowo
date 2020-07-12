@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "news-brief": "components/newsBrief/newsBrief"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

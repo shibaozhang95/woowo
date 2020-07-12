@@ -1,0 +1,88 @@
+.search-bar-container {
+  width: 690rpx;
+  min-height: 100rpx;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search-icon-block {
+  display: block;
+  width: 36rpx;
+  height: 44rpx;
+  margin: 28rpx 30rpx;
+}
+
+.search-icon-block .search-icon {
+  width: 36rpx;
+  height: 44rpx;
+}
+
+.areas-block {
+  width: 564rpx;
+  height: auto;
+  max-height: 240rpx;
+  margin: 20rpx 30rpx 20rpx 0;
+  overflow-y: scroll;
+}
+
+.new-areas-input {
+  width: 100%;
+  height: 44rpx;
+}
+.new-areas-input input {
+  width: 100%;
+  height: 100%;
+  /* padding: 4rpx 0; */
+  display: block;
+  font-size: 32rpx;
+  line-height: 36rpx;
+  color: rgba(136, 193, 211, 1);
+}
+.new-areas-input .input-placehoder {
+  font-size: 32rpx;
+  line-height: 36rpx;
+  color: rgba(136, 193, 211, 0.5);
+}
+
+.one-chosen-area {
+  width: 100%;  /*642*/
+  height: 50rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 8rpx;
+}
+
+.one-chosen-area .area-name {
+  width: 500rpx;
+  height: 100%;
+  padding-top: 12rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 38rpx;
+  color: rgb(55, 74, 94);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.one-chosen-area .area-delete {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  background-color: rgb(149, 158, 167);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.area-delete-icon {
+  width: 50rpx;
+  height: 50rpx;
+}

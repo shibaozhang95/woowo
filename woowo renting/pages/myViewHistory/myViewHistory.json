@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "one-apt": "../../components/oneApt/oneApt"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

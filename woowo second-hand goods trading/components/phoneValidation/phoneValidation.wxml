@@ -1,0 +1,17 @@
+<view hidden="{{!ifShowValidation}}">
+  <full-screen-container >
+    <view class="validation-block">
+      <view class="validation-title">输入验证码</view>
+      <view class="validation-input">
+        <input type="number" bindinput="inputCode" value="{{inputValidateCode}}" placeholder="输入4位数字" />
+      </view>
+      <!-- <view class="validation-error">验证码错误</view> -->
+      <view class="validation-fnt">
+        <view class="validation-fnt-btn validation-fnt-confirm" 
+          bindtap="confirmOpt" bindtap="confirmValidate">确定</view>
+        <view class="validation-fnt-btn validation-fnt-cancel"
+          bindtap="cancelOpt" bindtap="cancelValidate">取消</view>
+      </view>
+    </view>
+  </full-screen-container>
+</view>

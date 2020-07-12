@@ -1,0 +1,98 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="我的发布"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <view class="user-info-block"
+      style="top:{{containerTopPos}}px">
+      <view class="avatar-and-username-block">
+        <image class="avatar" 
+          src="{{woowoUserInfo.user_image}}" mode="aspectFit"></image>
+        <view class="username-block">
+          <view class="username">{{woowoUserInfo.username}}</view>
+          <view class="bussiness-tag"
+            wx:if="{{woowoUserInfo.user_right!='normal'}}">商</view>
+        </view>
+      </view>
+
+      <!-- navigator block -->
+      <view class="navigation-block">
+        <view class="nav-btn nav-btn-{{currentContentId == 0 ? 'chosen' : ''}}"
+          catch:tap="switchLikedContent" data-tid="{{0}}">
+          <view class="nav-txt">发布房源</view>
+          <view class="nav-indicator"></view>
+        </view>
+        <view class="horizontal-seperate-line"></view>
+        <view class="nav-btn nav-btn-{{currentContentId == 1 ? 'chosen' : ''}}"
+          catch:tap="switchLikedContent" data-tid="{{1}}">
+          <view class="nav-txt">发布求租</view>
+          <view class="nav-indicator"></view>
+        </view>
+      </view>
+
+      <view class="post-count"
+        >已发布 {{currentContentId == 0 ? (onShelfCount + ' 个房源') : (onShelfCountHm + ' 个求租')}} </view>
+    </view>
+
+    <swiper class="post-content" 
+      indicator-dots="{{false}}"
+      autoplay="{{false}}" duration="{{500}}" 
+      bindchange="swipeLikedContent"
+      current="{{currentContentId}}"
+      style="width:100%;height:{{windowHeight - navHeight}}px">
+      <swiper-item
+       style="width:100%;height:100%;">
+        <scroll-view scroll-y="{{true}}"
+        style="width:100%;height:100%;">
+        <!-- the list -->
+          <wn-list if-show-nothing-mark="{{ifNothing}}"
+            nothing-mark-tips="空的，你还没有发布过哦~"
+            if-show-loading="{{ifLoading}}"
+            if-show-reach-bottom="{{ifReachBottom}}"
+            reach-bottom-tips="没有啦~"
+            extra-top-block-height="{{totalNavHeight - navHeight}}">
+            <view class="housing-list-block">
+              <view class="one-apt-item" 
+                wx:for="{{houseInfoList}}" wx:key="id">
+                <one-apt-edit
+                  woowo-house-info="{{item}}"
+                  bindshelfchanged="shelfChanged"></one-apt-edit>
+              </view>
+            </view>
+          </wn-list>
+        </scroll-view>
+      </swiper-item>
+
+      <!-- for housemate -->
+      <swiper-item
+        style="width:100%;height:100%;">
+        <scroll-view scroll-y="{{true}}"
+          style="width:100%;height:100%;">
+          
+          <!-- the list -->
+          <wn-list if-show-nothing-mark="{{ifHmNothing}}"
+            nothing-mark-tips="空的，目前没有上架的求租哦~"
+            if-show-loading="{{ifHmLoading}}"
+            if-show-reach-bottom="{{ifHmReachBottom}}"
+            reach-bottom-tips="没有啦~"
+            extra-top-block-height="{{totalNavHeight - navHeight}}">
+            <view class="housemate-list-block">
+              <block wx:for="{{housemateInfoList}}" 
+                wx:key="id">
+                <view class="housemate-item">
+                  <housemate-card
+                    housemate-info="{{item}}"
+                    if-on-edit-page="{{true}}"
+                    bind:deleteahousemate="deleteAHousemate"></housemate-card>
+                </view>
+              </block>
+            </view>
+          </wn-list>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+
+    
+  </view>
+</wn-window>

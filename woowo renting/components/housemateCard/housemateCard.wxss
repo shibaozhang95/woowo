@@ -1,0 +1,64 @@
+.housemate-card-container {
+  width: 640rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+housemate-carse-base {
+  z-index: 0;
+}
+
+.like-block {
+  position: absolute;
+  top: 10rpx;
+  right: 20rpx;
+}
+
+.like-icon {
+  width: 60rpx;
+  height: 50rpx;
+}
+
+.edit-block {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+.seperate-line {
+  width: 600rpx;
+  height: 2rpx;
+  margin: 10rpx auto 0 auto;
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.function-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.horizontal-seperate-line {
+  height: 80rpx;
+  width: 2rpx;
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.edit-btn,
+.delete-btn {
+  width: 318rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.edit-btn {
+  color: rgb(246, 182, 45);
+}
+.delete-btn {
+  color: rgb(146, 153, 160);
+}

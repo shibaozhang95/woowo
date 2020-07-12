@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "merchant-goods-card": "./components/merchantGoodsCard/merchantGoodsCard"
+  }
+}

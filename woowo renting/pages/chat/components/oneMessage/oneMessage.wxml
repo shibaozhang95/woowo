@@ -1,0 +1,50 @@
+<view class="one-message-container">
+  <view class="message-time">{{showingMsgDate}}</view>
+  <view class="message-content-block message-content-{{ifOwn?'own':''}}">
+    <view class="user-avatar">
+      <image src="{{userInfo.user_image}}" mode="aspectFit" lazy-load="{{true}}">
+      </image>
+    </view>
+    <view class="message-bubble">
+      <view class="message-bubble-text"
+        wx:if="{{messageItem.msgType=='text'}}"
+        >{{messageItem.msgContent}}</view>
+      <image class="message-bubble-image"
+        bindtap="previewImages"
+        data-imgs="{{[messageItem.msgContent]}}"
+        data-current-img="{{messageItem.msgContent}}"
+        src="{{messageItem.ifSending?messageItem.msgContent:messageItem.msgContent+'-scale_50'}}"
+        mode="widthFix"
+        wx:if="{{messageItem.msgType=='image'}}"
+      ></image>
+    </view>
+    <view class="loading-icon-block"
+      wx:if="{{ifOwn&&messageItem.ifSending}}">
+      <image class="loading-icon" 
+        src="/statics/images/loading_2.gif" mode="widthFix"></image>
+    </view>
+    <view class="failed-icon-block" 
+      wx:if="{{ifOwn&&messageItem.ifFailedToSend}}">
+      <image class="failed-icon" 
+        bindtap="showFailedBtnBlock"
+        src="statics/icon_message_failed.png" mode="aspectFit"></image>
+
+      <view class="failed-btn-block"
+        wx:if="{{ifShowFailedBtnBlock}}">
+        <view class="resend-btn" hover-class="resend-btn-hover"
+          bindtap="resendMessage">
+          <!-- <image class="btn-bg" 
+            src="statics/bg_message_left.png" mode="aspectFit"></image> -->
+          <view>重发</view>
+        </view>
+        <view class="delete-btn"  hover-class="delete-btn-hover"
+          bindtap="deleteMessage">
+          <!-- <image class="btn-bg" 
+            src="statics/bg_message_right.png" mode="aspectFit"></image> -->
+          <view>删除</view>
+        </view>
+      </view>
+      
+    </view>
+  </view>
+</view>

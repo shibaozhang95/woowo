@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "one-message": "components/oneMessage/oneMessage",
+    "chat-input": "components/chatInput/chatInput"
+  }
+}

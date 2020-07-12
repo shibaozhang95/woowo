@@ -1,0 +1,15 @@
+{
+
+  "enablePullDownRefresh": true,
+
+  "usingComponents": {
+    "tab-bar": "../../components/tabBar/tabBar",
+    "brif-goods": "../../components/brifGoods/brifGoods",
+    "login-auth": "../../components/loginAuth/loginAuth",
+    "modal": "../../components/modal/modal",
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView",
+    "menu": "components/menu/menu",
+    "wn-search-bar": "../../components/common/wnSearchBar/wnSearchBar",
+    "popular-goods": "./components/popularGoods/popularGoods"
+  }
+}

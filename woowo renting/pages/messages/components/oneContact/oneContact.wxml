@@ -1,0 +1,17 @@
+<view class="one-contact-container">
+  <view class="contact-avatar">
+    <image class="avatar-img" src="{{contactImage}}" mode="aspectFit" lazy-load="{{true}}">
+    </image>
+    <view class="unread-red-pot"
+      wx:if="{{unreadMsgNum>0}}">{{unreadMsgNum>99?'99+':unreadMsgNum}}</view>
+  </view>
+  <view class="contact-content">
+    <view class="username-block">
+      <view class="contact-name">{{contactUsername}}</view>
+      <view class="bussiness-tag"
+        wx:if="{{contactUserRight!='normal'}}">商</view>
+    </view>
+    
+    <view class="contact-message">{{lastMessage}}</view>
+  </view>
+</view>

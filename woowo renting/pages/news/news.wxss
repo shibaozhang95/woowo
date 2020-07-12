@@ -1,0 +1,3 @@
+.news-item {
+  border-bottom: 2rpx solid rgba(44, 62, 80, 0.1);
+}

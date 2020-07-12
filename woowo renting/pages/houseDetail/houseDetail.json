@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "function-bar": "components/functionBar/functionBar",
+    "share-image": "../../components/shareImage/shareImage",
+    "contact-info": "/components/contactInfo/contactInfo"
+  },
+
+  "backgroundColor": "#F8F5F0",
+  "enablePullDownRefresh": false
+  
+}

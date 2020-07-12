@@ -1,0 +1,132 @@
+page {
+  background-color: rgb(248, 245, 240);
+  overflow-x: hidden;
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+.success-block {
+  width: 100%;
+  height: auto;
+  margin: 80rpx 0 0 0;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.success-block-tips {
+  width: 100%;
+  font-size: 50rpx;
+  line-height: 72rpx;
+  height: 72rpx;
+  text-align: center;
+  color: rgb(44, 62, 80);
+  margin-bottom: 50rpx;
+}
+.success-image {
+  width: 300rpx;
+  height: 300rpx;
+  display: block;
+}
+
+.share-btn {
+  position: absolute;
+  left: 260rpx;
+  bottom: -70rpx;
+}
+
+.fnt-block {
+  width: 100%;
+  padding: 0 136rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+/* .sharing-image-block {
+  width: 100%;
+  display: flex;
+  margin: 110rpx 0 64rpx 0;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.share-image {
+  width: 480rpx;
+  height: 560rpx;
+  display: block;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  margin-bottom: 44rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16);
+}
+.sharing-image-block .tips {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 136rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.sharing-image-block .tips .line {
+  width: 140rpx;
+  height: 2rpx;
+  background-color: rgba(44, 62, 80, 0.5);
+}
+.sharing-image-block .tips .tips-text {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgba(44, 62, 80, 0.5);
+} */
+
+.customer-service-block {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.cs-tips {
+  font-size: 32rpx;
+  line-height: 44rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.cs-wechat {
+  width: 480rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: rgb(86, 182, 213);
+  text-align: center;
+  border-radius: 20rpx;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2rpx solid rgb(86, 182, 213);
+  margin-bottom: 20rpx;
+}
+
+.fnt-btn {
+  width: 230rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  color: rgb(255, 255, 255);
+  background-color: rgb(86, 182, 213);
+}
+
+/* .canvas {
+  position: absolute;
+  left: 750rpx;
+  top: 0;
+  z-index: 0;
+} */

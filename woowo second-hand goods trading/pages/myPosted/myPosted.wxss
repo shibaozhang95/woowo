@@ -1,0 +1,82 @@
+.container {
+  position: relative;
+}
+
+.posted-nav {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  z-index: 99;
+}
+
+.posted-nav-ls {
+  float: left;
+  width: 50%;
+  height: 60rpx;
+  line-height: 40rpx;
+  border-bottom: 4rpx solid #fff;
+  padding: 8rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: rgba(44, 62, 80, 0.5)
+}
+.posted-nav-ls-focused {
+  border-bottom: 4rpx solid rgb(246, 182, 45);
+  color: rgba(44, 62, 80, 1);
+}
+
+
+.posted-content swiper-item,
+.posted-content .items-content {
+  width: 100%;
+  height: 100%;
+  /* (603 - 30) * 2 = 1146
+     603 is the windowHeight
+     30 is the posted nav height
+  */
+}
+.items-content-selling,
+.items-content-unsell {
+  width: 100%;
+}
+.one-goods-block {
+  margin: 20rpx 0;
+}
+
+.one-goods-fnt {
+  background-color: #fff;
+  border-top: 2rpx solid rgba(44, 62, 80, 0.3);
+  overflow: hidden;
+}
+.one-goods-fnt-btn {
+  width: 208rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  background-color: rgb(246, 182, 45);
+  color: rgb(44, 62, 80);
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  margin: 8rpx 32rpx 8rpx auto;
+  float: right;
+  outline: none;
+  box-shadow: none;
+}
+
+.goods-account-block {
+  width: 100%;
+  height: 60rpx;
+  background: #fff;
+  color: rgb(44, 62, 80);
+  padding: 14rpx 0;
+  line-height: 32rpx;
+  font-size: 22rpx;
+}
+
+.goods-account-block .title {
+  float: left;
+}
+.goods-account-block .value {
+  float: right;
+}

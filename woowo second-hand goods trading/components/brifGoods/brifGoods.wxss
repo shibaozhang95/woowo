@@ -1,0 +1,115 @@
+.brif-goods-container {
+  /* float: left; */
+  width: 360rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+.brif-goods-user-inf {
+  width: 100%;
+  padding: 20rpx 8rpx 20rpx 20rpx;
+  overflow: hidden;
+}
+
+.user-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  float: left;
+  background-color: rgb(136, 193, 211);
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+
+.user-name {
+  display: block;
+  float: left;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color: rgb(44, 62, 80);
+  margin: 12rpx 0 8rpx 12rpx;
+  max-width: 140rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.user-location {
+  float: right;
+  line-height: 32rpx;
+  font-size: 22rpx;
+  color: rgb(136, 193, 211);
+  margin: 18rpx 0 14rpx 0;
+  max-width: 120rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.brif-goods-img {
+  overflow: hidden;
+  /* width: 100%; */
+  /* height: auto; */
+  
+  max-height: 250px;
+  background-color: rgb(44, 62, 80);
+}
+.goods-pic {
+  display: block;
+  width: 100%;
+  /* height: 100%; */
+  /* height: auto; */
+  /* min-height: 360rpx; */
+  max-height: 480rpx;
+}
+
+.brif-goods-inf-title {
+  margin: 20rpx 20rpx 0 20rpx;
+  color: rgb(44, 62, 80);
+  line-height: 40rpx;
+  font-size: 28rpx;
+  height: 40rpx;
+  overflow: hidden;
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.brif-goods-inf-second {
+  padding: 30rpx 20rpx 20rpx 20rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.brif-goods-inf-price {
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(246, 182, 45);
+  float: left;
+}
+.brif-goods-inf-time {
+  float: right;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  margin: 6rpx 0 4rpx 0;
+  color: rgb(136, 193, 211);
+}
+
+/* For collecting formId */
+.collect-form {
+  
+  width: 100%;
+  height: 100%;
+}
+
+.collect-btn {
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  text-align: unset;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0)
+}
+
+.collect-btn::after{ border: none; }

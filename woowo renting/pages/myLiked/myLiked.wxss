@@ -1,0 +1,70 @@
+.navigation-block {
+  position: fixed;
+  margin-top: 0;
+  margin-left: 0;
+  width: 100%;
+  background-color: rgb(86, 182, 213);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+}
+
+.nav-btn {
+  width: 374rpx;
+  height: 70rpx;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal-seperate-line {
+  width: 2rpx;
+  height: 70rpx;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-txt {
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 32rpx;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10rpx;
+}
+
+.nav-indicator {
+  width: 134rpx;
+  height: 6rpx;
+  background-color: rgb(86, 182, 213);
+  border-radius: 6rpx;
+}
+
+.nav-btn-chosen .nav-txt {
+  color: rgb(255, 255, 255)
+}
+
+.nav-btn-chosen .nav-indicator {
+  background-color: rgb(255, 255, 255)
+}
+
+.housing-list-block,
+.housemate-list-block {
+  width: 100%;
+  padding-top: 40rpx;
+}
+
+.house-item,
+.housemate-item {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}
+
+swiper-item,
+swiper-item scroll-view {
+  height: 100%;
+}

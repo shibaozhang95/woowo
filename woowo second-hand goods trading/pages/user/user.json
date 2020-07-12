@@ -1,0 +1,7 @@
+{
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "tab-bar": "../../components/tabBar/tabBar",
+    "login-auth": "../../components/loginAuth/loginAuth"
+  }
+}

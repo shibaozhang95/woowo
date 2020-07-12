@@ -1,0 +1,45 @@
+.wn-input-radio-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40rpx;
+  height: 180rpx;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.input-title {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  white-space: nowrap;
+  margin: 30rpx 0;
+}
+
+.input-fnt {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start; 
+  align-items: center;
+}
+
+.choice-item {
+  height: 50rpx;
+  line-height: 46rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  border-radius: 40rpx;
+  border: 2rpx solid rgba(44, 62, 80, 0.5);
+  background-color: rgb(255, 255, 255);
+  color: rgba(44, 62, 80, 0.5);
+  font-size: 30rpx;
+  margin-right: 30rpx;
+}
+
+.choice-item-chosen {
+  border: 2rpx solid rgb(86, 182, 213);
+  background-color: rgb(86, 182, 213);
+  color: rgb(255, 255, 255);
+}
+

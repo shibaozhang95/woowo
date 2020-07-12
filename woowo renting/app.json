@@ -1,0 +1,90 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/news/news",
+    "pages/messages/messages",
+    "pages/homepage/homepage",
+    "pages/chat/chat",
+    "pages/areasSearch/areasSearch",
+    "pages/adding/adding",
+    "pages/housingList/housingList",
+    "pages/post/post",
+    "pages/postFacilities/postFacilities",
+    "pages/postLocation/postLocation",
+    "pages/postDescription/postDescription",
+    "pages/postRules/postRules",
+    "pages/postPrice/postPrice",
+    "pages/postId/postId",
+    "pages/houseDetail/houseDetail",
+    "pages/myPost/myPost",
+    "pages/userPage/userPage",
+    "pages/myViewHistory/myViewHistory",
+    "pages/myLiked/myLiked",
+    "pages/myFollowing/myFollowing",
+    "pages/houseDetail/pages/allFacilities/allFacilities",
+    "pages/maps/maps",
+    "pages/afterPost/afterPost",
+    "pages/article/article",
+    "pages/aboutUs/aboutUs",
+    "pages/activities/activities",
+    "pages/housemateList/housemateList",
+    "pages/postHousemate1/postHousemate1",
+    "pages/postHousemate2/postHousemate2",
+    "pages/housemateDetail/housemateDetail",
+    "pages/afterPostHousemate/afterPostHousemate"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "Woowo 租房",
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "custom",
+    "backgroundColor": "#ffffff",
+    "onReachBottomDistance": 200
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/messages/messages",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/homepage/homepage",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于获取你当前地理位置"
+    }
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx8d5c44e08ac1dc3e",
+    "wxc3e43cb4472891ef"
+  ],
+  "usingComponents": {
+    "login-auth": "components/loginAuth/loginAuth",
+    "search-bar": "components/searchBar/searchBar",
+    "wn-tab-bar": "components/common/wnTabBar/wnTabBar",
+    "wn-window": "components/common/wnWindow/wnWindow",
+    "wn-navigation": "components/common/wnNavigation/wnNavigation",
+    "wn-input-picker": "components/common/wnInputPicker/wnInputPicker",
+    "wn-input-switch": "components/common/wnInputSwitch/wnInputSwitch",
+    "wn-input": "components/common/wnInput/wnInput",
+    "wn-input-count": "components/common/wnInputCount/wnInputCount",
+    "wn-input-trigger": "components/common/wnInputTrigger/wnInputTrigger",
+    "wn-list": "components/common/wnList/wnList",
+    "wn-input-selection": "components/common/wnInputSelection/wnInputSelection",
+    "wn-input-selection2": "components/common/wnInputSelection2/wnInputSelection2"
+  },
+  "sitemapLocation": "sitemap.json"
+}

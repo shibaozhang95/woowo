@@ -1,0 +1,95 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'身份认证'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{45}}">
+  <view class="container">
+    <view class="personal-info-block">
+      <image class="user-avatar" src="{{woowoUserInfo.user_image}}" mode="aspectFit"></image>
+      <view class="username">{{woowoUserInfo.username}}</view>
+    </view>
+
+    <view class="id-section">
+      <view class="section-line">
+        <view class="section-title">手机号</view>
+        <input type="text" class="section-input"
+          placeholder="请输入澳洲手机号"
+          placeholder-class="section-input-placeholder"
+          bindinput="phoneNumberChanged"
+          value="{{phoneNumber}}"></input>
+        <view class="section-fnt">
+          <view class="section-fnt-btn btn-send-id-code"
+            wx:if="{{phoneVerificationStatus == 'unverified'}}"
+            bindtap="requestVerificationCode">
+            <view class="section-fnt-btn-txt">发送验证码</view>
+          </view>
+          <view class="section-fnt-btn btn-send-id-code-verifying"
+            wx:if="{{phoneVerificationStatus == 'verifying'}}">
+            <view class="section-fnt-btn-txt">重新发送{{timer}}s</view>
+          </view>
+          <view class="section-fnt-btn btn-send-id-code-verified"
+            wx:if="{{phoneVerificationStatus == 'verified'}}">
+            <image class="icon-yes" src="statics/icon_yes.png" 
+              mode="aspectFit"></image>
+            <view class="section-fnt-btn-txt">验证成功</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="section-line">
+        <view class="section-title">微信号</view>
+        <input type="text" class="section-input"
+          placeholder="输入微信号或上传二维码"
+          placeholder-class="section-input-placeholder"
+          bindinput="wechatChanged"
+          value="{{fieldObj.wechat}}"></input>
+        <view class="section-fnt">
+          <view class="section-fnt-btn btn-upload-qr-code"
+            wx:if="{{qrCodeUploadingStatus == 'unuploaded'}}"
+            bindtap="chooseQRCode">
+            <view class="section-fnt-btn-txt">上传二维码</view>
+          </view>
+          <view class="section-fnt-btn btn-upload-qr-code-uploading"
+            wx:if="{{qrCodeUploadingStatus == 'uploading'}}">
+            <view class="section-fnt-btn-txt">上传中...</view>
+          </view>
+          <view class="section-fnt-btn btn-upload-qr-code-uploaded"
+            wx:if="{{qrCodeUploadingStatus == 'uploaded'}}"
+            bindtap="chooseQRCode">
+            <image class="icon-yes" src="statics/icon_yes.png" 
+              mode="aspectFit"></image>
+            <view class="section-fnt-btn-txt">重新上传</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="qr-code-block"
+        wx:if="{{fieldObj.wechatCodeUrl}}">
+        <image class="qr-code-image" 
+          src="{{fieldObj.wechatCodeUrl}}" mode="aspectFit"></image>
+      </view>
+
+      <view class="save-info-block"
+        wx:if="{{ifShowSaveInfo}}">
+        <view class="save-info-btn save-info-btn-{{ifSaveInfo?'active':'unactive'}}"
+          bindtap="triggerSaveInfo"
+          >保存联系方式</view>
+      </view>
+    </view>
+  </view>  
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}">
+  <view class="post-next-btn"
+    bindtap="nextStep"
+    hover-closs="post-button-hover">确定</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>
+
+<phone-verification
+  wx:if="{{ifShowVerification}}"
+  if-show-error="{{ifShowVerificationError}}"
+  bindverificationconfirm="verificationConfirm"
+  bindverificationcancel="verificationCancel"></phone-verification>

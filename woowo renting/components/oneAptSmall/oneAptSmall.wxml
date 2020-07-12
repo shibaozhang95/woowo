@@ -1,0 +1,12 @@
+<view class="one-apt-small-container"
+  bindtap="goToHouseDetail">
+  <image class="apt-image" mode="aspectFill"
+    src="{{woowoHouse.imageUrls[0]?woowoHouse.imageUrls[0]+'-scale_50':''}}"></image>
+  <view class="apt-title">{{woowoHouse.houseTitle}}</view>
+  <view class="apt-sub-title">{{woowoHouse.houseAddress}}</view>
+</view>
+
+
+<login-auth show-login-auth="{{ifShowLoginAuth}}" 
+  bind:loginsuccess="loginSuccess"
+  ></login-auth>

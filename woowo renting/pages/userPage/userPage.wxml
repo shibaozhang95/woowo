@@ -1,0 +1,106 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{navTitle}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="user-info-block user-info-block-{{ifSelf ? '' : 'others'}}">
+    <view class="avatar-and-username-block">
+      <image class="avatar" 
+        src="{{targetUserInfo.user_image}}" mode="aspectFit"></image>
+
+      <view class="extra-layout">
+        <view class="username-block">
+          <view class="username">{{targetUserInfo.username}}</view>
+          <view class="bussiness-tag"
+            wx:if="{{targetUserInfo.user_right!='normal'}}">商</view>
+        </view>
+
+        <view wx:if="{{!ifSelf}}" 
+          class="following-fnt-btn following-fnt-btn-{{ifFollowingHouseHolder ? 'following' : ''}}"
+          bindtap="switchFollowingStatus"
+          >{{ifFollowingHouseHolder ? '已关注' : '关注'}}</view>
+      </view>
+    </view>
+
+    <!-- navigator block -->
+    <view class="navigation-block">
+      <view class="nav-btn nav-btn-{{currentContentId == 0 ? 'chosen' : ''}}"
+        catch:tap="switchLikedContent" data-tid="{{0}}">
+        <view class="nav-txt">发布房源</view>
+        <view class="nav-indicator"></view>
+      </view>
+      <view class="horizontal-seperate-line"></view>
+      <view class="nav-btn nav-btn-{{currentContentId == 1 ? 'chosen' : ''}}"
+        catch:tap="switchLikedContent" data-tid="{{1}}">
+        <view class="nav-txt">发布求租</view>
+        <view class="nav-indicator"></view>
+      </view>
+    </view>
+
+    
+  </view>
+
+  <swiper class="post-content" 
+    indicator-dots="{{false}}"
+    autoplay="{{false}}" duration="{{500}}" 
+    bindchange="swipeLikedContent"
+    current="{{currentContentId}}"
+    style="width:100%;height:{{windowHeight - navHeight}}px">
+    <swiper-item
+      style="width:100%;height:100%;">
+      <scroll-view scroll-y="{{true}}"
+        style="width:100%;height:100%;">
+
+         <!-- shelf count -->
+        <view class="post-count"
+          style="top:{{ifSelf? selfPersonalInfoHeight : othersPersonalInfoHeight}}px"
+          >当前在线 {{onShelfCount}} 个房源</view>
+        
+        <!-- the list -->
+        <wn-list if-show-nothing-mark="{{ifNothing}}"
+          nothing-mark-tips="空的，目前没有上架的房源哦~"
+          if-show-loading="{{ifLoading}}"
+          if-show-reach-bottom="{{ifReachBottom}}"
+          reach-bottom-tips="没有啦~"
+          extra-top-block-height="{{(ifSelf? selfPersonalInfoHeight : othersPersonalInfoHeight) + shelfCountHeight}}">
+          <view class="housing-list-block">
+            <block wx:for="{{houseInfoList}}" wx:key="id">
+              <view class="one-apt-item" wx:if="{{item.status=='postedChecked'}}">
+                <one-apt
+                  house-info="{{item}}"
+                  if-not-go-further="{{true}}"></one-apt>
+              </view>
+            </block>
+          </view>
+        </wn-list>
+      </scroll-view>
+    </swiper-item>
+
+    <!-- for housemate -->
+    <swiper-item
+      style="width:100%;height:100%;">
+      <scroll-view scroll-y="{{true}}"
+        style="width:100%;height:100%;">
+        
+        <!-- the list -->
+        <wn-list if-show-nothing-mark="{{ifHmNothing}}"
+          nothing-mark-tips="空的，目前没有上架的求租哦~"
+          if-show-loading="{{ifHmLoading}}"
+          if-show-reach-bottom="{{ifHmReachBottom}}"
+          reach-bottom-tips="没有啦~"
+          extra-top-block-height="{{(ifSelf? selfPersonalInfoHeight : othersPersonalInfoHeight)}}">
+          <view class="housemate-list-block">
+            <block wx:for="{{housemateInfoList}}" 
+              wx:key="id">
+              <view class="housemate-item">
+                <housemate-card
+                  housemate-info="{{item}}"></housemate-card>
+              </view>
+            </block>
+          </view>
+        </wn-list>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  
+</wn-window>

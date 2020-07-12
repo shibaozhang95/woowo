@@ -1,0 +1,9 @@
+<view class="news-brief-container">
+  <image class="news-image" 
+    src="{{oneNews.img}}" mode="aspectFill"></image>
+
+  <view class="news-info-block">
+    <view class="news-title"
+      >{{oneNews.title}}</view>
+  </view>
+</view>

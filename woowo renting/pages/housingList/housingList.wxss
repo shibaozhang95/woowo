@@ -1,0 +1,139 @@
+page {
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  /* position: relative; */
+  overflow: hidden;
+  
+}
+
+.function-block {
+  width: 100%;
+  height: 220rpx;
+  position: fixed;
+  z-index: 999;
+  background-color: rgb(255, 255, 255);
+}
+
+.function-block .search-bar-block {
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(44, 62, 80, 0.05);
+}
+
+.sort-bar {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: rgba(44, 62, 80, 0.05);
+  position: relative;
+}
+
+.sort-bar-sort,
+.sort-bar-agent,
+.sort-bar-choose-agent,
+.sort-bar-filter {
+  width: 248rpx;
+  height: 100%;
+}
+
+.sort-bar-split {
+  width: 2rpx;
+  height: 100%;
+  background-color: rgba(44, 62, 80, 0.1);
+}
+
+.sort-bar-item {
+  width: auto;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgba(44, 62, 80, 0.5);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.sort-bar-item-chosen {
+  color: rgba(44, 62, 80, 1);
+}
+
+.price-sort-arrow-1 {
+  /* width: 10rpx;
+  height: 12rpx; */
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: transparent transparent rgba(44, 62, 80, 1) transparent;
+  margin: 0 0 12rpx 10rpx;
+}
+
+.price-sort-arrow-2 {
+  border-width: 10rpx;
+  border-style: solid;
+  border-color: rgba(44, 62, 80, 1) transparent transparent transparent;
+  margin: 16rpx 0 12rpx 10rpx;
+}
+
+.sort-bar-filter-icon-block {
+  width: 24rpx;
+  height: 24rpx;
+  margin: 10rpx 0 0 10rpx;
+  position: relative;
+}
+.sort-bar-filter-icon {
+  width: 24rpx;
+  height: 24rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sort-bar-filter-icon-bold {
+  left: 1rpx;
+}
+
+.one-apt-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.filter-block {
+  z-index: 99;
+}
+
+.sort-bar filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.filter-bubble-block {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 70rpx;
+  opacity: 0;
+  z-index: 9;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.housing-list {
+  padding: 30rpx 0;
+}
+
+.one-apt-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30rpx;
+}

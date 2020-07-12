@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "post-adding-photos": "/components/postAddingPhotos/postAddingPhotos"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

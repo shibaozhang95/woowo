@@ -1,0 +1,23 @@
+<full-screen-container wx:if="{{ifShowReportModal}}">
+  <view class="report-modal-block">
+    <view class="report-title">举报理由</view>
+    <view class="report-content">
+      <block wx:for="{{reportReasons}}" wx:key="">
+        <view class="report-item" data-reason-index="{{index}}" bind:tap="chooseAReason">
+          <view class="report-item-icon">
+            <view wx:if="{{item.ifChosen}}" class="report-item-icon-chosen"></view>
+          </view>
+          <view class="report-item-title report-item-title-{{item.ifChosen ? 'chosen' : ''}}">{{item.title}}</view>
+        </view>
+      </block>
+      <input type="text" class="other-reason-inpt" disabled="{{!ifOtherReasons}}"
+        placeholder="点击输入..." bindinput="inputOtherReason" value="{{otherReasons}}"></input>
+    </view>
+    <view class="report-fnt">
+      <view class="report-fnt-btn report-fnt-confirm"
+        hover-class="modal-btn-hover" bind:tap="confirmReport">确定</view>
+      <view class="report-fnt-btn report-fnt-cancel"
+        hover-class="modal-btn-hover" bind:tap="cancelReport">取消</view>
+    </view>
+  </view>
+</full-screen-container>

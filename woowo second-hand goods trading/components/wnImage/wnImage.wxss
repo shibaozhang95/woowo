@@ -1,0 +1,5 @@
+/* wnImage.wxss */
+.wn-image-container {
+  width: auto;
+  height: auto;
+}

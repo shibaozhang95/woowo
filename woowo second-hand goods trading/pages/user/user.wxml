@@ -1,0 +1,75 @@
+<wn-navigation nav-title="个人中心" if-tab-page="{{true}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{true}}">
+  <view class="container">
+
+    <view class="section-user-inf" hover-class="normal-hover" bindtap="navigateToHomepage">
+      <view class="block-basic-inf">
+        <image class="basic-inf avatar" 
+          mode="aspectFill" 
+          src="{{ifMerchant ? shopInfo.avatarUrl : userInfo.avatarUrl}}"/>
+        <text class="basic-inf username"
+          >{{ifMerchant ? shopInfo.username : userInfo.username}}</text>
+        <image wx:if="{{ifMerchant}}" 
+          class="basic-inf user-type" 
+          src="../../statics/images/icon_for_enterprise@2x.png" 
+          mode="aspectFill"/>
+      </view>
+    </view>
+
+    <form bind:submit="collectFormId" report-submit class="collect-form">
+      <view class="section-user-fnct">
+
+        <view class="block block-messages">
+          <view bindtap="navigateTo" data-towhere="../myMessages/myMessages" class="block-line messages" hover-class="normal-hover">
+            <button form-type="submit" class="collect-btn">
+              <image class="block-line-icon" src="../../statics/images/icon_messages@2x.png" mode="aspectFit" />
+              <text class="block-line-txt">我的消息</text>
+              <view wx:if="{{unreadNotificationAccount > 0}}" class="block-line-notification">{{unreadNotificationAccount}}</view>
+            </button>
+          </view>
+        </view>
+
+        <view class="block block-fnct">
+          
+          <view bindtap="navigateTo" data-towhere="../myPosted/myPosted" class="block-line my-posted" hover-class="normal-hover">
+            <button form-type="submit" class="collect-btn">    
+              <image class="block-line-icon" src="../../statics/images/icon_posted@2x.png" mode="aspectFit" />
+              <text class="block-line-txt">我的发布</text>
+            </button>
+          </view>
+          
+          <view bindtap="navigateTo" data-towhere="../myLiked/myLiked" class="block-line my-liked" hover-class="normal-hover">
+            <button form-type="submit" class="collect-btn">
+              <image class="block-line-icon" src="../../statics/images/icon_liked@2x.png" mode="aspectFit" />
+              <text class="block-line-txt">我的收藏</text>
+            </button>
+          </view>
+          
+          
+          <view bindtap="navigateTo" data-towhere="../myFollowings/myFollowings" class="block-line my-followings" hover-class="normal-hover">
+            <button form-type="submit" class="collect-btn">
+              <image class="block-line-icon" src="../../statics/images/icon_followings@2x.png" mode="aspectFit" />
+              <text class="block-line-txt">我的关注</text>
+            </button>
+          </view>
+        </view>
+        
+        <view class="block block-service">
+          <navigator url="../aboutUs/aboutUs" class="block-line about">
+            <image class="block-line-icon" src="../../statics/images/icon_about@2x.png" mode="aspectFit" />
+            <text class="block-line-txt">关于我们</text>
+          </navigator>
+          <button id="clearBtn" class="block-line service" open-type="contact" class="block-line about">
+            <image class="block-line-icon" src="../../statics/images/icon_service@2x.png" mode="aspectFit" />
+            <text class="block-line-txt">联系客服</text>
+          </button>
+        </view>
+      </view>
+    </form>
+  </view>
+</wn-window>
+
+
+<tab-bar isUser="ture" bind:unread="unreadAccount"></tab-bar>
+<login-auth show-login-auth="{{showLoginAuth}}" bind:loginsuccess="loginSuccess"></login-auth>

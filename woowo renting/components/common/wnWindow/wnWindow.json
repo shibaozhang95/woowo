@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "go-to-top": "./components/goToTop/goToTop"
+  }
+}

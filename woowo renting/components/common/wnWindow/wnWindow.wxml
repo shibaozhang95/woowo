@@ -1,0 +1,15 @@
+<view class="wn-window">
+  <view class="nav-bar-block" wx:if="{{ifCustomNav}}"
+    style="height:{{navBarHeight}}px"></view>
+  <slot></slot>
+  <view class="extra-block"
+    style="height:{{extraBottomBlockHeight}}px"></view>
+  <view class="tab-bar-block" wx:if="{{ifShowTabBar}}"
+    style="height:{{tabBarHeight}}px"></view>
+  <view class="bottom-gap-block"
+    style="height:{{bottomGapHeight}}px"></view>
+
+  <go-to-top  
+    wx:if="{{ifShowGoToTop && currentTopPosition>=500}}" 
+    bindgoToTop="_onGoToTop"></go-to-top>
+</view>

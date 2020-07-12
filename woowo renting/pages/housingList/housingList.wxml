@@ -1,0 +1,102 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{pageTitle}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  current-top-pos="{{currentTopPos}}"
+  if-show-go-to-top="{{true}}">
+  <view class="container">
+
+    <view class="function-block" catchtouchmove=""
+      style="">
+
+      <view class="search-bar-block">
+        <search-bar
+          chosen-areas="{{woowoFilter.areas}}"
+          bindtap="goToSearchAreaFromList"></search-bar>
+      </view>
+
+      <view class="sort-bar">
+
+        <!-- This is for mixed page -->
+        <view class="sort-bar-agent"
+          wx:if="{{!ifAgentsPage}}"
+          bindtap="switchAgentSort">
+          <view class="sort-bar-item sort-bar-item-{{agentSortValue!=0?'chosen':''}}">
+            <text class="sort-txt">{{agentSort[agentSortValue]}}</text>
+          </view>
+        </view>
+
+        <!-- This is only for agent pages -->
+        <view class="sort-bar-choose-agent"
+          wx:else
+          bindtap="chooseAgent">
+          <view class="sort-bar-item sort-bar-item-{{currentAgentInfo.name?'chosen':''}}">
+            <text class="sort-txt">{{currentAgentInfo.name?currentAgentInfo.name:'选择中介'}}</text>
+          </view>
+        </view>
+
+        <view class="sort-bar-split"></view>
+
+         <view class="sort-bar-sort" bind:tap="switchSortWay">
+          <view class="sort-bar-item sort-bar-item-{{currentPriceSortWay==0?'':'chosen'}}">
+            <text class="sort-txt"
+              >{{priceSortWay[currentPriceSortWay].text}}</text>
+            <view class="price-sort-arrow-{{currentPriceSortWay}}"></view>
+          </view>
+        </view>
+
+        <view class="sort-bar-split"></view>
+
+        <view class="sort-bar-filter"
+          bindtap="switchOnofOffFilter">
+          <view class="sort-bar-item sort-bar-item-{{ifAnyFilter?'chosen':''}}">
+            <text class="sort-txt">筛选</text>
+            <view class="sort-bar-filter-icon-block">
+              <image class="sort-bar-filter-icon" 
+                src="/statics/images/icon_sort_filter.png" mode="aspectFit"></image>
+              <image wx:if="{{ifAnyFilter}}" class="sort-bar-filter-icon sort-bar-filter-icon-{{ifAnyFilter ? 'bold' : ''}}" 
+                src="/statics/images/icon_sort_filter.png" mode="aspectFit"></image>
+            </view>
+          </view>
+        </view>
+        
+        <!-- This is for filter -->
+        <filter top-gap="{{searchBarHeight}}"
+          wx:if="{{ifShowFilter}}"
+          bindfilterconfirm="filterUpdated"
+          woowo-filter="{{woowoFilter}}"></filter>
+
+        <!-- This is for choosing agents -->
+        <agents-choosing
+          style="position:fixed;"
+          if-show-agents-choosing="{{ifShowChoosingAgents}}"
+          bindagentchosencomplete="agentChosenComplete"
+          ></agents-choosing>
+        
+        <view class="filter-bubble-block"
+          animation="{{filterBubbleAnimation}}"
+          bindtap="switchOnofOffFilter">
+          <filter-bubble
+            filter-bubble-data="{{woowoFilter}}"></filter-bubble>
+        </view>
+
+      </view>
+    </view>
+
+    <wn-list if-show-loading="{{housesInfo.ifLoading}}"
+      if-show-reach-bottom="{{housesInfo.ifReachBottom}}"
+      if-show-nothing-mark="{{housesInfo.ifNothing}}"
+      nothing-mark-tips="空的，换其他过滤条件试试呢~"
+      extra-top-block-height="{{110}}">
+      <view class="housing-list">
+        <block wx:for="{{housesInfo.list}}" wx:key="id">
+          <view class="one-apt-item"
+            wx:if="{{item}}">
+            <one-apt house-info="{{item}}"></one-apt>
+          </view>
+        </block>
+      </view>
+    </wn-list>
+
+  </view>
+</wn-window>

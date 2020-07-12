@@ -1,0 +1,16 @@
+<view wx:if="{{popularGoods.length > 0}}" 
+    class="popular-goods-container">
+  <view class="block-title">今日热门</view>
+  <view class="block-content">
+    <scroll-view class="popular-scroll-block" 
+      scroll-x="{{true}}">
+      <view class="popular-scroll-block">
+        <block wx:for="{{popularGoods}}" wx:key="">
+          <tiny-goods class="goods-item"
+            goods-info="{{item}}">
+          </tiny-goods>
+        </block>
+      </view>
+    </scroll-view>
+  </view>
+</view>

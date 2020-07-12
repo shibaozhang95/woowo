@@ -1,0 +1,111 @@
+.mini-goods-item {
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.mini-goods-cover {
+  float: left;
+  width: 180rpx;
+  height: 180rpx;
+  background-color: rgb(44, 62, 80);
+  margin: 0 30rpx 0 20rpx;
+}
+.mini-goods-inf {
+  float: left;
+}
+
+.mini-goods-title {
+  width: 80%;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgb(44, 62, 80);
+  margin: 20rpx 0 0 0;
+  display: inline-block;
+}
+.mini-goods-other-inf {
+  /* overflow: hidden; */
+  width: 518rpx;
+}
+.mini-goods-price {
+  float: left;
+  color: rgb(246, 182, 45);
+  height: 44rpx;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  margin-top: 42rpx;
+}
+.mini-goods-fnt {
+  float: right;
+  margin-right: 20rpx;
+  position: relative;
+}
+.mini-goods-my-liked,
+.mini-goods-my-selling,
+.mini-goods-my-unsell {
+  overflow: hidden;
+  float: right;
+}
+.mini-goods-fnt-btn {
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+  background-color: rgb(246, 182, 45);
+  border-radius: 40rpx;
+  float: left;
+  margin-left: 10rpx;
+  margin-top: 40rpx;
+}
+
+.mini-goods-fnt-btn-disable {
+  /* background-color: rgba(44, 62, 80, 0.1); */
+  color: rgba(44, 62, 80, 1);
+}
+
+.normal-hover {
+   background-color: rgba(44, 62, 80, 0.1); 
+}
+
+
+.mini-goods-item-unsell .mini-goods-cover,
+.mini-goods-item-unsell .mini-goods-title,
+.mini-goods-item-unsell .mini-goods-price {
+   opacity: 0.5; 
+}
+
+.mini-goods-item-unsell .mini-goods-my-liked .mini-goods-fnt-btn {
+  background-color: rgba(44, 62, 80, 0.1)
+}
+
+.mini-goods-item-unsell .mini-goods-my-liked .normal-hover {
+   opacity: 0.7; 
+}
+
+.mini-goods-unsell-img {
+  width: 194rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 0;
+  bottom: 50rpx;
+}
+
+
+.edit-image{
+  width:18px;
+  height: 18px;
+  z-index: 100;
+  background-image: url('https://media.woniu-xcx.xyz/Symbol%20175%20%E2%80%93%201@2x.png');
+  background-size:18px 18px;
+}
+
+.edit-image:active{
+  width:18px;
+  height: 18px;
+  z-index: 100;
+  background-image: url('https://media.woniu-xcx.xyz/Symbol%20174%20%E2%80%93%201@2x.png');
+  background-size:18px 18px;
+}
+

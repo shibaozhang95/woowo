@@ -1,0 +1,40 @@
+<view wx:if="{{!ifMerchant}}"
+  class="user-card-container"
+  bindtap="goToHomepage">
+  <image class="following-avatar" 
+    src="{{userInfo.userAvatarUrl}}" 
+    mode="aspectFill"></image>
+  <view class="following-inf">
+    <text class="following-inf-name"
+      >{{userInfo.username}}</text>
+  </view>
+  <view class="following-fnt">
+    <button class="unfollow-btn" 
+      wx:if="{{ifFollowingUser}}" 
+      catchtap="switchFollowUser">已关注</button>
+    <button class="follow-btn" 
+      wx:else
+      catchtap="switchFollowUser">关注</button>
+  </view>
+</view>
+
+<view wx:else 
+  class="user-card-container"
+  bindtap="goToShop">
+  <image class="following-avatar" 
+    src="{{userInfo.image}}" 
+    mode="aspectFill"></image>
+  <view class="following-inf">
+    <text class="following-inf-name following-shop-name"
+      >{{userInfo.name}}</text>
+    <view class="shop-icon">商</view>
+  </view>
+  <view class="following-fnt">
+    <button class="unfollow-btn" 
+      wx:if="{{ifFollowingShop}}" 
+      catchtap="switchFollowShop">已关注</button>
+    <button class="follow-btn" 
+      wx:else
+      catchtap="switchFollowShop">关注</button>
+  </view>
+</view>

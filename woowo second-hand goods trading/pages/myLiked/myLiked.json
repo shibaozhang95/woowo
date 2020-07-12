@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mini-goods": "../../components/miniGoods/miniGoods",
+    "modal": "../../components/modal/modal",
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView"
+  }
+}

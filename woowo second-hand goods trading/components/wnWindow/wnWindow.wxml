@@ -1,0 +1,18 @@
+<view class="wn-window" style="width:{{screenWidth}}px; height:{{screenHeight}}px">
+  <view class="nav-bar-block" style="width:{{screenWidth}}px; height:{{navBarHeight}}px"></view>
+  <!-- <scroll-view class="wn-window-scroll-view" scroll-y="{{true}}"
+    style="width:{{screenWidth}}px; height:{{windowHeight}}px"
+    bindscrolltoupper="_onScrollToUpper" bindscrolltolower="_onScrollToLower" 
+    bindscroll="_onScroll" scroll-into-view="{{scrollToThere}}"
+    scroll-with-animation="{{true}}"
+    upper-threshold="{{-50}}" lower-threshold="{{50}}">
+    <view id="top"></view>
+    <slot></slot>
+  </scroll-view> -->
+  <slot></slot>
+  <view class="tab-bar-block" wx:if="{{ifShowTabBar}}"
+    style="width:{{screenWidth}}px; height:{{tabBarHeight}}px"></view>
+
+  <go-to-top wx:if="{{currentTopPosition >= 500}}"
+    bindgoToTop="_onGoToTop"></go-to-top>
+</view>

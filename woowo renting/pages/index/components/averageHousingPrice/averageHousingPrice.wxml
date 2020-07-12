@@ -1,0 +1,4 @@
+<view class="average-housing-price-container">
+  <view class="title">墨尔本平均房价</view>
+  <view class="price-chart-container"></view>
+</view>

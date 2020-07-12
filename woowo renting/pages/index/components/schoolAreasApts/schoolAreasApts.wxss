@@ -1,0 +1,71 @@
+.school-areas-apts-container {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  width: 640rpx;
+  height: 44rpx;
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 44rpx;
+  margin: 0 auto 20rpx auto;
+}
+
+.school-nav-container {
+  width: 640rpx;
+  height: 44rpx;
+  margin: 0 auto 40rpx auto;
+}
+
+.school-nav-block scroll-view {
+  width: 100%;
+  height: auto;
+  
+}
+
+.school-nav-block {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.school-nav-block .each-school {
+  width: auto;
+  height: 44rpx;
+  color: rgba(136, 193, 211, 0.5);
+  font-size: 32rpx;
+  text-align: left;
+  line-height: 38rpx;
+  font-weight: bold;
+  margin-right: 30rpx;
+  white-space: nowrap;
+}
+
+.school-nav-block .each-school-chosen {
+  color: rgb(136, 193, 211);
+}
+
+.school-apts-block {
+  width: 100%;
+  height: auto;
+  
+}
+
+wn-list {
+  width: 100%;
+  min-height: 500rpx;
+}
+
+.housing-list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.one-apt-item {
+  margin-bottom: 30rpx;
+}
+

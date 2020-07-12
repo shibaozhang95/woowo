@@ -1,0 +1,65 @@
+<!--tabBar.wxml-->
+<view class="tabbar-container">
+  <view class="tabbar-layer">
+    <view class="tabbar-block tabbar-left">
+      <view class="tabbar-ls">
+        <navigator class="tabbar-nav" url="../index/index" open-type="switchTab" hover-class="none">
+          <image class="tabbar-icon" wx:if="{{!isIndex}}" 
+            mode="aspectFit" src="statics/icon_tab_index.png" />
+          <image class="tabbar-icon" wx:if="{{isIndex}}" 
+            mode="aspectFit" src="statics/icon_tab_index_active.png" />
+          <text class="tabbar-text">主页</text>
+        </navigator>  
+      </view>
+      <view class="tabbar-ls">
+        <navigator class="tabbar-nav" url="../news/news" open-type="switchTab" hover-class="none">
+          <image class="tabbar-icon" wx:if="{{!isNews}}" 
+            mode="aspectFit" src="statics/icon_tab_news.png" />
+          <image class="tabbar-icon" wx:if="{{isNews}}" 
+            mode="aspectFit" src="statics/icon_tab_news_active.png" />
+          <text class="tabbar-text">资讯</text>
+        </navigator>  
+      </view>
+    </view>
+    <view class="tabbar-block tabbar-middle">
+      <view bindtap="goToAdding" class="tabbar-nav-add"  open-type="navigateTo">
+        <view class="icon-add-block-bg" hover-class="rotate">
+          <image class="tabbar-icon-add" mode="aspectFit" 
+            src="statics/icon_tab_add.png" />
+        </view>
+        
+        <view class="tabbar-add-block-circle"></view>
+        <view class="tabbar-add-block-white"></view>
+      </view>
+    </view>
+    <view class="tabbar-block tabbar-right">
+      <view class="tabbar-ls">
+        <navigator class="tabbar-nav" url="../messages/messages" open-type="switchTab" hover-class="none">
+          <image class="tabbar-icon" wx:if="{{!isMessages}}" 
+            mode="aspectFit" src="statics/icon_tab_messages.png" />
+          <image class="tabbar-icon" wx:if="{{isMessages}}" 
+            mode="aspectFit" src="statics/icon_tab_messages_active.png" />
+          <text class="tabbar-text">消息</text>
+          <view class="unread-message-red-dot"
+           wx:if="{{unreadMessageNum>0}}">{{unreadMessageNum>99?'99+':unreadMessageNum}}</view>
+        </navigator>  
+      </view>
+      <view class="tabbar-ls">
+        <navigator class="tabbar-nav" url="../homepage/homepage" open-type="switchTab" hover-class="none">
+          <image class="tabbar-icon" wx:if="{{!isHomepage}}" 
+            mode="aspectFit" src="statics/icon_tab_homepage.png" />
+          <image class="tabbar-icon" wx:if="{{isHomepage}}" 
+            mode="aspectFit" src="statics/icon_tab_homepage_active.png" />
+          <text class="tabbar-text">我的</text>
+        </navigator>  
+      </view>
+    </view>
+  </view>
+
+  <view class="tabbar-gap" style="width:100%;height:{{bottomGapHeight}}px"></view>
+  
+</view>
+
+<login-auth show-login-auth="{{ifShowLoginAuth}}" 
+  bind:loginsuccess="loginSuccess"
+  ></login-auth>

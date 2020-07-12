@@ -1,0 +1,38 @@
+<view class="agents-choosing-container"
+  wx:if="{{ifShowAgentsChoosing}}"
+  style="width:{{windowWidth}}px;height:{{windowHeight}}px;top:{{topPos}}px"
+  bindtap="cancleChoosing"
+  catchtouchmove="">
+
+  <scroll-view class="agents-list"
+    animation="{{agentsAnimation}}"
+    scroll-y="{{true}}"
+    catchtap="">
+    
+    <view class="loading-block"
+      wx:if="{{ifLoading}}">
+      <image class="loading-img" 
+        src="/statics/images/loading_2.gif" mode="aspectFit"></image>
+      <view class="loading-tips">请求中介列表中...</view>
+    </view>
+
+    <view class="nothing-mark-block" 
+      wx:if="{{ifNothing}}">
+      <view class="nothing-mark-tips">没了。</view>
+    </view>
+
+    <block wx:for="{{agentsList}}" wx:key="id">
+      <view class="one-agent"
+        hover-class="normal-hover"
+        catchtap="chooseACompany"
+        data-company-info="{{item}}">
+        <image class="agent-logo"
+          mode="aspectFill"
+          src="{{item.roundLogo}}"></image>
+        <view class="agent-name"
+          >{{item.name}}</view>
+      </view>
+    </block>
+    
+  </scroll-view>
+</view>

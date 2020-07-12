@@ -1,0 +1,29 @@
+.tiny-goods-container {
+  width: 240rpx;
+}
+
+.goods-img {
+  width: 240rpx;
+  height: 240rpx;
+  display: block;
+  background-color: rgb(44, 62, 80);
+}
+.goods-title {
+  height: 34rpx;
+  line-height: 34rpx;
+  height: 34rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: rgb(44, 62, 80);
+  text-align: left;
+  margin: 2rpx 12rpx;
+  font-size: 24rpx;
+}
+.goods-price {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(246, 182, 25);
+  margin: 2rpx 12rpx;
+}

@@ -1,0 +1,19 @@
+<wn-navigation nav-title="我的关注"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <wn-list ifShowNothingMark="{{ifNothing}}"
+      ifShowLoading="{{ifLoading}}"
+      ifShowReachBottom="{{ifReachBottom}}"
+      reach-bottom-tips="没有啦~">
+      <view slot="list-container" class="following-list-content">
+        <block wx:for="{{myFollowingList}}" wx:key="userUnionId">
+          <view class="one-following-block">
+            <user-card
+              user-info="{{item}}"></user-card>
+          </view>
+        </block>
+      </view>
+    </wn-list>
+  </view>
+</wn-window>

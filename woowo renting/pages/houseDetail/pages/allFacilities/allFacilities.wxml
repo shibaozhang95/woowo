@@ -1,0 +1,23 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'设施服务'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <block wx:for="{{allFacilities}}" wx:key=""
+    wx:if="{{item.fieldIcons.length>0}}">
+    <view class="f-section">
+      <view class="section-title">{{item.fieldTitle}}</view>
+      <view class="post-icons-block">
+        <block wx:for="{{item.fieldIcons}}" wx:key=""
+          wx:for-item="iconItem">
+          <view class="icon-item icon-item-active">
+            <image class="icon" mode="aspectFit"
+              src="{{iconItem.iconUrl}}"></image>
+            <view class="icon-text"
+              >{{iconItem.title}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</wn-window>

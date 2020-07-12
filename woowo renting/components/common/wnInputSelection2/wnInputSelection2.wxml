@@ -1,0 +1,19 @@
+<view class="wn-input-radio-container">
+  <view class="input-title">{{title}}</view>
+  <view class="input-fnt">
+    <block wx:for="{{innerChoices}}" wx:key="">
+      <view class="choice-item choice-item-{{item.ifChosen?'chosen':''}}"
+        bind:tap="chooseFromSelection"
+        data-indx="{{index}}"
+      >{{item.text}}
+        <!-- <view class="choice-{{selectionType == 'radio' ? 'radio' : 'multiple'}}">
+          <view 
+            class="choice-inner choice-inner-{{item.ifChosen?'chosen':''}}">
+          </view>
+        </view> -->
+        <!-- <view class="choice-txt">{{item.text}}</view> -->
+        
+      </view>
+    </block>  
+  </view>
+</view>

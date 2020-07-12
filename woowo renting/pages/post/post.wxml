@@ -1,0 +1,54 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{pageTitle}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <view class="adding-photos-section">
+      <post-adding-photos
+        default-image-urls="{{imageUrls.fieldObj}}"
+        pics-limitation="{{9}}"
+        upload-hint="一张照片都没有可不行呀"
+        bindaddnewphotos="addNewPhotos"
+        binddeletephotos="deletePhotos"></post-adding-photos> 
+    </view>
+
+    <scroll-view class="house-info-section" scroll-y="{{true}}"  
+      style="width:100%;height:{{scrollListHeight}}px">
+      <block wx:for="{{houseInfoFields}}" wx:key="fieldName">
+        <view class="house-info-field" hover-class="normal-hover"
+          bindtap="goToSpecificField"
+          data-field-name="{{item.fieldName}}"
+          data-field-url="{{item.fieldUrl}}">
+          <view class="field-left-block">
+            <image class="field-icon" src="{{item.iconUrl}}" mode="aspectFit"></image>
+            <view class="text-block">
+              <view class="field-title">{{item.title}}</view>
+              <view class="field-description"
+                >{{item.shortcut ? item.shortcut : item.description}}</view>
+            </view>
+          </view>
+          <view class="field-right-block">
+            <view class="field-status field-status-uncompleted"
+              wx:if="{{!item.ifValid}}"
+              >请完善</view>
+            <view class="field-status field-status-completed"
+              wx:else
+              >已完成</view>
+            <image class="arrow-icon"
+              mode="aspectFill"
+              src="/statics/images/icon_arrow_right_grey.png"></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+
+    <view class="post-button-section">
+      <view class="post-confirm post-confirm-{{ifPostDataValid?'':'disable'}}"
+        hover-closs="post-button-hover"
+        bindtap="nextStep">{{ifEditMode?'更新':'发布'}}</view>
+      <view class="post-confirm-gap post-confirm-gap-{{ifPostDataValid?'':'disable'}}"
+        style="width:100%;height:{{bottomGapHeight}}px"></view>
+    </view>
+  </view>  
+</wn-window>

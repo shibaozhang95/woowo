@@ -1,0 +1,103 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{pageTitle}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}">
+  <view class="container">
+    <view class="function-block">
+      <view class="search-bar-block">
+        <search-bar
+          chosen-areas="{{housemateFilter.area}}"
+          bind:tap="goToSearchAreasFromList">
+        </search-bar>
+      </view>
+
+      <view class="sort-bar-block">
+        <!-- 区域 -->
+        <view class="sort-item sort-item-{{sortAreaBlockTxt != '学区' ? 'chosen' : ''}}">
+          <picker 
+            mode="selector" 
+            range="{{housemateFilter.schoolsRange}}"
+            value="{{housemateFilter.schoolValue}}" 
+            bindchange="changeSchoolAreas">
+            <view class="sort-item-content">
+              <view class="sort-item-txt">{{sortAreaBlockTxt}}</view>
+              <view class="sort-arrow"></view>
+            </view>
+          </picker>
+          
+        </view>
+
+        <view class="sort-bar-split"></view>
+
+        <!-- 性别 -->
+        <view class="sort-item sort-item-{{sortGenderTxt != '性别' ? 'chosen' : ''}}"
+          bind:tap="chooseGnder">
+          <view class="sort-item-content">
+            <view class="sort-item-txt">{{sortGenderTxt}}</view>
+            <view class="sort-arrow"></view>
+          </view>
+        </view>
+
+        <view class="sort-bar-split"></view>
+
+        <!-- 筛选 -->
+        <view class="sort-item sort-item-{{true ? 'chosen' : ''}}"
+          bind:tap="switchFilter">
+          <view class="sort-item-content">
+            <view class="sort-item-txt">筛选</view>
+            <view class="sort-item-icon-block">
+              <image class="sort-item-icon" 
+                src="/statics/images/icon_sort_filter.png" 
+                mode="aspectFit"></image>
+              <image class="sort-item-icon sort-item-icon-bold"
+                wx:if="{{true}}" 
+                src="/statics/images/icon_sort_filter.png" 
+                mode="aspectFit"></image>
+            </view>
+          </view>
+        </view>
+
+        <!-- 过滤 -->
+        <filter-for-housemate 
+          top-gap="{{80}}"
+          wx:if="{{ifShowFilter}}"
+          housemate-filter="{{housemateFilter}}"
+          bind:confirmfilter="confirmFilter"></filter-for-housemate>
+      </view>
+    </view>
+
+    
+
+    <wn-list if-show-loading="{{ifLoading}}"
+      if-show-reach-bottom="{{ifReachBottom}}"
+      if-show-nothing-mark="{{ifNothing}}"
+      nothing-mark-tips="空的，换其他条件搜索试试吧~"
+      extra-top-block-height="{{110}}">
+
+      <view class="housemate-list">
+        <block wx:for="{{housemateList}}" wx:key="">
+          <view class="one-housemate-card">
+            <housemate-card
+              housemate-info="{{item}}"></housemate-card>
+          </view>
+        </block>
+        <!-- <view class="one-housemate-card">
+          <housemate-card></housemate-card>
+        </view>
+
+        <view class="one-housemate-card">
+          <housemate-card 
+            if-on-like-page="{{true}}"></housemate-card>
+        </view>
+        
+        <view class="one-housemate-card">
+          <housemate-card 
+            if-on-edit-page="{{true}}"></housemate-card>
+        </view> -->
+      </view>
+      
+    </wn-list>
+    
+
+  </view>
+</wn-window>

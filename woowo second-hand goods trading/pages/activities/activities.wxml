@@ -1,0 +1,217 @@
+<wn-navigation nav-title="{{'摸法管家'}}"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <image class="activity-banner"
+      mode="aspectFil"
+      src="/statics/images/banner_page_mofaguanjia.png">
+    </image>
+
+    <view class="info-block">
+      <text class="txt-block-one">
+        又到了 final 结束然后搬家的时间啦，怕遇到黑心搬家清洁中介拖拉 or 乱加价，清洁不给力，行李无处存放的小伙伴们有福了！Woowo 生活（管家）（服务）他 lei 啦！Woowo 助您在退房搬家清洁路上一路顺风~
+
+        Woowo 涵盖了搬家，清洁，行李寄存和接送机等一站式服务，给您全方位服务到家！
+
+        Woowo 向每一位用户保证：
+        1. 放心！我们团队会按时到达指定地点，中途干活不磨蹭，不会影响您的既定行程~
+        2. 靠谱！快速搬家，专业清洁，安全行李寄存，快速接送机，让您没有后顾之忧~
+        3. 不加价！确认搬家清洁等服务项目后，绝！不！加！价！
+
+        Woowo，您的海外生活留学伴侣~
+      </text>
+    </view>
+
+    <view class="contact-block">
+      <view class="contact-hint">👇 微信号(点击复制)👇</view>
+      <view class="contact-method">
+        <view class="wechat-id"
+          hover-class="touch-copy"
+          bindtap="touchCopy"
+          data-content="{{'Redbeencake'}}" >Redbeencake</view>
+      </view>
+      <view class="contact-hint">👇 微信二维码(保存扫描)👇</view>
+      <view class="contact-method">
+        <image class="wechat-barcode"
+          src="https://media.woniu-xcx.xyz/977B7842-650C-4745-83FB-55888D2BC52F.jpeg"
+          mode="aspectFit"
+          data-url="{{'https://media.woniu-xcx.xyz/977B7842-650C-4745-83FB-55888D2BC52F.jpeg'}}"
+          bindtap="previewQRCode"></image>
+      </view>
+    </view>
+  </view>
+</wn-window>
+
+<!-- <view class="title-img">
+  <image class="acticity-banner" mode="aspectFit" src="https://media.woniu-xcx.xyz/Group%201282@2x.png" />
+</view>
+<view class="container">
+
+  <view class="info-one-block">
+    <view class="info-title">活动详情</view>
+    <view class="info-content">
+
+      <text class="info-txt">
+            <text class="info-txt-bold">活动时间</text> 2018.09.25—2018.10.02
+      <text class="info-txt-bold">参与方式</text> 1. 转发公众号推文到朋友圈，并截图发送至Woowo澳洲公众号后台； 2. 并在Woowo小程序上上架一款个人商品就可以参与抽奖啦！
+      </text>
+      <image class="img img-left-1" src="../../statics/images/img_us_left_1@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-1" src="../../statics/images/img_us_right_1@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="info-one-block">
+    <view class="info-title">奖品设置</view>
+    <view class="info-content">
+      <text class="info-txt">
+        <text class="info-txt-bold">一等奖（1名）</text> IPad Pro
+
+      <text class="info-txt-bold">二等奖（5名）</text> Hoyts电影票两张
+
+      <text class="info-txt-bold">参与奖（好多好多名）</text> 只要参与活动就送『茶之心』碳焙乌龙奶茶一杯哦！不限名额！
+      </text>
+      <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="info-one-block">
+    <view class="info-title">活动规则</view>
+    <view class="info-content">
+      <text class="info-txt">首先要关注WooWo平台公众号！
+        然后将朋友圈设置为所有人可见！
+        你需要将转发的截图发给woowo公众号后台!
+        同一个微信用户不可重复参与活动！
+
+        如果你中奖了，我们会第一时间与你联系，你需要：
+        将姓名电话发送到公众号！
+        中奖的你在10个工作日内不与公众号联系，你的资格就作废啦！
+        你可以选择奖品倾向！
+        幸运的你会在活动结束后两周内收到奖品！
+      </text>
+      <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="info-one-block info-one-block-special">
+    <image bindtap="previewQRCode" mode="aspectFit" src="../../statics/images/qr_code.jpg" class="qr-code" />
+    <view class="info-content">
+      <text class="info-txt">快来扫码关注我啦~</text>
+
+    </view>
+    <image class="img" src="../../statics/images/img_spark@2x.png" mode="aspectFit"></image>
+  </view>
+
+</view> -->
+
+
+<!-- <view class="title-img">
+  <image class="acticity-banner" mode="aspectFit" src="https://media.woniu-xcx.xyz/123.png" />
+</view>
+<view class="container">
+
+  <view class="info-one-block">
+    <view class="info-title">活动详情</view>
+    <view class="info-content">
+
+      <text class="info-txt">
+            <text class="info-txt-bold" >活动时间：</text> 
+            11月11号-11月17号
+      <text class="info-txt-bold">活动内容：</text> 
+      免费上门收取寄存行李！终于可以过个轻松的假期啦！
+      ↓下拉填写表单报名
+      </text>
+      <image class="img img-left-1" src="../../statics/images/img_us_left_1@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-1" src="../../statics/images/img_us_right_1@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="info-one-block">
+    <view class="info-title">寄存优惠</view>
+    <view class="info-content">
+      <text class="info-txt">
+        <text class="info-txt-bold">福利一</text> 
+        行李箱寄存低至 3刀/件/周 （原价6刀）
+        家具家电低至 4刀/件/周  （原价8刀）
+        墨尔本史上寄存最低价!
+        (寄存时间越久，价格越低！具体价格按工人实际预估后确定）
+
+      <text class="info-txt-bold">福利二</text> 
+      11月11号-11月20号免费上门收件！ 
+      （其余时间正常收费）
+
+      <text class="info-txt-bold">福利三</text> 
+      不在这期间回国怎么办？ 
+      没关系，还有优惠！ 
+      叫上自己朋友，3人组团寄存行李，上门取件优惠！ 
+      5人组团，取件免费！
+      </text>
+      <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="info-one-block">
+    <view class="info-title">寄存规则</view>
+    <view class="info-content">
+      <text class="info-txt">1. 上门取件不包括上楼搬运服务哦！请小伙伴们自行把行李搬到楼下哦
+      2. 如有上楼需要，请联系工人付费~（价格在10-20刀左右）
+      3. 寄存到期后，需要自行取件~（或送件出车费40刀起，根据距离远近）
+      4. 预约成功后会有专业工人打电话确认具体寄存细节~
+      具体信息请联系:
+      0422270181 或 0425656782
+      </text>
+      <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="info-one-block">
+    <view class="info-title">提交信息</view>
+    <view class="info-content">
+      <view style='text-align:center'>
+        <label style='display:inline-block;vertical-align:top;margin-top:1px;width:20%;'>姓名：</label>
+        <input style='display:inline-block;vertical-align:top;width:80%;' bindinput="nameInput" placeholder="请输入姓名" />
+      </view>
+
+      <view style='text-align:center;margin-top:10px;'>
+        <label style='display:inline-block;vertical-align:top;margin-top:1px;width:20%;'>电话：</label>
+        <input type="number" style='display:inline-block;vertical-align:top;width:80%;' bindinput="phoneInput" placeholder="请输入联系电话" />
+      </view>
+      <view style='text-align:center;margin-top:10px;'>
+        <label style='display:inline-block;vertical-align:top;margin-top:1px;width:20%;'>日期：</label>
+        <picker style='display:inline-block;vertical-align:top;width:80%;text-align:center' mode="date" value="{{dateRecord}}" start="2018-11-4" bindchange="DatePicker">
+          <view wx:if="{{dateRecord == ''}}" class="picker" style='color:#777777'>
+          请选择日期
+          </view>
+           <view wx:if="{{dateRecord != ''}}" class="picker" >
+          {{dateRecord}}
+          </view>
+        </picker>
+      </view>
+      <view style='text-align:center;margin-top:10px;'>
+        <label style='display:inline-block;vertical-align:top;margin-top:1px;width:20%;'>地址：</label>
+        <input style='display:inline-block;vertical-align:top;width:80%;' bindinput="addressInput" placeholder="请输入地址" />
+      </view>
+      <view style='text-align:center;margin-top:10px;'>
+        <label style='display:inline-block;vertical-align:top;margin-top:1px;width:20%;'>备注：</label>
+        <textarea style='display:inline-block;vertical-align:top;width:80%;' bindinput="commentInput" placeholder="请输入行李信息以及任何备注" />
+      </view>
+      <view class="section-submit" style='margin-top:10px;'>
+        <view class="submit-btn" hover-class="normal-hover" bindtap="confirmToSubmit">
+          提交信息
+        </view>
+      </view>
+      <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+      <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <view class="info-one-block info-one-block-special">
+      <view class="info-title" >扫码入群拼寄存啦~</view>
+  
+    <view class="info-content">
+    <image bindtap="previewQRCode" mode="aspectFit" src="../../statics/images/qr_code_group.jpg" class="qr-code" />
+
+    </view>
+    <image class="img" src="../../statics/images/img_spark@2x.png" mode="aspectFit"></image>
+  </view>
+
+</view> -->

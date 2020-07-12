@@ -1,0 +1,9 @@
+.contact-us-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-img {
+  margin: 60rpx auto;
+}

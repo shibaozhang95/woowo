@@ -1,0 +1,12 @@
+<view class="filter-bubble-container"
+  wx:if="{{showingList.length>0}}">
+  <block wx:for="{{showingList}}" wx:key="">
+    <view class="one-filter-item">
+      <view class="filter-icon"
+        wx:if="{{item.icon}}"></view>
+      <view class="filter-text">{{item.value}}</view>
+    </view>
+    <view class="plus-icon"
+      wx:if="{{index!=showingList.length-1}}">+</view>
+  </block>
+</view>

@@ -1,0 +1,36 @@
+<view class="housemate-card-base-container">
+  <view class="address-block">
+    <image class="address-icon" 
+      src="./statics/icon_location.png"
+      mode="aspectFill"></image>
+    <view class="address-txt"
+      >{{showingHousemateInfo.areasShortcut}}</view>
+  </view>
+  <view class="price-range-block">
+    <image class="price-icon"
+      src="./statics/icon_price.png"
+      mode="aspectFill"></image>
+    <view class="price-txt"
+      >${{showingHousemateInfo.priceLow}} - ${{showingHousemateInfo.priceHigh}}/week</view>
+  </view>
+  <view class="description-txt"
+    >{{showingHousemateInfo.description}}</view>
+  <view class="info-block">
+    <image class="avatar"
+      src="{{showingHousemateInfo.userInfo.user_image}}"
+      mode="aspectFill"></image>
+    <view class="other-info">
+      <view class="user-name"
+        >{{showingHousemateInfo.userInfo.username}}</view>
+      <view class="status">
+        <view class="gender-icon">
+          <gender-icons
+            gender="{{showingHousemateInfo.sex}}">
+          </gender-icons>
+        </view>
+        <view class="status-txt"
+          >{{showingHousemateInfo.sexShortcut}} / {{showingHousemateInfo.age}} / {{showingHousemateInfo.career}}</view>
+      </view> 
+    </view>
+  </view>
+</view>

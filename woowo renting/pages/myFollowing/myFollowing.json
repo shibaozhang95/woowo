@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "one-user-card": "components/oneUserCard/oneUserCard"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

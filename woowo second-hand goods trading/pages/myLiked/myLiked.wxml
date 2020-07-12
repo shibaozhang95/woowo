@@ -1,0 +1,23 @@
+<wn-navigation nav-title="我的收藏"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <wn-list ifShowNothingMark="{{ifNothing}}"
+      ifShowLoading="{{ifLoading}}"
+      ifShowReachBottom="{{ifReachBottom}}"
+      reach-bottom-tips="没有啦~">
+      <view slot="list-container" class="my-liked-block">
+        <view class="one-goods-block" 
+          wx:for="{{myLikedList}}" wx:key="product_id">
+          <mini-goods goods-info="{{item}}" showing-type="{{'liked'}}" 
+            bind:unlike="unlikeGoods"></mini-goods>
+        </view>
+      </view>
+    </wn-list>
+  </view>
+</wn-window>
+
+<modal if-show-modal="{{ifShowModal}}" 
+  modal-info="{{modalInfo}}" 
+  bindconfirm="modalconfirm" 
+  bindcancel="modalCancel"></modal>

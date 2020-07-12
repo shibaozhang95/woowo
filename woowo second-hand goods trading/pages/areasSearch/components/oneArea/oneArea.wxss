@@ -1,0 +1,39 @@
+.one-area-container {
+  width: 100%;
+  height: 88rpx;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.area-name {
+  width: 610rpx;
+  height: 38rpx;
+  margin: 25rpx 0 25rpx 30rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgb(55, 74, 94);
+  line-height: 38rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.area-action {
+  width: 50rpx;
+  height: 50rpx;
+  margin: 19rpx 30rpx 19rpx 0;
+}
+
+.area-action view {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+
+.area-action-icon {
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}

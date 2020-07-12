@@ -1,0 +1,121 @@
+page {
+  background-color: rgb(255, 255, 255);
+}
+
+.adding-photos-section {
+  width: 100%;
+  height: 250rpx;
+}
+
+.house-info-section {
+  background-color: rgb(255, 255, 255);
+}
+
+.post-button-section {
+  width: 100%;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  border-top: 2rpx solid rgba(112, 112, 112, 0.1);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.post-confirm {
+  width: 660rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: rgb(246, 182, 45);
+  text-align: center;
+  font-size: 40rpx;
+  color: rgb(255, 255, 255);
+  margin: 16rpx auto 14rpx auto;
+  border-radius: 46rpx;
+}
+.post-confirm-disable {
+  background-color: rgb(222, 225, 228);
+}
+
+.house-info-field {
+  width: 100%;
+  height: 134rpx;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2rpx solid rgba(112, 112, 112, 0.1);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.field-left-block {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.field-icon {
+  width: 100rpx;
+  height: 75rpx;
+  margin: 32rpx 0 32rpx 26rpx;
+}
+
+.text-block {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.field-title {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(44, 62, 80);
+}
+
+.field-description {
+  max-width: 400rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  color: rgba(44, 62, 80, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field-right-block {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.field-status {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+}
+.field-status-uncompleted {
+  color: rgb(246, 182, 45);
+}
+.field-status-completed {
+  color: rgb(86, 182, 213);
+}
+
+.arrow-icon {
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  border-radius: 50%;
+  margin: 0 28rpx;
+}
+
+.normal-hover {
+  opacity: 0.7;
+}

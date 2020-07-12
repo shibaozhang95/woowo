@@ -1,0 +1,73 @@
+.post-container {
+  background-color: rgb(248, 245, 240);
+}
+
+.adding-photos-section {
+  width: 100%;
+  height: 250rpx;
+}
+
+.post-container .section:first-of-type {
+  margin-top: 0;
+}
+
+.post-container .section:last-of-type {
+  margin-bottom: 40rpx;
+}
+/* .info-section {
+  padding-bottom: 40rpx;
+} */
+
+/* for special picker */
+.areas-picker-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 40rpx;
+  height: 100rpx;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.picker-title {
+  /* width: 128rpx; */
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgba(44, 62, 80, 0.8);
+}
+
+.picker-fnt {
+  height: auto;
+  width: 400rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.picker-result {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  color: rgba(44, 62, 80, 0.5);
+  margin-right: 20rpx;
+  text-align: right;
+  max-width: 360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.picker-icon {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  display: block;
+}
+
+.normal-hover {
+  opacity: 0.7;
+}

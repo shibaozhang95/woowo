@@ -1,0 +1,80 @@
+.title-img {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.about-us-banner {
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.info-one-block {
+  width: 680rpx;
+  margin: 40rpx 34rpx;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border-radius: 40rpx;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.16);
+}
+
+.info-title {
+  width: 100%;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: rgb(44, 62, 80);
+  position: absolute;
+  top: -20rpx;
+  text-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.16)
+}
+.info-content {
+  width: 100%;
+  padding: 66rpx 44rpx 40rpx 44rpx;
+  box-sizing: border-box;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  position: relative;
+}
+.info-txt {
+  position: relative;
+  display: block !important;
+  color: rgb(44, 62, 80);
+  font-size: 32rpx !important;
+  line-height: 44rpx !important;
+  z-index: 2;
+}
+
+.img {
+  position: absolute;
+  display: block;
+  z-index: 0;
+}
+
+/* .img-left-1 {
+  width: 102rpx;
+  height: 36rpx;
+  left: -4rpx;
+  top: 8rpx;
+}
+.img-right-1 {
+  width: 58rpx;
+  height: 76rpx;
+  right: -20rpx;
+  top: -20rpx;
+}
+.img-left-2 {
+  width: 98rpx;
+  height: 98rpx;
+  left: 12rpx;
+  top: -20rpx;
+}
+.img-right-2 {
+  width: 102rpx;
+  height: 126rpx;
+  right: 8rpx;
+  top: 0rpx;
+} */
+
+

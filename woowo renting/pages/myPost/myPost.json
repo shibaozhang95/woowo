@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "one-apt-edit": "../../components/oneAptEdit/oneAptEdit",
+    "housemate-card": "/components/housemateCard/housemateCard"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

@@ -1,0 +1,25 @@
+<wn-navigation if-tab-page="{{true}}" if-custom="{{false}}"
+  nav-title="{{'消息'}}"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <block wx:for="{{woowoMessages}}" wx:key="uniqueChatId">
+      <view class="each-contact"
+        bind:tap="goToChat" 
+        data-unique-chat-id="{{item.uniqueChatId}}"
+        data-self-user-id="{{woowoUserInfo.user_id}}"
+        data-user-one="{{item.userOne}}"
+        data-user-two="{{item.userTwo}}"
+        url="../chat/chat" 
+        hover-class="navigator-hover">
+        <one-contact contact-info="{{item}}"
+          self-user-id="{{woowoUserInfo.user_id}}"></one-contact>
+      </view>
+    </block>
+
+    <view class="no-message"
+      wx:if="{{woowoMessages.length==0}}">什么消息都没有呢~</view>
+  </view>
+</wn-window>
+
+<wn-tab-bar isMessages="true"></wn-tab-bar>

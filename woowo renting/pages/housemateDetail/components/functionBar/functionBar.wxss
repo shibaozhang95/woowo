@@ -1,0 +1,66 @@
+.function-bar-container {
+  width: 750rpx;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.function-bar-block {
+  width: 100%;
+  padding: 0 0 0 30rpx;
+  box-sizing: border-box;
+  height: 102rpx;
+  border-top: 2rpx solid rgba(44, 62, 80, 0.1);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.function-bar-left {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.function-item {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 20rpx;
+  align-items: center;
+}
+
+.function-item-icon {
+  width: 60rpx;
+  height: 50rpx;
+}
+.function-item-text {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.contact-btn {
+  padding: 0;
+  border: none;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0);
+  box-sizing: content-box;
+  line-height: 0;
+  display: block;
+  border: none;
+}
+.contact-btn::after{ border: none; }
+
+
+.call-btn {
+  width: 370rpx;
+  margin-right: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 40rpx;
+  font-size: 40rpx;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(246, 182, 45);
+}

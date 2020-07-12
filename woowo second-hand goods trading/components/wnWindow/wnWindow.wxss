@@ -1,0 +1,9 @@
+.wn-window {
+  /* background-color: rgb(248, 245, 240); */
+}
+
+.nav-bar-block,
+.wn-window-scroll-view,
+.tab-bar-block {
+  background: rgba(0, 0, 0, 0);
+}

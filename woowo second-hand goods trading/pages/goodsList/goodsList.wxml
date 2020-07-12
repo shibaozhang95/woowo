@@ -1,0 +1,50 @@
+<wn-navigation></wn-navigation>
+
+<wn-window current-top-pos="{{currentTopPos}}">
+  <view class="container">
+    <view class="search-and-sort-block">
+      <view class="search-bar-block">
+        <wn-search-bar
+          init-placeholder="搜索"
+          init-keyword="{{keyword}}"
+          confirm-type-text="搜索"
+          bindconfirmsearch="goToSearch"></wn-search-bar>
+      </view>
+      <view class="function-block">
+        <sort-bar current-main-cat="{{currentMainCat}}" 
+          bind:changeFilters="changeFilters"
+          initialize-filter="{{initializeFilter}}">
+        </sort-bar>
+      </view>
+    </view>
+
+    <wn-list ifShowNothingMark="{{ifNothing}}"
+      ifShowLoading="{{ifLoading}}"
+      ifShowReachBottom="{{ifReachBottom}}"
+      reach-bottom-tips="没有啦~"
+      nothing-mark-tips="空的，去看看其他吧～"
+      extra-top-block-height="{{50}}">
+      <view slot="list-container" class="goods-list-container">
+        <view class="container-left">
+          <block wx:for="{{filteredGoods.list}}" wx:key="product_id">
+            <view hidden="{{index % 2 != 0}}" class="content-item" hover-class="normal-hover">
+              <brif-goods class="brif-goods" goods-info="{{item}}">
+              </brif-goods>
+            </view>
+          </block>
+        </view>
+        <view class="container-right">
+          <block wx:for="{{filteredGoods.list}}" wx:key="product_id">
+            <view hidden="{{index % 2 != 1}}" class="content-item" hover-class="normal-hover">
+              <brif-goods class="brif-goods" goods-info="{{item}}">
+              </brif-goods>
+            </view>
+          </block>
+        </view>
+        
+      </view>
+    </wn-list>
+
+  </view>
+</wn-window>
+

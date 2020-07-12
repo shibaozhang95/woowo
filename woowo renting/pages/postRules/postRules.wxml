@@ -1,0 +1,104 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'规则说明'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}"
+  extra-bottom-block-height="{{45}}">
+  <view class="post-container">
+    <view class="section">
+      <view class="section-title">时间</view>
+      <view class="section-form">
+        <view class="section-form-line">
+          <wn-input-picker title="可入住时间"
+            picker-mode="date"
+            default-date-value="{{avaliableDateStr}}"
+            bindwninputchanged="pickerResultCallback"
+            data-field-name="avaliableDate"></wn-input-picker>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input-picker title="到期时间"
+            picker-mode="date"
+            default-date-value="{{expireDateStr}}"
+            bindwninputchanged="pickerResultCallback"
+            data-field-name="expireDate"></wn-input-picker>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="section-title">对租客要求</view>
+      <view class="section-form">
+
+        <view class="section-form-line">
+          <view class="special-switch">
+            <view class="special-switch-left">
+              <view class="special-switch-title">男性</view>
+              <switch class="switch-ifself" type="switch" 
+                color="rgb(86, 182, 213)"
+                checked="{{fieldObj.tenantRestrict.ifMaleAllowed}}"
+                bindchange="tenantRestrictChanged"
+                data-field-name="ifMaleAllowed"></switch>
+            </view>
+            <view class="special-switch-right">
+              <view class="special-switch-title">女性</view>
+              <switch class="switch-ifself" type="switch" 
+                color="rgb(86, 182, 213)"
+                checked="{{fieldObj.tenantRestrict.ifFemaleAllowed}}"
+                bindchange="tenantRestrictChanged"
+                data-field-name="ifFemaleAllowed"></switch>
+            </view>
+          </view>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input-switch
+            title="允许做饭"
+            default-switch-value="{{fieldObj.tenantRestrict.ifCookAllowed}}"
+            bindwninputchanged="tenantRestrictChanged"
+            data-field-name="ifCookAllowed"></wn-input-switch>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input-switch
+            title="允许抽烟"
+            default-switch-value="{{fieldObj.tenantRestrict.ifSmookAllowed}}"
+            bindwninputchanged="tenantRestrictChanged"
+            data-field-name="ifSmookAllowed"></wn-input-switch>
+        </view>
+
+        <view class="section-form-line">
+          <wn-input-switch
+            title="允许养宠物"
+            default-switch-value="{{fieldObj.tenantRestrict.ifPetsAllowed}}"
+            bindwninputchanged="tenantRestrictChanged"
+            data-field-name="ifPetsAllowed"></wn-input-switch>
+        </view>
+      </view>
+
+      <view class="section">
+        <view class="section-title">其他要求</view>
+        <view class="section-form">
+          <view class="section-form-line">
+            <wn-input-count
+              input-type="textarea"
+              placeholder="选填"
+              word-limit="{{500}}"
+              default-value="{{fieldObj.others}}"
+              textarea-height="{{60}}"
+              bindwninputchanged="inputChanged"
+              data-field-name="others"></wn-input-count>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>  
+</wn-window>
+
+<view class="post-next-btn-block post-next-btn-block-{{ifAllDataPass?'enable' : 'disable'}}"
+  bindtap="nextStep">
+  <view class="post-next-btn"
+    hover-closs="post-button-hover">下一步</view>
+  <view class="post-next-bottom-gap"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+</view>

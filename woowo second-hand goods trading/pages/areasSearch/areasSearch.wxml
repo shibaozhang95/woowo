@@ -1,0 +1,100 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="{{'搜索区域'}}"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}" 
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <view class="search-bar-section">
+      <edible-areas-search-bar
+        chosen-areas-list="{{chosenAreasList}}"
+        bind:deletechosen="deleteChosenEvent"
+        bind:newareasearch="newAreaSearchBing"
+        reset-value="{{resetInputValue}}">
+      </edible-areas-search-bar>
+    </view>
+
+    <view class="current-area-section">
+      <view class="title-block">
+        <view class="title">获取当前定位</view>
+        <switch class="current-area-swith" 
+          color="rgb(246,182,45)"
+          checked="{{ifOpenNearAreas}}"
+          type="switch" bindchange="switchNearAreas"></switch>
+      </view>
+      <view class="section-list" wx:if="{{ifOpenNearAreas}}">
+
+        <view class="requesting-tips"
+          wx:if="{{ifRequestingCurrLocation||ifNoCurrLocation}}">
+          <view class="loading"
+            wx:if="{{ifRequestingCurrLocation}}">
+            <image  class="loading-icon" 
+              src="/statics/images/loading_2.gif" mode="aspectFit"></image>
+            <view class="loading-text">加载中...</view>
+          </view>
+          <view wx:if="{{ifNoCurrLocation}}" class="no-result">未找到相关地址</view>
+        </view>
+
+        <block wx:for="{{nearAreasList}}" wx:key="">
+          <view class="one-area" 
+            hover-class="normal-hover-class"
+            bind:tap="chosenFromAreasList"
+            data-target-index="{{index}}"
+            data-target-list="nearAreasList">
+            <one-area area-info="{{item.formatAddress}}" if-chosen="{{item.ifChosen}}"></one-area>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="suggestion-areas-section" 
+      wx:if="{{suggestionAreasList.length!=0||ifRequestingQueryLocation}}">
+      <view class="section-title">建议定位</view>
+      <view class="section-list">
+        
+        <view class="requesting-tips"
+          wx:if="{{ifRequestingQueryLocation||ifNoQueryLocation}}">
+          <view class="loading"
+            wx:if="{{ifRequestingQueryLocation}}">
+            <image  class="loading-icon" 
+              src="/statics/images/loading_2.gif" mode="aspectFit"></image>
+            <view class="loading-text">加载中...</view>
+          </view>
+          <view wx:if="{{ifNoQueryLocation}}" class="no-result">未找到相关地址</view>
+        </view>
+
+        <block wx:for="{{suggestionAreasList}}" wx:key="">
+          <view class="one-area" 
+            hover-class="normal-hover-class"
+            bind:tap="chosenFromAreasList"
+            data-target-index="{{index}}"
+            data-target-list="suggestionAreasList">
+            <one-area area-info="{{item.formatAddress}}" if-chosen="{{item.ifChosen}}"></one-area>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <view class="history-areas-section"
+      wx:if="{{historyAreasList.length!=0}}">
+      <view class="section-title">最近使用过的定位</view>
+      <view class="section-list">
+        <block wx:for="{{historyAreasList}}" wx:key="">
+          <view class="one-area" 
+            hover-class="normal-hover-class"
+            bind:tap="chosenFromAreasList"
+            data-target-index="{{index}}"
+            data-target-list="historyAreasList">
+            <one-area area-info="{{item.formatAddress}}" if-chosen="{{item.ifChosen}}"></one-area>
+          </view>
+        </block>
+      </view>
+    </view>
+
+    <!-- <view class="confirm-section">
+      <view class="confirm-section-button" 
+        hover-class="normal-hover-class"
+        bindtap="confrimSearchResult">确认</view>
+      <view class="bottom-gap" style="width:100%;height:{{bottomGapHeight}}px"></view>
+    </view> -->
+  </view>
+</wn-window>

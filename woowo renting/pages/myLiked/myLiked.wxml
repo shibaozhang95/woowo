@@ -1,0 +1,66 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="我的收藏"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="">
+  <view class="navigation-block">
+    <view class="nav-btn nav-btn-{{currentContentId == 0 ? 'chosen' : ''}}"
+      catch:tap="switchLikedContent" data-tid="{{0}}">
+      <view class="nav-txt">收藏房源</view>
+      <view class="nav-indicator"></view>
+    </view>
+    <view class="horizontal-seperate-line"></view>
+    <view class="nav-btn nav-btn-{{currentContentId == 1 ? 'chosen' : ''}}"
+      catch:tap="switchLikedContent" data-tid="{{1}}">
+      <view class="nav-txt">合租室友</view>
+      <view class="nav-indicator"></view>
+    </view>
+  </view>
+
+  <swiper class="liked-content" indicator-dots="{{false}}"
+    autoplay="{{false}}" duration="{{500}}" bindchange="swipeLikedContent"
+    current="{{currentContentId}}"
+    style="height:{{windowHeight - navHeight}}px">
+    <!-- My liked housing list -->
+    <swiper-item>
+      <scroll-view scroll-y="{{true}}">
+        <wn-list if-show-nothing-mark="{{ifNothing}}"
+          nothing-mark-tips="空的，你什么都没收藏呢~"
+          if-show-loading="{{ifLoading}}"
+          if-show-reach-bottom="{{ifReachBottom}}"
+          reach-bottom-tips="没有啦~"
+          extra-top-block-height="{{35}}">
+          <view class="housing-list-block">
+            <viwe class="house-item" wx:for="{{houseInfoList}}" wx:key="id">
+              <one-apt
+                house-info="{{item}}"
+                if-on-like-page="{{true}}"></one-apt>
+            </viwe>
+          </view>  
+        </wn-list>  
+      </scroll-view>
+    </swiper-item>  
+
+    <!-- My liked housemate list -->
+    <swiper-item>
+      <scroll-view scroll-y="{{true}}">
+        <wn-list 
+          if-show-nothing-mark="{{ifHmNothing}}"
+          nothing-mark-tips="空的，你什么都没收藏呢~"
+          if-show-loading="{{ifHmLoading}}"
+          if-show-reach-bottom="{{ifHmReachBottom}}"
+          reach-bottom-tips="没有啦~"
+          extra-top-block-height="{{35}}">
+          <view class="housemate-list-block">
+            <viwe class="housemate-item" 
+              wx:for="{{housemateInfoList}}" wx:key="id">
+              <housemate-card
+                housemate-info="{{item}}"
+                if-on-like-page="{{true}}"></housemate-card>
+            </viwe>
+          </view>  
+        </wn-list>  
+      </scroll-view>
+    </swiper-item>  
+  </swiper>
+</wn-window>

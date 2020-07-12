@@ -1,0 +1,140 @@
+<wn-navigation nav-title="发布(1/2)"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="section-basic-inf">
+      <view class="goods-name">
+        <input class="goods-name-input" placeholder="请输入物品名称" 
+          value="{{goodsInfo.title}}" bindinput="checkGoodsTitleWords"/>
+        <text class="words-limit">{{titleWords}}/{{titleWordsLimit}}</text>
+      </view>
+      <view class="goods-brif">
+        <textarea class="goods-brif-input" placeholder="请简要描述物品的细节，型号尺码等"
+          value="{{goodsInfo.brif}}" bindinput="checkGoodsBrif">
+        </textarea>
+      </view>
+      <view class="block-goods-pics">
+        <view class="one-pic" wx:for="{{images}}" wx:key="tempFilePath">
+          <image class="one-pic-img" mode="aspectFit" src="{{item.tempFilePath}}"></image>
+          <view wx:if="{{item.ifDone}}" class="delete-icon-btn" hover-class="normal-hover" 
+            data-index="{{index}}" bindtap="deletePhoto">
+            <image class="delete-icon" src="../../statics/images/icon_delete@2x.png" mode="aspectFit"></image>
+          </view>
+          <view wx:if="{{item.ifDone && index == 0}}" class="cover-block">封面</view>
+          <view wx:if="{{!item.ifDone}}" style="width: {{100 - item.process}}%" class="cover-loading"></view>
+          <view wx:if="{{!item.ifDone}}" class="cover-loading-2">
+            <!-- THIS IS FROM OTHERS -->
+            <view  id="floatingCirclesG">
+              <view class="f_circleG" id="frotateG_01"></view>
+              <view class="f_circleG" id="frotateG_02"></view>
+              <view class="f_circleG" id="frotateG_03"></view>
+              <view class="f_circleG" id="frotateG_04"></view>
+              <view class="f_circleG" id="frotateG_05"></view>
+              <view class="f_circleG" id="frotateG_06"></view>
+              <view class="f_circleG" id="frotateG_07"></view>
+              <view class="f_circleG" id="frotateG_08"></view>
+            </view>
+          </view>
+          
+        </view>
+        <view class="add-pics-button" wx:if="{{images.length < imagesLimit}}" 
+          hover-class="normal-hover" bind:tap="takePhoto">
+          <image class="add-pics-icon" mode="aspectFit" src="../../statics/images/icon_add_img@2x.png" />
+        </view>
+        <text class="pics-limit-warning" wx:if="{{images.length == 0}}">{{"最多添加 " + imagesLimit + " 张图片"}}</text>
+      </view>
+    </view>
+    
+    <view class="section-other-inf">
+      
+      <view class="other-inf-block block-property">
+        <picker mode="selector" range="{{conditionLevel}}" value="{{conditionValue}}"
+          bindchange="conditionLevelChange" >
+          <view class="other-inf-line" hover-class="normal-hover">
+            <view class="other-inf-txt">
+              <text class="txt">新旧程度</text>
+            </view>
+            <view class="other-inf-input">
+              {{conditionLevel[conditionValue]}}
+            </view>
+            <view class="other-inf-fnt">
+              <image class="arrow-icon" src="../../statics/images/icon_arrow@2x.png" mode="aspectFit"></image>
+            </view>
+          </view>
+        </picker>
+        
+        <picker mode="multiSelector" range="{{catalogies}}" value="{{catalogyValue}}"
+          bind:change="catalogiesChange" bind:columnchange="bigCatChange">
+          <view class="other-inf-line" hover-class="normal-hover">
+            <view class="other-inf-txt">
+              <text class="txt">分类</text>
+            </view>
+            <view class="other-inf-input">
+              {{catalogies[0][catalogyValue[0]]}} {{catalogyValue[1] == -1 ? '' : ', '}} {{catalogies[1][catalogyValue[1]]}}
+            </view>
+            <view class="other-inf-fnt">
+              <image class="arrow-icon" src="../../statics/images/icon_arrow@2x.png" mode="aspectFit"></image>
+            </view>
+          </view>
+        </picker>
+      </view>
+
+      <!-- specialize -->
+      <!-- <view class="other-inf-block block-delivery">
+        <view class="other-inf-line">
+          <view class="other-inf-txt">
+            <text class="txt">邮寄方式</text>
+            <text class="input-hint">（可多选）</text>
+          </view>
+          <view class="other-inf-input">
+          </view>
+          <view class="other-inf-fnt">
+            <view class="other-inf-fnt-mulchose">
+              <view class="delivery-btn delivery-{{ifSelfTake == true ? 'chosen' : 'unchoose'}}"
+                hover-class="normal-hover" data-way="{{0}}" bindtap="switchshipWay">自取</view>
+              <view class="delivery-btn delivery-{{ifDelivery == true ? 'chosen' : 'unchoose'}}"
+                hover-class="normal-hover" data-way="{{1}}" bindtap="switchshipWay">送货</view>
+            </view>
+          </view>
+        </view>
+      </view> -->
+
+      <view class="other-inf-block block-delivery">
+        <view class="delivery-block">
+          <view class="delivery-title">
+            <view class="delivery-txt">邮寄方式</view>
+            <view class="delivery-hint">(可多选)</view>
+          </view>
+          <view class="other-inf-fnt-mulchose">
+            <view class="delivery-btn delivery-{{ifSelfTake == true ? 'chosen' : 'unchoose'}}"
+              hover-class="normal-hover" data-way="{{0}}" bindtap="switchshipWay">自取</view>
+            <view class="delivery-btn delivery-{{ifDelivery == true ? 'chosen' : 'unchoose'}}"
+              hover-class="normal-hover" data-way="{{1}}" bindtap="switchshipWay">送货</view>
+          </view>
+        </view>
+      </view>
+
+      <view class="other-inf-block block-price">
+        <view class="other-inf-line">
+          <view class="other-inf-txt">
+            <text class="txt">价格</text>
+          </view>
+          <view class="other-inf-input">
+            <text class="txt">$</text>
+            <input class="inpt" type="digit" value="{{goodsInfo.price}}"
+              bindinput="inputPrice"></input>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- <navigator url="../sale2/sale2" hover-class="none"> -->
+    <view class="next-step-btn" hover-class="next-step-hover"
+      bindtap="nextStep">
+      <view class="btn-txt" hover-class="next-step-hover">下一步</view>
+      <image class="arrow-icon" src="../../statics/images/icon_arrow@2x.png" mode="aspectFit"></image>
+    </view>
+    <!-- </navigator> -->
+  </view>
+</wn-window>

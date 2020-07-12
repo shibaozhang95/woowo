@@ -1,0 +1,85 @@
+<wn-navigation nav-title="{{navTitle}}"
+  nav-bg-color="{{navBgColor}}"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view wx:if="{{!ifMerchant}}" 
+      class="user-inf-block">
+      <image class="user-inf-avatar" 
+        src="{{userInfo.userAvatar}}" 
+        mode="aspectFill"></image>
+      <text class="user-inf-name">{{userInfo.username}}</text>
+    </view>
+
+    <view wx:else
+      class="merchant-block">
+      <image class="bg-image" src="{{bgImageUrl}}" 
+        mode="aspectFill"></image>
+      <view class="edit-block">
+        <view class="create-shop-card-btn"
+          bindtap="createShopCard"
+          >生成店铺卡片</view>
+        <view class="edit-btn"
+          wx:if="{{!ifOthersHomepage}}"
+          bindtap="editShopInfo">
+          <view class="edit-text">编辑</view>
+          <image class="edit-icon" 
+            src="./statics/icon_edit.png" mode="aspectFill">
+          </image>
+        </view>
+      </view>
+      <view class="merchant-info-block">
+        <view class="merchant-info-bg"></view>
+        <image class="merchant-avatar" 
+          src="{{userInfo.userAvatar}}" mode="aspectFill">
+        </image>
+        <view class="name-and-brief-block">
+          <view class="merchant-name">{{userInfo.username}}</view>
+          <view class="merchant-brief">{{description}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="following-fnt-block" wx:if="{{ifOthersHomepage}}">
+      <image class="following-fnt-background bg-unfollowed" wx:if="{{!(ifFollowing || ifFollowingShop)}}" 
+        src="/statics/images/img_bg_unfollowed@2x.png" mode="aspectFit"></image>
+      <image class="following-fnt-background bg-following" wx:else
+        src="/statics/images/img_bg_following@2x.png" mode="aspectFit"></image>
+      <view wx:if="{{!ifMerchant}}"
+        class="following-fnt-btn following-fnt-btn-{{ifFollowing ? 'following' : ''}}"
+        bindtap="switchFollowUser">
+        {{ifFollowing ? '已关注' : '关注'}}</view>
+      <view wx:else 
+        class="following-fnt-btn following-fnt-btn-{{ifFollowingShop ? 'following' : ''}}"
+        bindtap="switchFollowShop">
+        {{ifFollowingShop ? '已关注' : '关注'}}</view>
+    </view>
+
+    <view class="goods-account-block">
+      {{'在架 ' + (userInfo.sellingGoodsAccount || 0) + ' 件，累计发布 ' + (userInfo.totalGoodsAccount || 0) + ' 件'}}
+    </view>
+
+    <wn-list ifShowNothingMark="{{ifNothing}}"
+      ifShowLoading="{{ifLoading}}"
+      ifShowReachBottom="{{ifReachBottom}}"
+      reach-bottom-tips="没有啦~">
+      <view slot="list-container" class="goods-content">
+        <block wx:for="{{userInfo.showingGoodsList}}" wx:key="product_id">
+          <view class="goods-item">
+            <brif-goods-basic goods-info="{{item}}"></brif-goods-basic>
+          </view>
+          
+        </block>
+      </view>
+    </wn-list>
+  </view>
+</wn-window>
+
+<share-image
+  if-show-share-image="{{ifShowShareImage}}"
+  if-shop="{{ifMerchant}}"
+  shop-name="{{userInfo.username}}"
+  shop-description="{{description}}"
+  shop-id="{{shopId}}"
+  shop-image="{{userInfo.userAvatar}}"
+  bindcomplete="turnOffShareImage"></share-image>

@@ -1,0 +1,108 @@
+.housemate-card-base-container {
+  width: 640rpx;
+  box-sizing: border-box;
+  height: auto;
+  background-color: rgb(255, 255, 255);
+  padding: 28rpx 20rpx 20rpx 24rpx;
+}
+
+.address-block, 
+.price-range-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+}
+
+.address-icon {
+  display: block;
+  width: 32rpx;
+  height: 40rpx;
+  display: block;
+  margin-right: 16rpx;
+}
+
+.price-icon {
+  width: 34rpx;
+  height: 34rpx;
+  display: block;
+  margin-right: 14rpx;
+}
+
+.address-txt,
+.price-txt { 
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgb(44, 62, 80);
+}
+
+.address-txt {
+  width: 540rpx;
+  height: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.address-block {
+  margin-bottom: 20rpx;
+}
+.price-range-block {
+  margin-bottom: 30rpx;
+}
+
+.description-txt {
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: rgba(44, 62, 80, 0.5);
+  margin-bottom: 20rpx;
+  max-height: 64rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* white-space: nowrap; */
+}
+
+.info-block {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.avatar {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  /* border: 2rpx solid rgb(112, 112, 112); */
+  border-radius: 50%;
+  margin-right: 18rpx;
+}
+
+.other-info {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.user-name {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: rgb(44, 62, 80);
+  margin-top: 8rpx;
+  margin-bottom: 12rpx;
+}
+
+.status {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.gender-icon {
+  margin-right: 4rpx;
+}
+
+.status-txt {
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: rgba(44, 62, 80, 0.49);
+}
+

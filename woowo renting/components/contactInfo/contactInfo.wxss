@@ -1,0 +1,154 @@
+/*
+* contact block
+*/
+
+.contact-block {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+  margin-bottom: 2rpx;
+}
+
+.contact-title-block {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 40rpx 0;
+}
+
+.contact-title {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: rgb(44, 62, 80);
+}
+
+.contact-show-text,
+.show-less-text {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  color: rgb(246, 182, 45);
+}
+
+.contact-show-block,
+.show-less-block {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contact-show-icon,
+.show-less-icon {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.contact-show-icon image {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.show-less-icon image {
+  width: 20rpx;
+  height: 20rpx;
+  transform: rotate(180deg);
+}
+
+.contact-info-block {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.contact-line-one {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 114rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+
+.contact-line-one-item,
+.contact-line-two-item {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.contact-line-one-title,
+.contact-line-two-title {
+  height: 44rpx;
+  line-height: 44rpx;
+  color: rgb(246, 182, 45);
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.contact-line-one-content {
+  width: 240rpx;
+  height: 50rpx;
+  box-sizing: border-box;
+  border: 2rpx solid rgb(44, 62, 80);
+  border-radius: 40rpx;
+  padding: 0 20rpx;
+  line-height: 46rpx;
+  color: rgb(44, 62, 80);
+  text-align: center;
+  font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.contact-line-two {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 40rpx;
+}
+
+.contact-line-two-content {
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  padding: 26rpx;
+  color: rgb(44, 62, 80);
+  border: 2rpx solid rgb(44, 62, 80);
+}
+
+.contact-line-one-content-disable,
+.contact-line-two-content-disable {
+  color: rgba(44, 62, 80, 0.5);
+}
+
+.qr-code {
+  width: 248rpx;
+  height: 248rpx;
+  display: block;
+}
+
+.contact-line-thress {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin-bottom: 40rpx;
+}

@@ -1,0 +1,61 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="商家信息验证">
+</wn-navigation>
+
+<wn-window
+  if-show-tab-bar="{{false}}">
+  <view class="upload-img-block">
+    <image class="background-img" 
+      src="{{bgImage}}" mode="aspectFill">
+    </image>
+    <view class="avatar-block"
+      bindtap="chooseAndUpdateImage"
+      data-field-name="image">
+      <image class="avatar-img" 
+        src="{{image}}" mode="aspectFill">
+      </image>
+      <view class="avatar-upload-btn"
+        wx:if="{{!image}}">
+        <image class="avatar-upload-icon" 
+          src="./statics/icon_camera.png" 
+          mode="aspectFit">
+        </image>
+        <view class="avatar-hint-text">上传头像</view>
+      </view>
+    </view>
+    <view class="bg-upload-btn"
+      bindtap="chooseAndUpdateImage"
+      data-field-name="bgImage">
+      <view class="bg-hint-text">上传主页背景图片</view>
+      <image class="bg-upload-icon" 
+        src="./statics/icon_camera.png" 
+        mode="aspectFit">
+      </image>
+    </view>
+  </view>
+
+  <view class="name-and-brief-block">
+    <view class="name-block">
+      <wn-input-count
+        input-type="input"
+        placeholder="请输入你店铺的名字"
+        default-value="{{name}}"
+        word-limit="{{12}}"
+        bindwninputchanged="inputChanged"
+        data-field-name="name"></wn-input-count>
+    </view>
+    <view class="brief-block">
+      <wn-input-count
+        input-type="textarea"
+        placeholder="请简要描述你的店铺"
+        default-value="{{description}}"
+        word-limit="{{20}}"
+        textarea-height="{{72}}"
+        bindwninputchanged="inputChanged"
+        data-field-name="description"></wn-input-count>
+    </view>
+  </view>
+
+  <view class="confirm-btn"
+    bindtap="updateShopInfo">确认保存</view>
+</wn-window>

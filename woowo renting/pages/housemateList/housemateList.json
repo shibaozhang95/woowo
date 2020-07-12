@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "housemate-card": "/components/housemateCard/housemateCard",
+    "search-bar": "/components/searchBar/searchBar",
+    "filter-for-housemate": "components/filterForHousemate/filterForHousemate"
+  }
+}

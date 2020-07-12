@@ -1,0 +1,63 @@
+<wn-navigation if-tab-page="{{false}}"
+  nav-title="发布成功"></wn-navigation>
+
+<wn-window if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <!-- <view class="success-block">
+      <image class="success-image" 
+        src="/statics/images/img_posted_succeed.png" mode="aspectFit">
+      </image>
+
+      <view class="share-btn fnt-btn"
+        bindtap="saveToLocal">保存房源卡片</view>
+    </view> -->
+
+    <view class="success-block">
+      <view class="success-block-tips"
+      >发布成功！</view>
+      <!-- <image class="success-image" 
+        src="/statics/images/img_posted_succeed.png" mode="aspectFit">
+      </image> -->
+    </view>
+
+    <view class="sharing-image-block">
+      <image class="share-image"
+        src="{{imageUrl}}" mode="aspectFill"></image>
+
+      <view class="tips">
+        <view class="line"></view>
+        <view class="tips-text"
+          bindtap="saveToLocal">保存图片</view>
+        <view class="line"></view>
+      </view>
+    </view>
+
+    <view class="customer-service-block">
+      <text class="cs-tips">
+        如果有更多问题可以联系客服哦~
+        （复制添加小客服）
+      </text>
+      <view 
+        class="cs-wechat"
+        bind:tap="copyText"
+        data-copy-text="Redbeencake"
+      >Redbeencake</view>
+    </view>
+
+    <view class="fnt-block">
+      <view class="fnt-btn"
+        bindtap="goToHouseDetail">查看详情</view>
+      <view class="fnt-btn"
+        bindtap="goToIndex">返回首页</view>
+    </view>
+  </view>
+</wn-window>
+
+<canvas class="canvas" canvas-id="{{canvasId}}"
+  style="width:200%;height:200%"></canvas>
+
+<!-- <share-image if-show-share-image="{{ifShowShareImage}}"
+  house-info="{{woowoHouse}}"
+  if-hidden="{{true}}"
+  bindcreateimagedone="createImageDone"></share-image> -->

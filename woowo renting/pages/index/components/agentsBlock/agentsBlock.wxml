@@ -1,0 +1,39 @@
+<view class="agents-block-container">
+  <view class="title-block">
+    <view class="title">优质中介房源</view>
+    <view class="view-more-block"
+      bindtap="goToAgents">
+      <view class="view-more-text">全部中介房源</view>
+      <image class="view-more-icon" mode="aspectFill"
+        src="/statics/images/icon_arrow_top_yellow.png"></image>
+    </view>
+  </view>
+
+  <view class="list-container">
+
+    <view class="loading-block"
+      wx:if="{{ifLoading}}">
+      <image class="loading-icon" mode="aspectFit"
+        src="/statics/images/loading_2.gif"></image>
+      <view class="loading-text">加载中...</view>
+    </view>
+    <view class="nothing-block"
+      wx:if="{{ifNothing}}">
+      <view class="nothing-text">还什么都没有哦~</view>
+    </view>
+
+    <scroll-view wx:if="{{!ifLoading&&!ifNothing}}"
+      scroll-x="{{true}}">
+      <view class="agents-list">
+        <block wx:for="{{agentsList}}" wx:key="">
+          <view class="one-agent-item">
+            <one-agent-brif
+              company-info="{{item}}"></one-agent-brif>
+          </view>
+        </block>
+        <view class="agents-block-margin">AA</view>
+      </view>
+    </scroll-view>
+
+  </view>
+</view>

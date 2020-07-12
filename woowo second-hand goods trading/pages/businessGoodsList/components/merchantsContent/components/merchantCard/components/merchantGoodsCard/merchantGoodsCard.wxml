@@ -1,0 +1,7 @@
+<view class="merchant-goods-card-container"
+  bindtap="goToGoodsDetail">
+  <image class="cover" 
+    src="{{cover}}" mode="aspectFill"></image>
+  <view class="title">{{goodsInfo.product_title}}</view>
+  <view class="price">{{'$ ' + goodsInfo.product_price}}</view>
+</view>

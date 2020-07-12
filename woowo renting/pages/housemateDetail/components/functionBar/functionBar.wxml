@@ -1,0 +1,37 @@
+<view class="function-bar-container">
+  <view class="function-bar-block">
+
+    <view class="function-bar-left">
+      <view class="function-item">
+        <button class="contact-btn" open-type="contact">
+          <image class="function-item-icon" 
+          src="./statics/icon_service.png" mode="aspectFit"></image>
+          <view class="function-item-text">客服</view>
+        </button>
+      </view>
+      <view class="function-item"
+        bindtap="switchLikingAHousemate">
+        <image class="function-item-icon" 
+          src="{{'./statics/icon_like' + (ifLiked ? '_active' : '') + '.png'}}" 
+          mode="aspectFit"></image>
+        <view class="function-item-text">收藏</view>
+      </view>
+      <view class="function-item"
+        bindtap="tryToContact">
+        <image class="function-item-icon" 
+          src="{{'./statics/icon_contact' + (ifContacted ? '_active' : '') + '.png'}}" 
+          mode="aspectFit"></image>
+        <view class="function-item-text">私信</view>
+      </view>
+    </view>
+
+    <view class="function-bar-right">
+      <view class="call-btn"
+        bindtap="callHouseholder">联系房东</view>
+    </view>
+  </view>
+
+  <view class="bottom-gap-block"
+    style="width:100%;height:{{bottomGapHeight}}px"></view>
+  
+</view>

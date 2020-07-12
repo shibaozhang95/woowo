@@ -1,0 +1,45 @@
+<view class="menu-container">
+  <swiper class="menu-swiper" indicator-dots="{{true}}" 
+    indicator-color="rgba(54,67,77,.5)"
+    indicator-active-color="rgb(136,193,211)" 
+    autoplay="{{false}}" 
+    duration="{{300}}" circular="{{false}}">
+    <swiper-item class="menu-swiper-item" item-id="">
+      <view class="one-menu-block">
+        <!-- Exchange items -->
+        <view class="extra-m-item"
+          bind:tap="searchWithMainCat"
+          data-main-cat="闲品互换"
+          data-code="exchange">
+          <image class="extra-menu-icon" 
+            src="statics/icon_menu_exchange.png" 
+            mode="widthFix">
+          </image>
+        </view>
+        <view class="m-item" wx:for="{{menu1}}" wx:key="{{item.id}}">
+          <view class="menu-nav-block" 
+            data-main-cat="{{item.txt}}" 
+            data-code="{{item.code}}"
+            hover-class="none" bind:tap="searchWithMainCat">
+            <image class="menu-icon" src="{{item.iconUrl}}" mode="aspectFit"></image>
+            <text class="menu-txt">{{item.txt}}</text>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+
+    <swiper-item class="menu-swiper-item" item-id="">
+      <view class="one-menu-block">
+        <view class="m-item" wx:for="{{menu2}}" wx:key="{{item.id}}">
+          <view class="menu-nav-block" 
+            data-main-cat="{{item.txt}}"
+            data-code="{{item.code}}" 
+            hover-class="none" bind:tap="searchWithMainCat">
+            <image class="menu-icon" src="{{item.iconUrl}}" mode="aspectFit"></image>
+            <text class="menu-txt">{{item.txt}}</text>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,42 @@
+.sys-message-container {
+  width: 620rpx;
+  margin: 36rpx auto;
+  background: rgb(246, 182, 45);
+  border-radius: 10rpx;
+  /* overflow: hidden; */
+}
+
+.sys-message-title {
+  width: 100%;
+  padding: 16rpx 18rpx 2rpx 18rpx;
+  overflow: hidden;
+}
+
+.sys-message-title-icon {
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 2rpx 0;
+}
+
+.sys-message-title-txt {
+  float: left;
+  height: 44rpx;
+  line-height: 44rpx;
+  color: rgb(44, 62, 80);
+  font-size: 32rpx;
+  margin-left: 14rpx;
+}
+
+.sys-message-content {
+  display: block;
+  width: 100%;
+  /* height: auto; */
+  padding: 0 40rpx 12rpx 72rpx;
+  color: rgb(44, 62, 80);
+  font-size: 28rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  word-break:break-all; 
+  /* text-align: left; */
+}

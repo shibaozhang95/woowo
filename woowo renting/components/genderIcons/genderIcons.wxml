@@ -1,0 +1,22 @@
+<view class="gender-icons-container">
+  <image class="icon-male" 
+    src="./statics/icon_gender_male.png" 
+    mode="aspectFill"
+    wx:if="{{gender == '男'}}"></image>
+  <image class="icon-female" 
+    src="./statics/icon_gender_female.png" 
+    mode="aspectFill"
+    wx:if="{{gender == '女'}}"></image>
+  <image class="icon-couples" 
+    src="./statics/icon_gender_straight_couples.png" 
+    mode="aspectFill"
+    wx:if="{{gender == '双人（男女）'}}"></image>
+  <image class="icon-couples" 
+    src="./statics/icon_gender_les_couples.png" 
+    mode="aspectFill"
+    wx:if="{{gender == '双人（女女）'}}"></image>
+  <image class="icon-couples" 
+    src="./statics/icon_gender_gay_couples.png" 
+    mode="aspectFill"
+    wx:if="{{gender == '双人（男男）'}}"></image>
+</view>

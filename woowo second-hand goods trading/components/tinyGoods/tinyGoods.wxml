@@ -1,0 +1,8 @@
+<view class="tiny-goods-container" data-goods-id="{{goodsInfo.goodsId}}" bindtap="goToGoodsDetail">
+  <image class="goods-img" mode="aspectFill" lazy-load="{{true}}"
+    src="{{goodsInfo.goodsPicsUrl[0] + '-scale_50'}}"></image>
+  <!-- <wn-image class="goods-img" img-src="{{goodsInfo.goodsPicsUrl[0]}}"
+    if-lazy-load="{{true}}" img-mode="{{'aspectFill'}}"></wn-image> -->
+  <view class="goods-title">{{goodsInfo.goodsTitle}}</view>
+  <view class="goods-price">$ {{goodsInfo.goodsPrice}}</view>
+</view>

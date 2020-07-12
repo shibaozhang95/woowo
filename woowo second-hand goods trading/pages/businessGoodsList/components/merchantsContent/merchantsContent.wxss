@@ -1,0 +1,35 @@
+.merchants-content-container {
+  width: 750rpx;
+  overflow: hidden;
+}
+
+.merchants-content-container .cat-ls-scroll-view {
+  width: 750rpx;
+  height: 60rpx;
+  padding: 30rpx 4rpx 30rpx 14rpx;
+  white-space: nowrap;
+}
+
+.cat-item {
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: rgb(44, 62, 80);
+  margin-right: 10rpx;
+}
+
+.cat-item-chosen {
+  background-color: rgb(246, 182, 45);
+  color: rgb(255, 255, 255);
+}
+
+.one-merchant-block {
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+

@@ -1,0 +1,9 @@
+{
+
+  "backgroundColor": "#ffffff",
+
+  "usingComponents": {
+    "edible-areas-search-bar": "components/edibleAreasSearchBar/edibleAreasSearchBar",
+    "one-area": "components/oneArea/oneArea"
+  }
+}

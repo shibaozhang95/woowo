@@ -1,0 +1,31 @@
+<form bind:submit="collectFormId" report-submit class="collect-form">
+  
+  <view class="brif-goods-container" bindtap="goToGoodsDetail">
+    <button form-type="submit" class="collect-btn">
+      <view class="brif-goods-user-inf">
+        <image class="user-avatar" 
+          mode="aspectFill"
+          src="{{ifMerchant ? shopInfo.image : goodsInfo.sellerAvatarUrl}}"
+          lazy-load="{{true}}"></image>
+        <!-- <wn-image class="user-avatar" img-src="{{goodsInfo.sellerAvatarUrl}}"
+          if-lazy-load="{{true}}"></wn-image> -->
+        <text class="user-name">{{ifMerchant ? shopInfo.name : goodsInfo.sellerName}}</text>
+        <text class="user-location">{{goodsInfo.goodsArea}}</text>
+      </view>
+      <view class="brif-goods-img">
+        <image class="goods-pic" src="{{goodsInfo.goodsPicsUrl[0] + '-scale_50'}}" 
+          lazy-load="{{true}}"	mode="widthFix"></image>
+        <!-- <wn-image class="goods-pic" img-src="{{goodsInfo.goodsPicsUrl[0]}}"
+          if-lazy-load="{{true}}" img-mode="{{'widthFix'}}"></wn-image> -->
+      </view>
+      <view class="brif-goods-inf">
+        <text class="brif-goods-inf-title">{{goodsInfo.goodsTitle}}</text>
+        <view class="brif-goods-inf-second">
+          <text class="brif-goods-inf-price">${{goodsInfo.goodsPrice}}</text>
+          <text class="brif-goods-inf-time">{{formatDate}}</text>
+        </view>
+      </view>
+    </button>
+  </view>
+   
+</form>

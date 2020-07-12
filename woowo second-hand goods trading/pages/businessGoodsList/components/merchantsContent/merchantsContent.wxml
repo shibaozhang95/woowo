@@ -1,0 +1,30 @@
+<view class="merchants-content-container">
+  <scroll-view 
+    class="cat-ls-scroll-view"
+    scroll-x="{{true}}">
+    <!-- <view class="cat-block"> -->
+      <block wx:for="{{cats}}" wx:key="">
+        <view class="cat-item cat-item-{{item.title == chosenCat ? 'chosen' : ''}}"
+          bindtap="switchCat"
+          data-target-cat="{{item.title}}"
+        >{{item.title}}</view>
+      </block>
+    <!-- </view> -->
+  </scroll-view>
+
+  <wn-list
+    if-show-nothingMark="{{ifNothing}}"
+    if-show-loading="{{ifLoading}}"
+    if-show-reach-bottom="{{ifReachBottom}}"
+    rearch-bottom-tips="空的，去看看其他吧~">
+    <view slot="list-container"
+      class="merchants-list-container">
+      <block wx:for="{{merchantsList}}" wx:key="id">
+        <view class="one-merchant-block">
+          <merchant-card
+            merchant-info="{{item}}"></merchant-card>
+        </view>
+      </block>
+    </view>
+  </wn-list>
+</view>

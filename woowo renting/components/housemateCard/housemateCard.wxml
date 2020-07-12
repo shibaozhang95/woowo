@@ -1,0 +1,28 @@
+<view class="housemate-card-container">
+  <housemate-card-base
+    bind:tap="goToHousemateDetail"
+    housemate-info="{{housemateInfo}}"></housemate-card-base>
+
+  <view wx:if="{{ifOnLikePage}}"
+    bind:tap="switchLikingAHousemate"
+    class="like-block">
+    <image wx:if="{{ifLiked}}" class="like-icon"
+      src="statics/icon_liking.png"
+      mode="aspectFill"></image>  
+    <image wx:else class="like-icon"
+      src="statics/icon_unliking.png"
+      mode="aspectFill"></image>  
+  </view>
+
+  <view wx:if="{{ifOnEditPage}}" 
+    class="edit-block">
+    <view class="seperate-line"></view>
+    <view class="function-block">
+      <view class="edit-btn"
+        bind:tap="goToHousemateEdit">编辑</view>
+      <view class="horizontal-seperate-line"></view>
+      <view class="delete-btn"
+        bind:tap="tryToDeleteHousemate">删除</view>
+    </view>
+  </view>
+</view>

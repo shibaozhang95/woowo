@@ -1,0 +1,36 @@
+<wn-navigation nav-title="发布成功"></wn-navigation>
+
+<wn-window>
+  <view class="container">
+    <view class="after-posted-block">
+      <image class="after-posted-img" mode="aspectFit" src="../../statics/images/img_posted_succeed@2x.png"></image>
+      <view class="after-posted-title">发布成功</view>
+      <view class="after-posted-tips"
+        >生成商品卡片，其他小伙伴扫码即可查看商品详情哦！</view>
+    </view>
+    <view class="after-posted-sharing">
+      <!-- <view class="sharing-title">分享闲品</view> -->
+      <view class="sharing-block">
+        <block wx:for="{{sharingList}}" wx:key="">
+          <view class="sharing-item" bind:tap="shareToOthers" data-title="朋友圈" hover-class="normal-hover">
+          <!-- <button> -->
+            <image class="sharing-item-icon" mode="aspectFit" src="{{item.iconUrl}}"></image>
+            <!-- <button wx:if="{{item.title != '朋友圈'}}" class="sharing-item-icon-2" open-type="share"></button> -->
+            <view class="sharing-item-title">{{item.title}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="after-posted-fnt">
+      <view class="fnt-btn" bindtap="goToGoodsDetail">查看详情</view>
+      <view class="fnt-btn" bindtap="goToIndex">返回首页</view>
+    </view>
+    
+  </view>
+</wn-window>
+
+<share-image goods-id="{{goodsId}}" goods-title="{{goodsTitle}}" goods-cover="{{goodsCover}}"
+  goods-price="{{goodsPrice}}"
+  if-show-share-image="{{ifShowShareImage}}" 
+  bind:complete="turnOffShareImage">
+</share-image>

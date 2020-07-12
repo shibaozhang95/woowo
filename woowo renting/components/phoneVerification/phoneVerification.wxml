@@ -1,0 +1,27 @@
+<view class="phone-verification-container"
+  style="width:{{containerWidth}}px;height:{{containerHeight}}px;top:{{containerTopPos}}px"
+  bind:touchmove="">
+  <view class="phone-verification-block">
+    <view class="window-top">
+      <view class="title">输入验证码</view>
+      <input type="text"
+        class="phone-input"
+        placeholder="输入四位数验证码"
+        placeholder-class="input-placeholder"
+        bindinput="phoneVeriCodeInput"
+        value="{{phoneVeriCode}}"></input>
+      <view class="error-tips">
+        <view class="error-tips-text"
+          wx:if="{{ifShowError}}">验证码错误</view>
+        
+      </view>
+    </view>
+    <view class="window-bottom">
+      <view class="fnt fnt-confirm"
+        bindtap="verificationConfirm">确定</view>
+      <view class="fnt fnt-cancel"
+        bindtap="verificationCancel">取消</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,14 @@
+<picker class="" mode="{{pickerMode}}" 
+  range="{{pickerRange}}" range-key="" value=""
+  bindchange="pickerChanged" bindcancel=""
+  hover-class="normal-hover">
+  <view class="picker-container">
+    <view class="picker-title">{{title}}</view>
+    <view class="picker-fnt">
+      <view class="picker-result">{{shortcut}}</view>
+      <image class="picker-icon"
+        mode="aspectFill"
+        src="/statics/images/icon_arrow_right_grey.png"></image>
+    </view>
+  </view>  
+</picker>

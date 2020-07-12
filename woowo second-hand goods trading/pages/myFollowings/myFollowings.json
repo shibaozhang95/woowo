@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView",
+    "user-card": "components/userCard/userCard"
+  }
+}

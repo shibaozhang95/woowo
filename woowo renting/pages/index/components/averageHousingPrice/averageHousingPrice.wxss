@@ -1,0 +1,23 @@
+.average-housing-price-container {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  width: 640rpx;
+  height: 44rpx;
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 44rpx;
+  margin: 0 auto 20rpx auto;
+}
+
+.price-chart-container {
+  width: 640rpx;
+  height: 162rpx;
+  margin: 0 auto;
+  background-color: rgba(246, 182, 45, 0.5);
+  border-radius: 10rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.16)
+}

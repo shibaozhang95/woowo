@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "one-contact": "components/oneContact/oneContact"
+  },
+  
+  "backgroundColor": "#F8F5F0"
+}

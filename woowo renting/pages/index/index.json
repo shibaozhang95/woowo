@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "index-ad": "components/indexAd/indexAd",
+    "index-menu": "components/indexMenu/indexMenu",
+    "hot-housing-stock": "components/hotHousingStock/hotHousingStock",
+    "average-housing-price": "components/averageHousingPrice/averageHousingPrice",
+    "school-areas-apts": "components/schoolAreasApts/schoolAreasApts",
+    "agents-block": "components/agentsBlock/agentsBlock"
+  },
+
+  "backgroundColor": "#ffffff",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 200
+}

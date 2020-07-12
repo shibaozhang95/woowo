@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "sort-bar": "../../components/sortBar/sortBar",
+    "brif-goods": "../../components/brifGoods/brifGoods",
+    "woowo-scroll-view": "../../components/woowoScrollView/woowoScrollView",
+    "reach-bottom-tips": "../../components/reachBottomTips/reachBottomTips",
+    "go-to-top": "../../components/goToTop/goToTop",
+    "wn-search-bar": "../../components/common/wnSearchBar/wnSearchBar"
+  }
+}

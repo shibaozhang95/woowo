@@ -1,0 +1,94 @@
+/* tabBar.wxss */
+
+.tabbar-container {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  z-index: 9997;
+}
+.tabbar-layer {
+  width: 750rpx;
+  height: 102rpx;
+  border-top: 2rpx solid rgba(44, 62, 90, 0.1);
+  position: relative;
+}
+
+.IPX-corresponding-block {
+  width: 100%;
+  height: 68rpx;
+  background-color: #fff;
+}
+
+.tabbar-container .tabbar-ls {
+  float: left;
+}
+
+.tabbar-nav-index, 
+.tabbar-nav-user {
+  width: 80rpx;
+  padding: 0 40rpx;
+  margin: 0 80rpx;
+  height: auto;
+}
+.tabbar-nav-add {
+  width: 110rpx;
+  height: auto;
+  position: relative;
+  z-index: 0;
+}
+
+.tabbar-icon-index, 
+.tabbar-icon-user {
+  margin-top: 16rpx;
+  width: 80rpx;
+  height: 70rpx;
+}
+.icon-add-bg {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: -86rpx;
+  z-index: 30;
+}
+
+.tabbar-icon-add {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+}
+
+.tabbar-icon-add-block1 {
+  width: 140rpx;
+  height: 70rpx;
+  border: 2rpx solid rgba(44, 62, 90, 0.1);
+  position: absolute;
+  border-top-left-radius: 120rpx;
+  border-top-right-radius: 120rpx;
+  background: #fff;
+  left: -20rpx;
+  top: -34rpx;
+  z-index: 1;
+}
+.tabbar-icon-add-block2 {
+  background-color: #fff;
+  width: 140rpx;
+  height: 70rpx;
+  position: absolute;
+  left: -20rpx;
+  z-index: 20;
+}
+
+.tabbar-add {
+  width: 110rpx;
+  height: 100rpx;
+}
+
+
+
+.rotate {
+  transform: rotate(-90deg);
+  transition: all 0.5s ease;
+}

@@ -1,0 +1,62 @@
+.modal-container {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(44, 62, 80, 0.2);
+  z-index: 99999;
+}
+
+.modal-block {
+  width: 340rpx;
+  height: 400rpx;
+  margin: 340rpx auto;
+  background-color: #fff;
+  border-radius: 40rpx;
+  overflow: hidden;
+}
+.modal-icon-block {
+  width: 100%;
+  /* height: 200rpx; */
+}
+.modal-icon {
+  width: 150rpx;
+  height: 100rpx;
+  /* background-color: rgba(44, 62, 80, 1); */
+  margin: 28rpx auto 76rpx;
+  display: block;
+}
+.modal-txt {
+  widows: 300rpx;
+  margin: 10rpx auto 92rpx auto;
+  color: rgba(44, 62, 80, 1);
+  font-size: 32rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+.modal-fnt {
+  width: 100%;
+  border-top: 2rpx solid rgba(112, 112, 112, 0.2);
+  overflow: hidden;
+}
+.modal-fnt-btn {
+  float: left;
+  width: 50%;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: rgba(44, 62, 80, 1);
+  font-size: 32rpx
+}
+.modal-fnt-confirm {
+  
+  border-right: 2rpx solid rgba(112, 112, 112, 0.2);
+  border-bottom-left-radius: 40rpx;
+}
+.modal-fnt-cancel {
+  background-color: #fff;
+  border-bottom-right-radius: 40rpx;
+}
+.modal-fnt-hover {
+  background-color: rgb(246, 182, 45);
+}

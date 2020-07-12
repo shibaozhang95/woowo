@@ -1,0 +1,35 @@
+<wn-navigation nav-title="关于我们"
+  if-tab-page="{{false}}"></wn-navigation>
+
+<wn-window
+  if-show-tab-bar="{{false}}"
+  if-show-go-to-top="{{false}}">
+  <view class="container">
+    <view class="title-img">
+      <image class="about-us-banner" mode="aspectFit" 
+        src="/statics/images/banner_about_us.png" />
+    </view>
+    <view class="info-one-block">
+      <view class="info-title">关于我们</view>
+      <view class="info-content">
+        <text class="info-txt">Woowo 租房是蜗牛科技官方租房信息交流平台，土澳小伙伴们可以在这里免费发布租房信息，自主决定出租方式；也可以在这里快速找到想要的房源，结识志同道合的伙伴合租。无论白天黑夜，我们随时为您效劳。
+        </text>
+        <!-- <image class="img img-left-1" src="../../statics/images/img_us_left_1@2x.png" mode="aspectFit"></image>
+        <image class="img img-right-1" src="../../statics/images/img_us_right_1@2x.png" mode="aspectFit"></image> -->
+      </view>
+    </view>
+    <view class="info-one-block">
+      <view class="info-title">免责申明</view>
+      <view class="info-content">
+        <text class="info-txt">Woowo 租房是一家提供租房信息交流的信息交流平台，属于第三方服务平台，我们竭诚为房东和租客提供最优质的服务,但不承诺以下职责：
+          1. 本平台并不检验个人和企业用户的房源信息真伪及其校验服务,如有问题请联系客服；
+          2. 本平台有权使用用户上传的内容信息，包括且不仅限于文字，房源图片，位置等信息；
+          3. 本平台不承担因租房导致的侵权责任；
+          4. 本平台只提供租房信息交流的渠道，并不参与交易流程，房东和租客双方请保护好自身权益，感谢您的理解与支持。
+        </text>
+        <!-- <image class="img img-left-2" src="../../statics/images/img_us_left_2@2x.png" mode="aspectFit"></image>
+        <image class="img img-right-2" src="../../statics/images/img_us_right_2@2x.png" mode="aspectFit"></image> -->
+      </view>
+    </view>
+  </view>
+</wn-window>

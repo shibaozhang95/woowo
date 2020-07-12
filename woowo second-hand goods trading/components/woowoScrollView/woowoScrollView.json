@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "nothing-mark": "../nothingMark/nothingMark",
+    "reach-bottom-tips": "../reachBottomTips/reachBottomTips"
+  }
+}

@@ -1,0 +1,12 @@
+page {
+  background-color: rgb(248, 245, 240);
+}
+
+.following-list-block {
+  padding-top: 20rpx;
+}
+
+.one-user-item {
+  width: 100%;
+  margin-bottom: 20rpx;
+}

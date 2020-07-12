@@ -1,0 +1,39 @@
+<view class="goods-content-container">
+  <view class="sort-bar-block">
+    <sort-bar
+      current-main-cat="{{}}"
+      initialize-filter="{{initializeFilter}}"
+      bindchangeFilters="changeFilters"
+      pos-top="{{85}}">
+    </sort-bar>
+  </view>
+
+  <wn-list
+    ifShowNothingMark="{{ifNothing}}"
+    ifShowLoading="{{ifLoading}}"
+    ifShowReachBottom="{{ifReachBottom}}"
+    reach-bottom-tips="没有啦~"
+    nothing-mark-tips="空的，去看看其他吧～"
+    extra-top-block-height="{{0}}">
+    
+    <view slot="list-container" class="goods-list-container">
+      <view class="container-left">
+        <block wx:for="{{filteredGoods.list}}" wx:key="product_id">
+          <view hidden="{{index % 2 != 0}}" class="content-item" hover-class="normal-hover">
+            <brif-goods class="brif-goods" goods-info="{{item}}">
+            </brif-goods>
+          </view>
+        </block>
+      </view>
+      <view class="container-right">
+        <block wx:for="{{filteredGoods.list}}" wx:key="product_id">
+          <view hidden="{{index % 2 != 1}}" class="content-item" hover-class="normal-hover">
+            <brif-goods class="brif-goods" goods-info="{{item}}">
+            </brif-goods>
+          </view>
+        </block>
+      </view>
+      
+    </view>
+  </wn-list>
+</view>
